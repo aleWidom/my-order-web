@@ -1,0 +1,28 @@
+@import 'config';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    background-color: $color-primary;
+    font-family: $font-family-primary;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.4rem;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+ 

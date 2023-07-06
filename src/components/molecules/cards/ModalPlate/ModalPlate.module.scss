@@ -1,0 +1,157 @@
+@import '../../../../styles/config';
+
+
+.containerModalPlate {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0px;
+	background-color: rgba(138, 138, 138, 0.3);
+	z-index: 3;
+}
+
+.modalPlate {
+	width: 90%;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	font-size: 0.9rem;
+	border-radius: 0.25rem;
+	padding: 0.5rem;
+	background-color: $color-primary;
+	z-index: 4;
+}
+
+.description {
+	text-align: center;
+	font-size: 0.7rem;
+	color: $color-secondary;
+}
+
+.title {
+	text-align: center;
+	font-size: 1rem;
+	font-weight: bold;
+	color: $color-secondary;
+}
+
+.img {
+	width: 25%;
+}
+
+.price {
+	font-weight: bold;
+	color: $color-secondary;
+}
+
+.buttonClosedModal {
+	display: flex;
+	justify-content: flex-end;
+	border: none;
+	cursor: pointer;
+}
+
+.request,
+.requestTrash {
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $color-primary;
+	padding: 0.5rem;
+	margin-top: 0.5rem;
+	cursor: pointer;
+	color: $color-five;
+	font-size: 1.5rem;
+	gap: 0.5rem;
+}
+
+.requestTrash {
+	color: $color-terciary;
+}
+
+
+.containerQuantity {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 0.5rem;
+	color: $color-secondary
+}
+
+.containerQuantitySigns {
+	width: 30%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border: solid 1px $color-secondary;
+	padding: 0.25rem;
+	border-radius: 2.6rem;
+	background-color: $color-secondary;
+}
+
+.quantity {
+	text-align: center;
+	font-size: 0.8rem;
+	color: $color-secondary;
+}
+
+.quantitySelected {
+	color: $color-primary;
+}
+
+.priceUnit {
+	margin-top: -0.5rem;
+	color: $color-secondary;
+}
+
+.buttonQuantitySubstract {
+	border: none;
+	width: 1.2rem;
+	height: 1.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-size: 1rem;
+	background-color: $color-secondary;
+}
+
+
+.buttonQuantityAdd {
+	border: none;
+	width: 1.2rem;
+	height: 1.2rem;
+	font-weight: bold;
+	font-size: 1rem;
+	background-color: $color-secondary;
+}
+
+
+.signAdd {
+	font-size: 1.1rem;
+}
+
+.signSubstract {
+	font-size: 1.5rem;
+}
+
+.signSubstractInactive {
+	font-size: 1.5rem;
+	color: rgb(87, 87, 87);
+}
+
+
+.signAddInactive {
+	font-size: 1.1rem;
+	color: rgb(87, 87, 87);
+}

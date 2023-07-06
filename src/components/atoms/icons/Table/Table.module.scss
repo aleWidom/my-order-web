@@ -1,0 +1,26 @@
+@import '../../../../styles/config';
+
+.containerTable {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 0.4rem;
+    background-color: $color-secondary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.table {
+    text-align: center;
+    font-size: 0.8rem;
+    color: $color-primary;
+    font-weight: bold;
+}
+
+.tableNumber {
+    text-align: center;
+    font-size:  1rem;
+    font-weight: bold;
+    color: $color-primary;
+  } 

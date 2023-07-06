@@ -1,0 +1,48 @@
+@import '../../../../styles/config';
+
+.containerModalInfo {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+	background-color: rgba(138, 138, 138, 0.3);
+  z-index: 3;
+}
+
+.modalInfo {
+  width: 90%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  background-color: $color-primary;
+  z-index: 4;
+}
+
+
+.buttonClosedModal {
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  cursor: pointer;
+}
+
+.description {
+  text-align: center;
+  font-size: 0.8rem;
+  color: $color-secondary;
+}
+
+.icon {
+	color: $color-secondary;
+	font-size: 1.5rem;
+}

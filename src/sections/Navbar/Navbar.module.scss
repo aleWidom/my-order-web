@@ -1,0 +1,41 @@
+@import '../../styles/config';
+
+.containerNavbarHome {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	top: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 6rem;
+	background-color: $color-primary;
+	z-index: 2;
+	margin-bottom: 2rem;
+	padding: 0px 1.5rem;
+}
+
+.containerMenuBrand {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0px;
+	gap: 0.5rem;
+	width: 70%;
+	height: 4rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.containerTableWaiter {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	height: 4rem;
+	gap: 1rem;
+}
+

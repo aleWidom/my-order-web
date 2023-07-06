@@ -1,0 +1,54 @@
+@import '../../../../styles/config';
+
+.containerCardOrder {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 6rem;
+}
+
+.containerDescription {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.title {
+	color: $color-primary;
+	font-size: 0.95rem;
+}
+
+.price {
+	color: $color-primary;
+}
+
+.quantity {
+	color: $color-four;
+	font-size: 0.8rem;
+}
+
+.editDelete {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 0.25rem;
+}
+
+.edit,
+.delete {
+	cursor: pointer;
+	font-size: 1.1rem;
+}
+
+.edit {
+	color: #79da61
+}
+
+.delete {
+	color: #ff7676;
+}
+
+
+

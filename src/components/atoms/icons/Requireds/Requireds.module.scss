@@ -1,0 +1,17 @@
+@import '../../../../styles/config';
+
+.required {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1;
+	height: 70%;
+}
+
+.link {
+	text-decoration: none;
+	color: $color-secondary;
+	font-size: 1.4rem;
+}
+
+

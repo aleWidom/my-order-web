@@ -1,0 +1,28 @@
+@import '../../../../styles/config';
+
+.buttonGral {
+  display: flex;
+  width: 6rem;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+
+/* .linkSelected {
+  text-decoration: none;
+  color: $color-primary;
+}
+
+.linkNotSelected {
+  text-decoration: none;
+  color: $color-secondary;
+}
+ */

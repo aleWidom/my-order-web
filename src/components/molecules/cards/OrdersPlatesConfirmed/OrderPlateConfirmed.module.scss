@@ -1,0 +1,82 @@
+@import '../../../../styles/utils';
+
+
+.container {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 8px;
+	background-color: #4e4e4e;
+	margin-bottom: 2rem;
+}
+
+.containerCardOrder {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	width: 100%;
+	border-top: solid $color-secondary 1px;
+	height: 8rem;
+}
+
+.containerCardOrderDefinitive {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	width: 100%;
+	height: 8rem;
+}
+
+.titleOrderConfirmed {
+	@include title;
+	color: $color-four;
+}
+
+.title {
+	color: $color-four;
+	font-weight: bold;
+}
+
+
+
+.img {
+	width: 20%;
+}
+
+.containerDescription {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.editDelete {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 0.25rem;
+}
+
+.process {
+	color: #ff9747;
+	font-weight: bold;
+}
+
+.delivered {
+	color: $color-five;
+}
+
+.quantity {
+	color: $color-four
+}
+
+.edit,
+.delete {
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.price {
+	color: $color-four;
+}
