@@ -11,5 +11,7 @@ export * from './cards/ModalPlate'
 export * from './loading/MainLoading'
 export * from './cards/ModalInfo'
 export * from './cards/ModalPlateRequired'
-export * from './cards/OrderPlateUnConfirmed/OrderPlateUnConfirmedView'
+/* export * from './cards/OrderPlateUnConfirmed'
 export * from './cards/OrdersPlatesUnconfirmed'
+export * from './cards/OrderPlateConfirmed'
+export * from './cards/OrdersPlatesConfirmed'  */

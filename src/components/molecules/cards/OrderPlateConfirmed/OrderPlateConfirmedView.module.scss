@@ -1,0 +1,30 @@
+@import '../../../../styles/config';
+
+.containerCardOrderDefinitive {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	width: 100%;
+	height: 8rem;
+}
+
+.containerDescription {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.title {
+	color: $color-four;
+	font-weight: bold;
+}
+
+.price {
+	color: $color-four;
+}
+
+.quantity {
+	color: $color-four
+}
+

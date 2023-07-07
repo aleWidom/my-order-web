@@ -11,13 +11,12 @@ export const ModalInfoView = ({ closedModalInfo, modalInfo }: Props) => {
 
 	return (
 		<>
-			<div className={styles.containerModalInfo} onClick={closedModalInfo}>
-				<button onClick={closedModalInfo} className={styles.buttonClosedModal}>
-					<Closed />
-				</button>
-				<div className={styles.modalInfo}>
-					<p className={styles.description}>{modalInfo.description}</p>
-				</div>
+			<div className={styles.containerModalInfo} onClick={closedModalInfo}></div>
+			<button onClick={closedModalInfo} className={styles.buttonClosedModal}>
+				<Closed />
+			</button>
+			<div className={styles.modalInfo}>
+				<p className={styles.description}>{modalInfo.description}</p>
 			</div>
 		</>
 	);

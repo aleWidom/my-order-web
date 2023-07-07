@@ -3,7 +3,6 @@ import { useContext} from 'react';
 import { OrderContext } from '../../../../context/order/OrderContext';
 import { v4 as uuidv4 } from 'uuid';
 import { OrdersPlatesUnConfirmedView } from './OrdersPlatesUnConfirmedView';
-import { PlateSelected } from '@/interfaces';
 import { itemPeopleInTable } from '@/services';
 
 
@@ -11,33 +10,6 @@ export const OrdersPlatesUnConfirmed = () => {
 
 	const {cartTemporary, modalPlate, setModalPlate, setCartDefinitive, setCartTemporary} = useContext(OrderContext);
 	
-	const handleEdit = (cartProduct: PlateSelected, i: number) => () => {
-
-		setModalPlate({
-			...modalPlate,
-			stateModal: true,
-			title: cartProduct.title,
-			price: cartProduct.price,
-			quantity: cartProduct.quantity,
-			modalType: 'main',
-			modalEditOrDeleteOrConfirm: 'edit',
-			index: i
-		});
-	};
-
-
-	const handleDelete = (cartProduct: PlateSelected, i: number) => () => {
-		setModalPlate({
-			...modalPlate,
-			stateModal: true,
-			price: cartProduct.price,
-			title: cartProduct.title,
-			quantity: cartProduct.quantity,
-			modalType: 'main',
-			modalEditOrDeleteOrConfirm: 'delete',
-			index: i
-		});
-	};
 
 	const handleConfirmRequest = () => {
 
@@ -72,7 +44,7 @@ export const OrdersPlatesUnConfirmed = () => {
 	}
 
 	return (
-		<OrdersPlatesUnConfirmedView handleEdit={handleEdit} handleDelete={handleDelete} handleConfirmRequest={handleConfirmRequest} cartTemporary={cartTemporary}/>
+		<OrdersPlatesUnConfirmedView handleConfirmRequest={handleConfirmRequest} cartTemporary={cartTemporary}/>
 	);
 };
 

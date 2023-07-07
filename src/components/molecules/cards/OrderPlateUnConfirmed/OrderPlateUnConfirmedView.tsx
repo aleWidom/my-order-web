@@ -5,7 +5,7 @@ import styles from './OrderPlateUnConfirmed.module.scss'
 interface Props {
   cartProduct: PlateSelected;
   handleEdit: any;
-  handleDelete: any;
+  handleDelete: any
 }
 
 export const OrderPlateUnConfirmedView = ({ cartProduct, handleEdit, handleDelete }: Props) => {

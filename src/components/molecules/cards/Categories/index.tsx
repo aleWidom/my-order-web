@@ -1,9 +1,7 @@
 "use client"
 import { useContext } from 'react';
-import { OrderContext, SearchContext } from '@/context';
+import { OrderContext} from '@/context';
 import { CategoriesView } from './CategoriesView';
-import { CategoryRestaurant } from '@/interfaces';
-
 
 export const Categories = () => {
 

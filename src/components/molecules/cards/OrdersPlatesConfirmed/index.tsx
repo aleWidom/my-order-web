@@ -1,11 +1,11 @@
 "use client"
 import { useContext } from 'react';
 import { OrderContext } from '../../../../context/order/OrderContext';
-import { OrderPlateConfirmedView } from './OrderPlateConfirmedView';
+import { OrdersPlatesConfirmedView } from './OrdersPlatesConfirmedView';
 
 
 
-export const OrderPlateConfirmed = () => {
+export const OrdersPlatesConfirmed = () => {
 
 	const { cartDefinitive} = useContext(OrderContext);
 
@@ -23,12 +23,7 @@ export const OrderPlateConfirmed = () => {
 	   }, 10000);  */
 
 	return (
-		<OrderPlateConfirmedView cartDefinitive={cartDefinitive}/>
+		<OrdersPlatesConfirmedView cartDefinitive={cartDefinitive}/>
 	);
 };
 
-/* {cartProduct.state === 'delivered' ? (
-	<small className={styles.delivered}>Entregado</small>
-) : (
-	<small className={styles.process}>Su pedido se está preparando.</small>
-)} */
