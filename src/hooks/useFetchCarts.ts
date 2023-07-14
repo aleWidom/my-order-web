@@ -8,26 +8,26 @@ export const useFetchCarts = () => {
 
 	useEffect(() => {
 		//si existe localStorage.getItem('cartTemporary') seteo el cartTemporary con el valor que trae, sino creo el local storage con dicho nombre y seteo un array vacio
-		if (localStorage.getItem('cartTemporary')) {
+		if (/* localStorage.getItem('cartTemporary') */ true) {
 			setCartTemporary(JSON.parse(localStorage.getItem('cartTemporary') as any));
 		} else {
-			localStorage.setItem('cartTemporary', JSON.stringify([]));
+/* 			localStorage.setItem('cartTemporary', JSON.stringify([])); */
 			setCartTemporary([]);
 		}
 
 		//realizo la búesqueda si existe en el localStorage cartDefinitive
-		if (localStorage.getItem('cartDefinitive')) {
+		if (/* localStorage.getItem('cartDefinitive') */true) {
 			//si el localStorage existe pero está vacío, busco de la base de datos y seteo
-			if (localStorage.getItem('cartDefinitive') === '[]') {
-				fetchItemPeopleInTable(JSON.parse(localStorage.getItem('idPeopleTableId') as any))
+			if (localStorage.getItem('cartDefinitive') === '[]' ) {
+				fetchItemPeopleInTable(/* JSON.parse(localStorage.getItem('idPeopleTableId') as any) */"")
 					.then((response) => {
 						//si la respuesta es vacia seteoCartDefinitive y el local storage con array vacio, si obtengo una respuesta seteo la respuesta.
 						if (response === '') {
 							setCartDefinitive([]);
-							localStorage.setItem('cartDefinitive', JSON.stringify([]));
+							/* localStorage.setItem('cartDefinitive', JSON.stringify([])); */
 						} else {
 							setCartDefinitive(response);
-							localStorage.setItem('cartDefinitive', JSON.stringify(response));
+					/* 		localStorage.setItem('cartDefinitive', JSON.stringify(response)); */
 						}
 					})
 					.catch((err) => {
@@ -38,20 +38,20 @@ export const useFetchCarts = () => {
 			else {
 				setCartDefinitive(JSON.parse(localStorage.getItem('cartDefinitive') as any));
 			}
-		}
+		 } 
 
 		//Sino existe en el localStorage cartDefinitive
 		else {
-			fetchItemPeopleInTable(JSON.parse(localStorage.getItem('idPeopleTableId') as any))
+			fetchItemPeopleInTable(/* JSON.parse(localStorage.getItem('idPeopleTableId') as any) */"a")
 				.then((response) => {
 					//si la respuesta es vacia seteoCartDefinitive y el local storage con array vacio, si obtengo una respuesta seteo la respuesta.
 					if (response === '') {
 						setCartDefinitive([]);
-						localStorage.setItem('cartDefinitive', JSON.stringify([]));
+/* 						localStorage.setItem('cartDefinitive', JSON.stringify([])); */
 					} else {
 						if (response !== undefined) {
 							setCartDefinitive(response);
-							localStorage.setItem('cartDefinitive', JSON.stringify(response));
+				/* 			localStorage.setItem('cartDefinitive', JSON.stringify(response)); */
 						}
 					}
 				})

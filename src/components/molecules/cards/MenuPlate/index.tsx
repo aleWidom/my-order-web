@@ -29,6 +29,6 @@ export const MenuPlate = ({price, description, header, id}: Props) => {
 
   return (
    <MenuPlateView handleClickRequest={handleClickRequest} price={price} header={header} 
-    description={description.length > 40 ? description.slice(0, 42) + "..." : description}/>
+    description={description.length > 40 ? description.slice(0, 40) + "..." : description}/>
   );
 };

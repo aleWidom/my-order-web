@@ -1,0 +1,32 @@
+@import '../../../../styles/config';
+
+
+.containerQuantitySigns {
+	width: 30%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border: solid 1px $color-secondary;
+	padding: 0.25rem;
+	border-radius: 2.6rem;
+	background-color: $color-secondary;
+}
+
+.buttonQuantity {
+	border: none;
+	width: 1.2rem;
+	height: 1.2rem;
+	font-size: 1rem;
+	background-color: $color-secondary;
+}
+
+.quantitySelected {
+	color: $color-primary;
+}
+
+.containerSign {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

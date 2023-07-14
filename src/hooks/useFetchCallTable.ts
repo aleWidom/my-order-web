@@ -7,7 +7,7 @@ export const useFetchCallTable = () => {
     const { setSittingOnTheTableCall} = useContext(TableContext);
 
 	useEffect(() => {  
-        fetchTable(JSON.parse(localStorage.getItem('table') as any))
+        fetchTable(/* JSON.parse(localStorage.getItem('table') as any) */"2")
         .then((response)=> {
            if(response?.table_call === '1') {
             setSittingOnTheTableCall(true)

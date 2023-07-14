@@ -1,0 +1,19 @@
+@import '../../../../styles/config';
+
+.button  {
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $color-primary;
+	padding: 0.5rem;
+	margin-top: 0.5rem;
+	cursor: pointer;
+	color: $color-five;
+	font-size: 1.5rem;
+	gap: 0.5rem;
+}
+
+.requestTrash {
+	color: $color-terciary;
+}

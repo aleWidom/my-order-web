@@ -1,7 +1,7 @@
 "use client"
 import { useContext, useEffect } from 'react';
 /* import { useSearchParams } from 'react-router-dom'; */
-/* import { v4 as uuidv4 } from 'uuid'; */
+import { v4 as uuidv4 } from 'uuid';
 import { fetchTable, peopleInTable, peopleInTableFetch, updateTableNumberActive } from '../services';
 import { TableContext } from '../context';
 
