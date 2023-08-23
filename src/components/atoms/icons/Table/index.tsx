@@ -3,10 +3,10 @@ import { TableView } from "./TableView"
 
 
 export const Table = () => {
-
-	const  numberTable =/*  JSON.parse(localStorage.getItem('table') as any) */ "2"
-
+    
+	const  {tableNumber}= JSON.parse(localStorage.getItem('table') as string)
+  
     return (
-        <TableView numberTable={numberTable}/>
+        <TableView numberTable={tableNumber}/>
     )
 }

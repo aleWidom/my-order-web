@@ -18,7 +18,7 @@ export const useFetchCarts = () => {
 		//realizo la búesqueda si existe en el localStorage cartDefinitive
 		if (/* localStorage.getItem('cartDefinitive') */true) {
 			//si el localStorage existe pero está vacío, busco de la base de datos y seteo
-			if (localStorage.getItem('cartDefinitive') === '[]' ) {
+			//if (localStorage.getItem('cartDefinitive') === '[]' ) {
 				fetchItemPeopleInTable(/* JSON.parse(localStorage.getItem('idPeopleTableId') as any) */"")
 					.then((response) => {
 						//si la respuesta es vacia seteoCartDefinitive y el local storage con array vacio, si obtengo una respuesta seteo la respuesta.
@@ -33,11 +33,11 @@ export const useFetchCarts = () => {
 					.catch((err) => {
 						console.log(err);
 					});
-			}
+			//}
 			//si existe y el array no es vacío lo seteo del localStorage
-			else {
+			//else {
 				setCartDefinitive(JSON.parse(localStorage.getItem('cartDefinitive') as any));
-			}
+			//}
 		 } 
 
 		//Sino existe en el localStorage cartDefinitive

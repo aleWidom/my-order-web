@@ -6,16 +6,15 @@ import brand from '@/images/brand.png';
 import styles from './MainBrand.module.scss';
 
 interface Props {
-	numberTable: string, 
-	params: string,
+	tableID: string, 
 	page: string, 
 	handleClickMenu: () => void
 }
 
 
-export const MainBrandView = ({numberTable, params, page, handleClickMenu}: Props) => {
+export const MainBrandView = ({tableID, page, handleClickMenu}: Props) => {
 	return (
-		<Link href={/* localStorage.getItem('table') ? `/?table=${numberTable.tableID}` : `/?table=${params.get('table')}` */"/"} className={styles.containerMainBrand} onClick={handleClickMenu}>
+		<Link href={`/?table=${tableID}`} className={styles.containerMainBrand} onClick={handleClickMenu}>
 			{page !== 'order' ? (
 				<Image src={brand} alt={'brand'} className={styles.mainBrand} width={50} height={50}/>
 			) : (

@@ -8,7 +8,9 @@ export const TableView = ({numberTable}:Props) => {
     return (
         <div className={styles.containerTable}>
             <p className={styles.table}>Mesa</p>
-            <p className={styles.tableNumber}>{/* `${numberTable.tableNumber}` */2} </p>
+            <p className={styles.tableNumber}>{`${numberTable}` } </p>
         </div>
     )
 }
+
+

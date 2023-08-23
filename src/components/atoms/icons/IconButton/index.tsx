@@ -20,8 +20,10 @@ export const IconButton = ({ buttonName }: Props) => {
 
   const handleClickRequest = () => {
 
+    console.log(cartTemporary)
+
 /*     if (localStorage.getItem('idPeopleTableId') && localStorage.getItem('idPeopleTableId') !== "undefined") { */
-      console.log(localStorage.getItem('idPeopleTableId'))
+    /*   console.log(localStorage.getItem('idPeopleTableId')) */
       setCartTemporary(
         [{
           ItemID: modalPlate.ItemID,
@@ -31,14 +33,14 @@ export const IconButton = ({ buttonName }: Props) => {
         },
         ...cartTemporary])
 
-      localStorage.setItem('cartTemporary', JSON.stringify([{
+/*       localStorage.setItem('cartTemporary', JSON.stringify([{
         ItemID: modalPlate.ItemID,
         title: modalPlate.title,
         quantity: modalPlate.quantity,
         price: modalPlate.price,
       },
       ...cartTemporary
-      ]))
+      ])) */
 
 
 
@@ -61,7 +63,7 @@ export const IconButton = ({ buttonName }: Props) => {
 
       setCartTemporary(cartTemporaryEdit)
 
-      localStorage.setItem('cartTemporary', JSON.stringify(cartTemporaryEdit))
+   /*    localStorage.setItem('cartTemporary', JSON.stringify(cartTemporaryEdit)) */
 
       setModalPlate({
         ...modalPlate,
@@ -80,7 +82,7 @@ export const IconButton = ({ buttonName }: Props) => {
 
       setCartTemporary(cartTemporaryDelete)
 
-      localStorage.setItem('cartTemporary', JSON.stringify(cartTemporaryDelete))
+/*       localStorage.setItem('cartTemporary', JSON.stringify(cartTemporaryDelete)) */
 
       setModalPlate({
         ...modalPlate,

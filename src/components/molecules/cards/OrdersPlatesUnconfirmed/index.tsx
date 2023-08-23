@@ -21,17 +21,17 @@ export const OrdersPlatesUnConfirmed = () => {
 
 		//seteo como cart Definitivo, el cartTemporary + lo que esta de antes como definitivo, la misma información la guardo en el localstorage
 		setCartDefinitive([
-			...cartTemporary, ...JSON.parse(localStorage.getItem('cartDefinitive') as any)
+			...cartTemporary, ...JSON.parse(/* localStorage.getItem('cartDefinitive') as any */"")
 		])
-		localStorage.setItem('cartDefinitive', JSON.stringify([
+		/* localStorage.setItem('cartDefinitive', JSON.stringify([
 			...cartTemporary,
 			...JSON.parse(localStorage.getItem('cartDefinitive') as any)
-		]))
+		])) */
 
 
 		//seteo el carrito temporario como vacio, y guardo lo mismo en el local storage
 		setCartTemporary([])
-		localStorage.setItem('cartTemporary', JSON.stringify([]))
+	/* 	localStorage.setItem('cartTemporary', JSON.stringify([])) */
 
 
 		setModalPlate({

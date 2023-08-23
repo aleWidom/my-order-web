@@ -11,6 +11,8 @@ export default function HomePage() {
 
   const { modalInfo } = useContext(SearchContext)
 
+  console.log(loading)
+
   return (
     <>
       {loading ?

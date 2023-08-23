@@ -7,11 +7,11 @@ import {useFetchCallTable,  useFetchTable, useFetchLoading, useFetchCardsDayPlat
 export const MainLoading = () => {
 
 
-   useFetchItems()
+  useFetchItems()
 
   useFetchCategories();
 
- /* useFetchTable()*/
+  useFetchTable()
 
   useFetchCallTable()
 

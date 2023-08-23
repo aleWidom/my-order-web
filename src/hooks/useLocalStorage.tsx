@@ -1,4 +1,3 @@
-/* 
 "use client"
 import { useEffect, useState} from "react";
 
@@ -9,7 +8,7 @@ const useLocalStorage = (key: string, initialState: []) => {
 
     //solo se ejecuta la primera vez
     useEffect(() => {
-     const tasksStorage = JSON.parse(localStorage.getItem(key) as any);
+     const tasksStorage = JSON.parse(/* localStorage.getItem(key) as any */"");
      if (tasksStorage) {
         setTasks(tasksStorage)
      }
@@ -17,9 +16,9 @@ const useLocalStorage = (key: string, initialState: []) => {
     }, [])
     
     
-    //se ejecuta cada vez que cambia tasks
+   //se ejecuta la primera vez y cada vez que cambia tasks
     useEffect(() => {
-        localStorage.setItem(key, JSON.stringify(tasks))
+       /*  localStorage.setItem(key, JSON.stringify(tasks)) */
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [tasks])
     
@@ -28,4 +27,4 @@ const useLocalStorage = (key: string, initialState: []) => {
 
 };
 
-export default useLocalStorage; */
+export default useLocalStorage; 

@@ -22,7 +22,8 @@ export const CallWaiter = () => {
 
 	const {sittingOnTheTableCall ,setSittingOnTheTableCall} = useContext(TableContext);
 
-	const  numberTable = /* JSON.parse(localStorage.getItem('table') as any) */ "2"
+	const  table = JSON.parse(localStorage.getItem('table') as any) 
+
 	
 	useFetchCallTable()
 
@@ -41,7 +42,7 @@ export const CallWaiter = () => {
 			});
 		}, 3000);
 
-		updateTableNumberCall(numberTable);
+		updateTableNumberCall(table.tableID);
 		setSittingOnTheTableCall(true);
 
 	};
@@ -61,7 +62,7 @@ export const CallWaiter = () => {
 			});
 		}, 3000);
 
-		updateTableNumberNotCall(numberTable);
+		updateTableNumberNotCall(table.tableID);
 		setSittingOnTheTableCall(false);
 	};
 
