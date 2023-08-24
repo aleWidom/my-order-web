@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { TableContext } from './TableContext';
+import { TableRestaurant } from '@/interfaces';
 
 
 interface Props {
@@ -8,6 +9,13 @@ interface Props {
 }
 
 export const TableProvider = ({ children }: Props) => {
+
+	const [table, setTable] = useState<TableRestaurant>({
+		TableID: "",
+		table_number: "",
+		table_active: "",
+		table_call: "",
+	});
 
 	const [idPeopleInTable, setIdPeopleInTable] = useState<string>("");
 
@@ -18,7 +26,9 @@ export const TableProvider = ({ children }: Props) => {
 	return (
 		<TableContext.Provider
 			value={{
-				idPeopleInTable,
+				table,
+				setTable,
+				idPeopleInTable, 
 				setIdPeopleInTable,
 				sittingOnTheTableCall, 
 				setSittingOnTheTableCall,

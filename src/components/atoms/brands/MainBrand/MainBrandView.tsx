@@ -6,7 +6,7 @@ import brand from '@/images/brand.png';
 import styles from './MainBrand.module.scss';
 
 interface Props {
-	tableID: string, 
+	tableID: string | undefined, 
 	page: string, 
 	handleClickMenu: () => void
 }

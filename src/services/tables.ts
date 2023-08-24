@@ -51,7 +51,7 @@ async function updateTableNumberDesactive(tableID: string) {
 	}
 }
 
-async function updateTableNumberCall(tableID: string) {
+async function updateTableNumberCall(tableID: string | undefined) {
 	try {
 		const response = await axios.put(
 			/*or get*/ `https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/tables/?call=${tableID}`
@@ -62,7 +62,7 @@ async function updateTableNumberCall(tableID: string) {
 	}
 }
 
-async function updateTableNumberNotCall(tableID: string) {
+async function updateTableNumberNotCall(tableID: string | undefined) {
 	try {
 		const response = await axios.put(
 			/*or get*/ `https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/tables/?notCall=${tableID}`

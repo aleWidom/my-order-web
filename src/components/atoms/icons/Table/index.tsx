@@ -1,12 +1,14 @@
+import { useContext } from "react"
+import { TableContext } from "@/context"
 import { TableView } from "./TableView"
 
 
 
 export const Table = () => {
     
-	const  {tableNumber}= JSON.parse(localStorage.getItem('table') as string)
+	const {table}= useContext(TableContext)
   
     return (
-        <TableView numberTable={tableNumber}/>
+        <TableView numberTable={table.table_number}/>
     )
 }

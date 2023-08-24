@@ -1,7 +1,7 @@
 import styles from './Table.module.scss'
 
 interface Props {
-    numberTable: string
+    numberTable: string | undefined
 }
 
 export const TableView = ({numberTable}:Props) => {

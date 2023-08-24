@@ -1,8 +1,8 @@
 export interface TableRestaurant {
-	TableID: string;
-	table_number: string;
-	table_active: string;
-	table_call: string;
+	TableID: string | undefined;
+	table_number: string | undefined;
+	table_active: string | undefined;
+	table_call: string | undefined;
 }
 
 export interface PlateRestaurant {

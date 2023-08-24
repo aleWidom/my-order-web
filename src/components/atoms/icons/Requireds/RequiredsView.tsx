@@ -5,17 +5,17 @@ import { FaBell } from 'react-icons/fa';
 import styles from './Requireds.module.scss'
 
 interface Props {
-	tableID: string
+	tableID: string | undefined
 }
 
 
-export const RequiredsView = ({tableID}:Props) => {
-return (
+export const RequiredsView = ({ tableID }: Props) => {
+	return (
 		<div className={styles.required}>
-						<Link href={`/order/${tableID}`} className={styles.link}>
-							<FaBell />
-						</Link>
+			<Link href={`/order/${tableID}`} className={styles.link}>
+				<FaBell />
+			</Link>
 		</div>
-	); 
+	);
 };
 

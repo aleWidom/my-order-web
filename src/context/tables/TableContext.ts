@@ -1,9 +1,12 @@
 "use client"
+import { TableRestaurant } from '@/interfaces';
 import { createContext } from 'react';
 
 
 
 interface ContextProps {
+	table: TableRestaurant,
+	setTable: (description: TableRestaurant) => void,
 	idPeopleInTable: string,
 	setIdPeopleInTable: (description: string) => void;
 	sittingOnTheTableCall: boolean | undefined;
