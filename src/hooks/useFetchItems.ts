@@ -16,7 +16,6 @@ export const useFetchItems = () => {
         fetchItemsRestaurant()
         .then((data)=> {
             if(data) {
-                console.log(data)
                 setItemsRestaurant(data)
             }
         })

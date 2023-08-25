@@ -1,3 +1,4 @@
+"use client"
 import { useContext } from 'react';
 import { OrderContext } from '@/context';
 import { QuantityView } from './QuantityView'

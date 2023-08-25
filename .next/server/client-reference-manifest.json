@@ -40,38 +40,6 @@
         "async": false
       }
     },
-    "(app-client)/./src/context/order/OrderContext.ts": {
-      "*": {
-        "id": "(sc_client)/./src/context/order/OrderContext.ts",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./src/context/order/OrderProvider.tsx": {
-      "*": {
-        "id": "(sc_client)/./src/context/order/OrderProvider.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./src/context/tables/TableContext.ts": {
-      "*": {
-        "id": "(sc_client)/./src/context/tables/TableContext.ts",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./src/context/tables/TableProvider.tsx": {
-      "*": {
-        "id": "(sc_client)/./src/context/tables/TableProvider.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
     "(app-client)/./src/context/search/SearchContext.ts": {
       "*": {
         "id": "(sc_client)/./src/context/search/SearchContext.ts",
@@ -88,9 +56,17 @@
         "async": false
       }
     },
-    "(app-client)/./src/context/adm/AdminContext.ts": {
+    "(app-client)/./src/context/order/OrderContext.ts": {
       "*": {
-        "id": "(sc_client)/./src/context/adm/AdminContext.ts",
+        "id": "(sc_client)/./src/context/order/OrderContext.ts",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/context/order/OrderProvider.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/context/order/OrderProvider.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -104,9 +80,25 @@
         "async": false
       }
     },
-    "(app-client)/./src/app/page.tsx": {
+    "(app-client)/./src/context/adm/AdminContext.ts": {
       "*": {
-        "id": "(sc_client)/./src/app/page.tsx",
+        "id": "(sc_client)/./src/context/adm/AdminContext.ts",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/context/tables/TableContext.ts": {
+      "*": {
+        "id": "(sc_client)/./src/context/tables/TableContext.ts",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/context/tables/TableProvider.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/context/tables/TableProvider.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -152,17 +144,17 @@
         "async": false
       }
     },
-    "(app-client)/./src/components/atoms/icons/IconButton/index.tsx": {
+    "(app-client)/./src/components/atoms/icons/Requireds/index.tsx": {
       "*": {
-        "id": "(sc_client)/./src/components/atoms/icons/IconButton/index.tsx",
+        "id": "(sc_client)/./src/components/atoms/icons/Requireds/index.tsx",
         "name": "*",
         "chunks": [],
         "async": false
       }
     },
-    "(app-client)/./src/components/atoms/icons/Requireds/index.tsx": {
+    "(app-client)/./src/components/atoms/icons/IconButton/index.tsx": {
       "*": {
-        "id": "(sc_client)/./src/components/atoms/icons/Requireds/index.tsx",
+        "id": "(sc_client)/./src/components/atoms/icons/IconButton/index.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -248,9 +240,9 @@
         "async": false
       }
     },
-    "(app-client)/./src/hooks/useFetchCardsRanking.ts": {
+    "(app-client)/./src/components/molecules/inputs/Quantity/index.tsx": {
       "*": {
-        "id": "(sc_client)/./src/hooks/useFetchCardsRanking.ts",
+        "id": "(sc_client)/./src/components/molecules/inputs/Quantity/index.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -264,9 +256,9 @@
         "async": false
       }
     },
-    "(app-client)/./src/hooks/useFetchCardsSpecialsCheff.ts": {
+    "(app-client)/./src/hooks/useFetchCardsRanking.ts": {
       "*": {
-        "id": "(sc_client)/./src/hooks/useFetchCardsSpecialsCheff.ts",
+        "id": "(sc_client)/./src/hooks/useFetchCardsRanking.ts",
         "name": "*",
         "chunks": [],
         "async": false
@@ -280,9 +272,25 @@
         "async": false
       }
     },
+    "(app-client)/./src/hooks/useFetchCardsSpecialsCheff.ts": {
+      "*": {
+        "id": "(sc_client)/./src/hooks/useFetchCardsSpecialsCheff.ts",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
     "(app-client)/./src/hooks/useFetchTable.ts": {
       "*": {
         "id": "(sc_client)/./src/hooks/useFetchTable.ts",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/hooks/useFetchCallTable.ts": {
+      "*": {
+        "id": "(sc_client)/./src/hooks/useFetchCallTable.ts",
         "name": "*",
         "chunks": [],
         "async": false
@@ -307,14 +315,6 @@
     "(app-client)/./src/hooks/useFetchLoading.ts": {
       "*": {
         "id": "(sc_client)/./src/hooks/useFetchLoading.ts",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./src/hooks/useFetchCallTable.ts": {
-      "*": {
-        "id": "(sc_client)/./src/hooks/useFetchCallTable.ts",
         "name": "*",
         "chunks": [],
         "async": false
@@ -368,17 +368,17 @@
         "async": false
       }
     },
-    "(app-client)/./src/components/molecules/inputs/Quantity/QuantityView.module.scss": {
+    "(app-client)/./src/components/molecules/loading/MainLoading/MainLoading.module.scss": {
       "*": {
-        "id": "(sc_client)/./src/components/molecules/inputs/Quantity/QuantityView.module.scss",
+        "id": "(sc_client)/./src/components/molecules/loading/MainLoading/MainLoading.module.scss",
         "name": "*",
         "chunks": [],
         "async": false
       }
     },
-    "(app-client)/./src/components/molecules/loading/MainLoading/MainLoading.module.scss": {
+    "(app-client)/./src/app/page.tsx": {
       "*": {
-        "id": "(sc_client)/./src/components/molecules/loading/MainLoading/MainLoading.module.scss",
+        "id": "(sc_client)/./src/app/page.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -467,6 +467,22 @@
       ],
       "async": false
     },
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\search\\SearchContext.ts": {
+      "id": "(app-client)/./src/context/search/SearchContext.ts",
+      "name": "*",
+      "chunks": [
+        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
+      ],
+      "async": false
+    },
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\search\\SearchProvider.tsx": {
+      "id": "(app-client)/./src/context/search/SearchProvider.tsx",
+      "name": "*",
+      "chunks": [
+        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
+      ],
+      "async": false
+    },
     "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\order\\OrderContext.ts": {
       "id": "(app-client)/./src/context/order/OrderContext.ts",
       "name": "*",
@@ -477,6 +493,22 @@
     },
     "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\order\\OrderProvider.tsx": {
       "id": "(app-client)/./src/context/order/OrderProvider.tsx",
+      "name": "*",
+      "chunks": [
+        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
+      ],
+      "async": false
+    },
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\adm\\AdminProvider.tsx": {
+      "id": "(app-client)/./src/context/adm/AdminProvider.tsx",
+      "name": "*",
+      "chunks": [
+        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
+      ],
+      "async": false
+    },
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\adm\\AdminContext.ts": {
+      "id": "(app-client)/./src/context/adm/AdminContext.ts",
       "name": "*",
       "chunks": [
         "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
@@ -499,51 +531,11 @@
       ],
       "async": false
     },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\search\\SearchContext.ts": {
-      "id": "(app-client)/./src/context/search/SearchContext.ts",
-      "name": "*",
-      "chunks": [
-        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
-      ],
-      "async": false
-    },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\search\\SearchProvider.tsx": {
-      "id": "(app-client)/./src/context/search/SearchProvider.tsx",
-      "name": "*",
-      "chunks": [
-        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
-      ],
-      "async": false
-    },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\adm\\AdminContext.ts": {
-      "id": "(app-client)/./src/context/adm/AdminContext.ts",
-      "name": "*",
-      "chunks": [
-        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
-      ],
-      "async": false
-    },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\adm\\AdminProvider.tsx": {
-      "id": "(app-client)/./src/context/adm/AdminProvider.tsx",
-      "name": "*",
-      "chunks": [
-        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
-      ],
-      "async": false
-    },
     "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\styles\\globals.scss": {
       "id": "(app-client)/./src/styles/globals.scss",
       "name": "*",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\page.tsx": {
-      "id": "(app-client)/./src/app/page.tsx",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -587,16 +579,16 @@
       ],
       "async": false
     },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\components\\atoms\\icons\\IconButton\\index.tsx": {
-      "id": "(app-client)/./src/components/atoms/icons/IconButton/index.tsx",
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\components\\atoms\\icons\\Requireds\\index.tsx": {
+      "id": "(app-client)/./src/components/atoms/icons/Requireds/index.tsx",
       "name": "*",
       "chunks": [
         "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
       ],
       "async": false
     },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\components\\atoms\\icons\\Requireds\\index.tsx": {
-      "id": "(app-client)/./src/components/atoms/icons/Requireds/index.tsx",
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\components\\atoms\\icons\\IconButton\\index.tsx": {
+      "id": "(app-client)/./src/components/atoms/icons/IconButton/index.tsx",
       "name": "*",
       "chunks": [
         "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
@@ -683,8 +675,8 @@
       ],
       "async": false
     },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\hooks\\useFetchCardsRanking.ts": {
-      "id": "(app-client)/./src/hooks/useFetchCardsRanking.ts",
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\components\\molecules\\inputs\\Quantity\\index.tsx": {
+      "id": "(app-client)/./src/components/molecules/inputs/Quantity/index.tsx",
       "name": "*",
       "chunks": [
         "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
@@ -699,8 +691,8 @@
       ],
       "async": false
     },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\hooks\\useFetchCardsSpecialsCheff.ts": {
-      "id": "(app-client)/./src/hooks/useFetchCardsSpecialsCheff.ts",
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\hooks\\useFetchCardsRanking.ts": {
+      "id": "(app-client)/./src/hooks/useFetchCardsRanking.ts",
       "name": "*",
       "chunks": [
         "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
@@ -715,8 +707,24 @@
       ],
       "async": false
     },
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\hooks\\useFetchCardsSpecialsCheff.ts": {
+      "id": "(app-client)/./src/hooks/useFetchCardsSpecialsCheff.ts",
+      "name": "*",
+      "chunks": [
+        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
+      ],
+      "async": false
+    },
     "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\hooks\\useFetchTable.ts": {
       "id": "(app-client)/./src/hooks/useFetchTable.ts",
+      "name": "*",
+      "chunks": [
+        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
+      ],
+      "async": false
+    },
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\hooks\\useFetchCallTable.ts": {
+      "id": "(app-client)/./src/hooks/useFetchCallTable.ts",
       "name": "*",
       "chunks": [
         "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
@@ -741,14 +749,6 @@
     },
     "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\hooks\\useFetchLoading.ts": {
       "id": "(app-client)/./src/hooks/useFetchLoading.ts",
-      "name": "*",
-      "chunks": [
-        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
-      ],
-      "async": false
-    },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\hooks\\useFetchCallTable.ts": {
-      "id": "(app-client)/./src/hooks/useFetchCallTable.ts",
       "name": "*",
       "chunks": [
         "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
@@ -811,19 +811,19 @@
       ],
       "async": false
     },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\components\\molecules\\inputs\\Quantity\\QuantityView.module.scss": {
-      "id": "(app-client)/./src/components/molecules/inputs/Quantity/QuantityView.module.scss",
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\components\\molecules\\loading\\MainLoading\\MainLoading.module.scss": {
+      "id": "(app-client)/./src/components/molecules/loading/MainLoading/MainLoading.module.scss",
       "name": "*",
       "chunks": [
         "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
       ],
       "async": false
     },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\components\\molecules\\loading\\MainLoading\\MainLoading.module.scss": {
-      "id": "(app-client)/./src/components/molecules/loading/MainLoading/MainLoading.module.scss",
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\page.tsx": {
+      "id": "(app-client)/./src/app/page.tsx",
       "name": "*",
       "chunks": [
-        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     }
@@ -832,11 +832,11 @@
     "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\layout": [
       "static/css/app/layout.css"
     ],
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\page": [
-      "static/css/app/page.css"
-    ],
     "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\order\\[id]\\page": [
       "static/css/app/order/[id]/page.css"
+    ],
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\page": [
+      "static/css/app/page.css"
     ]
   }
 }

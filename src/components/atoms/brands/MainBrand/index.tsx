@@ -10,9 +10,6 @@ export const MainBrand = () => {
 
     const { setResults } = useContext(SearchContext);
 
-    console.log(table)
-
-
     const pathname  = usePathname();
 
     const page = pathname.slice(1, 6);

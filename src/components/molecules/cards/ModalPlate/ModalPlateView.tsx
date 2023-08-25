@@ -3,12 +3,6 @@ import { Quantity } from '@/components/molecules';
 import { ModalPlate } from '@/interfaces';
 import styles from './ModalPlate.module.scss'
 
-
-interface Personalization {
-    styles: any;
-    page: string
-}
-
 interface Props {
     modalPlate: ModalPlate;
     buttonName: string;
@@ -23,15 +17,15 @@ export const ModalPlateView = ({ closedModalPlate, modalPlate, buttonName}: Prop
                 <button onClick={closedModalPlate} className={styles.buttonClosedModal}>
                     <Closed />
                 </button>
-                <h2 className={styles.title}>{modalPlate.title}</h2>
-                <p className={styles.description}>{modalPlate.description}</p>
-                <p className={styles.price}>${modalPlate.price}</p>
+               <h2 className={styles.title}>{modalPlate.title}</h2>
+                 <p className={styles.description}>{modalPlate.description}</p>
+               <p className={styles.price}>${modalPlate.price}</p>
                 <small className={styles.priceUnit}> (precio x unidad)</small>
-                <div className={styles.containerQuantity}>
+                 <div className={styles.containerQuantity}>
                     <p className={styles.quantity}>Cantidad: </p>
-                    <Quantity/>
+                   {/*  <Quantity/> */}
                 </div>
-            <IconButton buttonName={buttonName}/>
+             <IconButton buttonName={buttonName}/> 
             </div>
         </>
     );
