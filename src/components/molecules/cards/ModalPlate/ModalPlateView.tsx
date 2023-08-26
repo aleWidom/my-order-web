@@ -23,7 +23,7 @@ export const ModalPlateView = ({ closedModalPlate, modalPlate, buttonName}: Prop
                 <small className={styles.priceUnit}> (precio x unidad)</small>
                  <div className={styles.containerQuantity}>
                     <p className={styles.quantity}>Cantidad: </p>
-                   {/*  <Quantity/> */}
+                   <Quantity/> 
                 </div>
              <IconButton buttonName={buttonName}/> 
             </div>
