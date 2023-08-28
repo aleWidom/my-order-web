@@ -4,20 +4,16 @@ import { OrderContext } from '@/context';
 import { OrderPlateUnConfirmedView } from './OrderPlateUnConfirmedView';
 import { PlateSelected } from '@/interfaces'
 
-
-
 interface Props {
   cartProduct: PlateSelected;
+  key: number
 }
 
-export const OrderPlateUnConfirmed= ({ cartProduct }: Props) => {
+export const OrderPlateUnConfirmed= ({ cartProduct, key }: Props) => {
 
-    
     const {modalPlate, setModalPlate} = useContext(OrderContext);
 
-    
-	const handleEdit = (cartProduct: PlateSelected, i: number) => () => {
-
+    const handleEdit = (cartProduct: PlateSelected, i: number) => () => {
 		setModalPlate({
 			...modalPlate,
 			stateModal: true,
@@ -28,8 +24,8 @@ export const OrderPlateUnConfirmed= ({ cartProduct }: Props) => {
 			modalEditOrDeleteOrConfirm: 'edit',
 			index: i
 		});
+		
 	};
-
 
 	const handleDelete = (cartProduct: PlateSelected, i: number) => () => {
 		setModalPlate({
@@ -46,7 +42,7 @@ export const OrderPlateUnConfirmed= ({ cartProduct }: Props) => {
 
   return (
     <>
-      <OrderPlateUnConfirmedView cartProduct={cartProduct} handleEdit={handleEdit} handleDelete={handleDelete}/>
+      <OrderPlateUnConfirmedView cartProduct={cartProduct} handleEdit={handleEdit} handleDelete={handleDelete} key={key}/>
     </>
   )
 }

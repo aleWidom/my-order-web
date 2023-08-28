@@ -48,22 +48,6 @@
         "async": false
       }
     },
-    "(app-client)/./src/context/search/SearchContext.ts": {
-      "*": {
-        "id": "(sc_client)/./src/context/search/SearchContext.ts",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./src/context/search/SearchProvider.tsx": {
-      "*": {
-        "id": "(sc_client)/./src/context/search/SearchProvider.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
     "(app-client)/./src/context/order/OrderContext.ts": {
       "*": {
         "id": "(sc_client)/./src/context/order/OrderContext.ts",
@@ -75,6 +59,22 @@
     "(app-client)/./src/context/order/OrderProvider.tsx": {
       "*": {
         "id": "(sc_client)/./src/context/order/OrderProvider.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/context/search/SearchContext.ts": {
+      "*": {
+        "id": "(sc_client)/./src/context/search/SearchContext.ts",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/context/search/SearchProvider.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/context/search/SearchProvider.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -111,11 +111,19 @@
         "chunks": [],
         "async": false
       }
+    },
+    "(app-client)/./src/app/order/[id]/page.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/order/[id]/page.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
     }
   },
   "edgeSSRModuleMapping": {},
   "clientModules": {
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\node_modules\\next\\dist\\client\\components\\error-boundary.js": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\node_modules\\next\\dist\\client\\components\\error-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "*",
       "chunks": [
@@ -123,7 +131,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\node_modules\\next\\dist\\esm\\client\\components\\error-boundary.js": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\node_modules\\next\\dist\\esm\\client\\components\\error-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "*",
       "chunks": [
@@ -131,7 +139,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\node_modules\\next\\dist\\client\\components\\app-router.js": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\node_modules\\next\\dist\\client\\components\\app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "*",
       "chunks": [
@@ -139,7 +147,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\node_modules\\next\\dist\\esm\\client\\components\\app-router.js": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\node_modules\\next\\dist\\esm\\client\\components\\app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "*",
       "chunks": [
@@ -147,7 +155,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\node_modules\\next\\dist\\client\\components\\layout-router.js": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\node_modules\\next\\dist\\client\\components\\layout-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "*",
       "chunks": [
@@ -155,7 +163,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\node_modules\\next\\dist\\esm\\client\\components\\layout-router.js": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\node_modules\\next\\dist\\esm\\client\\components\\layout-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "*",
       "chunks": [
@@ -163,7 +171,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\node_modules\\next\\dist\\client\\components\\render-from-template-context.js": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\node_modules\\next\\dist\\client\\components\\render-from-template-context.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "*",
       "chunks": [
@@ -171,7 +179,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\node_modules\\next\\dist\\esm\\client\\components\\render-from-template-context.js": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\node_modules\\next\\dist\\esm\\client\\components\\render-from-template-context.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "*",
       "chunks": [
@@ -179,7 +187,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\node_modules\\next\\dist\\client\\components\\static-generation-searchparams-bailout-provider.js": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\node_modules\\next\\dist\\client\\components\\static-generation-searchparams-bailout-provider.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "*",
       "chunks": [
@@ -187,7 +195,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\node_modules\\next\\dist\\esm\\client\\components\\static-generation-searchparams-bailout-provider.js": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\node_modules\\next\\dist\\esm\\client\\components\\static-generation-searchparams-bailout-provider.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "*",
       "chunks": [
@@ -195,7 +203,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\src\\app\\page.tsx": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\page.tsx": {
       "id": "(app-client)/./src/app/page.tsx",
       "name": "*",
       "chunks": [
@@ -203,23 +211,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\src\\context\\search\\SearchContext.ts": {
-      "id": "(app-client)/./src/context/search/SearchContext.ts",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\src\\context\\search\\SearchProvider.tsx": {
-      "id": "(app-client)/./src/context/search/SearchProvider.tsx",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\src\\context\\order\\OrderContext.ts": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\order\\OrderContext.ts": {
       "id": "(app-client)/./src/context/order/OrderContext.ts",
       "name": "*",
       "chunks": [
@@ -227,7 +219,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\src\\context\\order\\OrderProvider.tsx": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\order\\OrderProvider.tsx": {
       "id": "(app-client)/./src/context/order/OrderProvider.tsx",
       "name": "*",
       "chunks": [
@@ -235,7 +227,23 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\src\\context\\tables\\TableContext.ts": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\search\\SearchContext.ts": {
+      "id": "(app-client)/./src/context/search/SearchContext.ts",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\search\\SearchProvider.tsx": {
+      "id": "(app-client)/./src/context/search/SearchProvider.tsx",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\tables\\TableContext.ts": {
       "id": "(app-client)/./src/context/tables/TableContext.ts",
       "name": "*",
       "chunks": [
@@ -243,7 +251,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\src\\context\\tables\\TableProvider.tsx": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\tables\\TableProvider.tsx": {
       "id": "(app-client)/./src/context/tables/TableProvider.tsx",
       "name": "*",
       "chunks": [
@@ -251,7 +259,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\src\\context\\adm\\AdminContext.ts": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\adm\\AdminContext.ts": {
       "id": "(app-client)/./src/context/adm/AdminContext.ts",
       "name": "*",
       "chunks": [
@@ -259,7 +267,7 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\src\\context\\adm\\AdminProvider.tsx": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\adm\\AdminProvider.tsx": {
       "id": "(app-client)/./src/context/adm/AdminProvider.tsx",
       "name": "*",
       "chunks": [
@@ -267,21 +275,32 @@
       ],
       "async": false
     },
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\src\\styles\\globals.scss": {
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\styles\\globals.scss": {
       "id": "(app-client)/./src/styles/globals.scss",
       "name": "*",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
+    },
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\order\\[id]\\page.tsx": {
+      "id": "(app-client)/./src/app/order/[id]/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/order/[id]/page:static/chunks/app/order/[id]/page.js"
+      ],
+      "async": false
     }
   },
   "entryCSSFiles": {
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\src\\app\\page": [
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\page": [
       "static/css/app/page.css"
     ],
-    "D:\\Proyectos-Programacion\\Año-2023\\my-order-web\\src\\app\\layout": [
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\layout": [
       "static/css/app/layout.css"
+    ],
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\order\\[id]\\page": [
+      "static/css/app/order/[id]/page.css"
     ]
   }
 }

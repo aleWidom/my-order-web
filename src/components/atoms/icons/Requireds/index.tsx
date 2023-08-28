@@ -2,8 +2,6 @@
 import { useContext } from "react";
 import { OrderContext, TableContext } from "@/context";
 import { RequiredsView } from "./RequiredsView";
-import { useSearchParams } from "next/navigation";
-
 
 export const Requireds = () => {
 

@@ -14,7 +14,7 @@ export const OrdersPlatesUnConfirmedView = ({cartTemporary, handleConfirmRequest
 		<div className={styles.container}>
 			<h3 className={styles.titleOrderUnconfirmed}>Tu Pedido</h3>
 			{cartTemporary.map((cartProduct, i) => (
-				<OrderPlateUnConfirmed key={cartProduct.ItemID} cartProduct={cartProduct}/>
+				<OrderPlateUnConfirmed key={i} cartProduct={cartProduct}/>
 			))}
 			<button className={styles.confirm} onClick={handleConfirmRequest}>Solicitar Pedido</button>
 		</div>

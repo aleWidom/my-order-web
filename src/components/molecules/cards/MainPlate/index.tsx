@@ -12,7 +12,6 @@ interface Props {
 	id: string
 }
 
-
 export const MainPlate = ({ header, price, source, description, id }: Props) => {
 
 	const { modalPlate, setModalPlate } = useContext(OrderContext);

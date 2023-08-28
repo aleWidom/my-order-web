@@ -2,15 +2,13 @@
 import { useContext, useEffect } from 'react';
 import { OrderContext } from '../../../../context';
 import { ModalPlateRequiredView } from './ModalPlateRequiredView';
+import { useSearchParams } from 'next/navigation';
 
 export const ModalPlateRequired = () => {
 
 	const { modalPlate, setModalPlate } = useContext(OrderContext);
 
-	/* const { pathname } = useLocation();
-
-	const page = pathname.slice(-5); */
-
+	const params = useSearchParams();
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -28,23 +26,16 @@ export const ModalPlateRequired = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [modalPlate]);
 
-	return(
-		<ModalPlateRequiredView/>
+	return (
+		<>
+			{params.get('table') !== undefined &&
+				<ModalPlateRequiredView header={"Solicitud Agregada"} title={modalPlate.title} quantity={modalPlate.quantity} />
+			}
+		</>
 	)
 };
 
-/* {page === '/' && (
-	<>
-		<div className={styles.containerAdd}>
-			<small>Solicitud Agregada</small>
-			<FaRegCheckCircle className={styles.check} />
-		</div>
-		<h2 className={styles.title}>{modalPlate.title}</h2>
-		<p className={styles.quantity}>Cantidad: {`${modalPlate.quantity} u.`}</p>
-		<small className={styles.edit}>Para editar la orden puede ir a sección mis solicitudes</small>
-		<FaBell className={styles.edit} style={{ marginLeft: '0.4rem' }} />
-	</>
-)}
+/* 
 {page !== '/' && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'edit' && (
 	<>
 		<div className={styles.containerAdd}>

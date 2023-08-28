@@ -4,11 +4,13 @@ import styles from './OrderPlateUnConfirmed.module.scss'
 
 interface Props {
   cartProduct: PlateSelected;
+  key: number;
   handleEdit: any;
   handleDelete: any
 }
 
-export const OrderPlateUnConfirmedView = ({ cartProduct, handleEdit, handleDelete }: Props) => {
+export const OrderPlateUnConfirmedView = ({ cartProduct, handleEdit, handleDelete, key }: Props) => {
+  console.log(key)
   return (
     <>
       <div className={styles.containerCardOrder}>
@@ -18,8 +20,8 @@ export const OrderPlateUnConfirmedView = ({ cartProduct, handleEdit, handleDelet
           <small className={styles.quantity} >Cantidad: {cartProduct?.quantity} u.</small>
         </div>
         <div className={styles.editDelete}>
-          <FaEdit onClick={handleEdit(cartProduct, cartProduct.ItemID)} className={styles.edit} />
-          <FaTrashAlt onClick={handleDelete(cartProduct, cartProduct.ItemID)} className={styles.delete} />
+          <FaEdit onClick={handleEdit(cartProduct, key)} className={styles.edit} />
+          <FaTrashAlt onClick={handleDelete(cartProduct, key)} className={styles.delete} />
         </div>
       </div>
     </>

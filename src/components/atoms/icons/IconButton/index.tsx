@@ -9,10 +9,8 @@ interface Props {
 }
 
 const requestTrash = {
-	color: "#fe0000"
+  color: "#fe0000"
 }
-
-
 
 export const IconButton = ({ buttonName }: Props) => {
 
@@ -20,83 +18,66 @@ export const IconButton = ({ buttonName }: Props) => {
 
   const handleClickRequest = () => {
 
-    console.log(cartTemporary)
-
-/*     if (localStorage.getItem('idPeopleTableId') && localStorage.getItem('idPeopleTableId') !== "undefined") { */
-    /*   console.log(localStorage.getItem('idPeopleTableId')) */
-      setCartTemporary(
-        [{
-          ItemID: modalPlate.ItemID,
-          title: modalPlate.title,
-          quantity: modalPlate.quantity,
-          price: modalPlate.price,
-        },
-        ...cartTemporary])
-
-/*       localStorage.setItem('cartTemporary', JSON.stringify([{
+    setCartTemporary(
+      [{
         ItemID: modalPlate.ItemID,
         title: modalPlate.title,
         quantity: modalPlate.quantity,
         price: modalPlate.price,
       },
-      ...cartTemporary
-      ])) */
+      ...cartTemporary])
 
+    setModalPlate({
+      ...modalPlate,
+      modalType: 'required',
+      modalEditOrDeleteOrConfirm: 'temporary',
+    });
 
-
-      setModalPlate({
-        ...modalPlate,
-        modalType: 'required',
-        modalEditOrDeleteOrConfirm: 'temporary',
-      });
-   /*  } */
   };
 
   const handleEdit = () => {
-/*     if (localStorage.getItem('idPeopleTableId') && localStorage.getItem('idPeopleTableId') !== "undefined") { */
-      const cartTemporaryEdit = cartTemporary.filter((item, i) => {
-        if (i === modalPlate.index) {
-          item.quantity = modalPlate.quantity
-        }
-        return item
-      })
 
-      setCartTemporary(cartTemporaryEdit)
+    const cartTemporaryEdit = cartTemporary.filter((item, i) => {
+      if (i === modalPlate.index) {
+        item.quantity = modalPlate.quantity
+      }
+      return item
+    })
 
-   /*    localStorage.setItem('cartTemporary', JSON.stringify(cartTemporaryEdit)) */
+    setCartTemporary(cartTemporaryEdit)
 
-      setModalPlate({
-        ...modalPlate,
-        modalType: 'required',
-        modalEditOrDeleteOrConfirm: 'edit',
-      });
-   /*  } */
+    setModalPlate({
+      ...modalPlate,
+      modalType: 'required',
+      modalEditOrDeleteOrConfirm: 'edit',
+    });
+
   };
 
   const handleDelete = () => {
 
- /*    if (localStorage.getItem('idPeopleTableId') && localStorage.getItem('idPeopleTableId') !== "undefined") { */
-      const cartTemporaryDelete = cartTemporary.filter((item, index) => {
-        return index !== modalPlate.index
-      })
+    /*    if (localStorage.getItem('idPeopleTableId') && localStorage.getItem('idPeopleTableId') !== "undefined") { */
+    const cartTemporaryDelete = cartTemporary.filter((item, index) => {
+      return index !== modalPlate.index
+    })
 
-      setCartTemporary(cartTemporaryDelete)
+    setCartTemporary(cartTemporaryDelete)
 
-/*       localStorage.setItem('cartTemporary', JSON.stringify(cartTemporaryDelete)) */
+    /*       localStorage.setItem('cartTemporary', JSON.stringify(cartTemporaryDelete)) */
 
-      setModalPlate({
-        ...modalPlate,
-        modalType: 'required',
-        modalEditOrDeleteOrConfirm: 'delete',
-      });
+    setModalPlate({
+      ...modalPlate,
+      modalType: 'required',
+      modalEditOrDeleteOrConfirm: 'delete',
+    });
     /* } */
   };
 
   return (
     <>
-      {buttonName === "Agregar" && <IconButtonView buttonName={buttonName} operation={handleClickRequest}><FaRegCheckCircle /></IconButtonView>}  
-      {buttonName === "Editar" && <IconButtonView buttonName={buttonName} operation={ handleEdit}><FaRegCheckCircle /></IconButtonView>}  
-      {buttonName === "Eliminar" && <IconButtonView buttonName={buttonName} operation={ handleDelete} styleButton={requestTrash}><FaTrashAlt/></IconButtonView>}
+      {buttonName === "Agregar" && <IconButtonView buttonName={buttonName} operation={handleClickRequest}><FaRegCheckCircle /></IconButtonView>}
+      {buttonName === "Editar" && <IconButtonView buttonName={buttonName} operation={handleEdit}><FaRegCheckCircle /></IconButtonView>}
+      {buttonName === "Eliminar" && <IconButtonView buttonName={buttonName} operation={handleDelete} styleButton={requestTrash}><FaTrashAlt /></IconButtonView>}
     </>
   )
 }

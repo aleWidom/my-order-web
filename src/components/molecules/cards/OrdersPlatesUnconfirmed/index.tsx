@@ -12,8 +12,6 @@ export const OrdersPlatesUnConfirmed = () => {
 	const {cartTemporary, modalPlate, setModalPlate, setCartDefinitive, setCartTemporary, cartDefinitive} = useContext(OrderContext);
 
 	const {idPeopleInTable} = useContext(TableContext)
-
-	console.log(idPeopleInTable)
 	
 	const handleConfirmRequest = () => {
 

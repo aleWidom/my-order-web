@@ -1,5 +1,4 @@
-import { /* AdminProvider,*/ OrderProvider, SearchProvider, TableProvider } from '@/context'
-/* import { FooterView as Footer, MainHome, Navbar } from '@/sections' */
+import {OrderProvider, SearchProvider, TableProvider } from '@/context'
 import '@/styles/globals.scss'
 
 
@@ -15,7 +14,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-{/*       <AdminProvider> */}
         <TableProvider>
           <OrderProvider>
             <SearchProvider>
@@ -25,7 +23,6 @@ export default function RootLayout({
             </SearchProvider>
           </OrderProvider>
         </TableProvider>
-    {/*   </AdminProvider> */}
     </html>
   )
 }
