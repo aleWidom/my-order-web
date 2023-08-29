@@ -1,3 +1,5 @@
+@import '../../../styles/utils';
+
 .mainContainerOrder {
 	display: flex;
 	flex-direction: column;
@@ -7,4 +9,17 @@
 	height: 100%;
 	padding: 0px 1.5rem;
     margin-top: 8rem;
+}
+
+.withoutRequestContainer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+	font-size: 0.9rem;
+}
+
+.emptyCart {
+	color: $color-four;
+	font-size: 1.2rem
 }

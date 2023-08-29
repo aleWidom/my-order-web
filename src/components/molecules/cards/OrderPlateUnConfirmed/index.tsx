@@ -6,14 +6,14 @@ import { PlateSelected } from '@/interfaces'
 
 interface Props {
   cartProduct: PlateSelected;
-  key: number
+  index: number
 }
 
-export const OrderPlateUnConfirmed= ({ cartProduct, key }: Props) => {
+export const OrderPlateUnConfirmed= ({ cartProduct, index }: Props) => {
 
     const {modalPlate, setModalPlate} = useContext(OrderContext);
 
-    const handleEdit = (cartProduct: PlateSelected, i: number) => () => {
+    const handleEdit = (cartProduct: PlateSelected, index: number) => () => {
 		setModalPlate({
 			...modalPlate,
 			stateModal: true,
@@ -22,12 +22,11 @@ export const OrderPlateUnConfirmed= ({ cartProduct, key }: Props) => {
 			quantity: cartProduct.quantity,
 			modalType: 'main',
 			modalEditOrDeleteOrConfirm: 'edit',
-			index: i
+			index: index
 		});
-		
 	};
 
-	const handleDelete = (cartProduct: PlateSelected, i: number) => () => {
+	const handleDelete = (cartProduct: PlateSelected, index: number) => () => {
 		setModalPlate({
 			...modalPlate,
 			stateModal: true,
@@ -36,13 +35,13 @@ export const OrderPlateUnConfirmed= ({ cartProduct, key }: Props) => {
 			quantity: cartProduct.quantity,
 			modalType: 'main',
 			modalEditOrDeleteOrConfirm: 'delete',
-			index: i
+			index: index
 		});
 	};
 
   return (
     <>
-      <OrderPlateUnConfirmedView cartProduct={cartProduct} handleEdit={handleEdit} handleDelete={handleDelete} key={key}/>
+      <OrderPlateUnConfirmedView cartProduct={cartProduct} handleEdit={handleEdit} handleDelete={handleDelete} index={index}/>
     </>
   )
 }

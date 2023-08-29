@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { OrderContext } from "@/context";
 import { OrdersPlatesConfirmed } from "@/components/molecules/cards/OrdersPlatesConfirmed";
 import { OrdersPlatesUnConfirmed } from "@/components/molecules/cards/OrdersPlatesUnconfirmed";
-import { ModalPlate } from "@/components/molecules";
+import { ModalPlate, ModalPlateRequired } from "@/components/molecules";
 import { Navbar } from "@/sections";
 import styles from './OrderPage.module.scss'
 
@@ -35,6 +35,12 @@ export default function OrderPage({ params }: any) {
       )}
       {modalPlate.stateModal && modalPlate.modalType === 'main' && modalPlate.modalEditOrDeleteOrConfirm === 'delete' && (
         <ModalPlate buttonName='Eliminar' />
+      )}
+      {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'edit' && (
+        <ModalPlateRequired />
+      )}
+       {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'delete' && (
+        <ModalPlateRequired />
       )}
     </>
   )
