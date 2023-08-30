@@ -3,8 +3,14 @@ import { useContext, useEffect } from 'react';
 import { OrderContext } from '../../../../context';
 import { ModalPlateRequiredView } from './ModalPlateRequiredView';
 import { useSearchParams } from 'next/navigation';
+import { FaRegCheckCircle, FaTrashAlt } from 'react-icons/fa';
 
-export const ModalPlateRequired = () => {
+
+interface Props {
+	selection: string
+}
+
+export const ModalPlateRequired = ({ selection }: Props) => {
 
 	const { modalPlate, setModalPlate } = useContext(OrderContext);
 
@@ -28,37 +34,17 @@ export const ModalPlateRequired = () => {
 
 	return (
 		<>
-			{params.get('table') !== undefined &&
-				<ModalPlateRequiredView header={"Solicitud Agregada"} title={modalPlate.title} quantity={modalPlate.quantity} />
+			{selection === "delete" ?
+				<ModalPlateRequiredView header={"Solicitud Eliminada"} title={modalPlate.title} quantity={modalPlate.quantity} selection="delete">
+					<FaTrashAlt />
+				</ModalPlateRequiredView>
+
+				:
+				<ModalPlateRequiredView header={selection === "confirm" ? "Su pedido se ha procesado correctamente" : selection === "edit" ? "Solicitud Editada" : "Solicitud Agregada"} title={modalPlate.title} quantity={modalPlate.quantity} selection='confirm'>
+					<FaRegCheckCircle />
+				</ModalPlateRequiredView>
 			}
 		</>
 	)
 };
 
-/* 
-{page !== '/' && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'edit' && (
-	<>
-		<div className={styles.containerAdd}>
-			<small>Solicitud Editada</small>
-			<FaRegCheckCircle className={styles.check} />
-		</div>
-		<h2 className={styles.title}>{modalPlate.title}</h2>
-		<p className={styles.quantity}>Cantidad: {`${modalPlate.quantity} u.`}</p>
-	</>
-)}
-{page !== '/' && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'delete' && (
-	<>
-		<div className={styles.containerSubstract}>
-			<small>Solicitud Eliminada</small>
-			<FaTrashAlt className={styles.delete} />
-		</div>
-		<h2 className={styles.title}>{modalPlate.title}</h2>
-		<p className={styles.quantity}>Cantidad: {`${modalPlate.quantity} u.`}</p>
-	</>
-)}
-{page !== '/' && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'confirm' && (
-	<div className={styles.containerAdd}>
-		<FaRegCheckCircle className={styles.check} />
-		<small>Su pedido se ha procesado correctamente.</small>
-	</div>
-)} */

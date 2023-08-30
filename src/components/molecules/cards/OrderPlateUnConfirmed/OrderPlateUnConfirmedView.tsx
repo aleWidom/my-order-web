@@ -10,7 +10,6 @@ interface Props {
 }
 
 export const OrderPlateUnConfirmedView = ({ cartProduct, handleEdit, handleDelete, index }: Props) => {
-  console.log(index)
   return (
     <>
       <div className={styles.containerCardOrder}>

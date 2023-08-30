@@ -37,10 +37,13 @@ export default function OrderPage({ params }: any) {
         <ModalPlate buttonName='Eliminar' />
       )}
       {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'edit' && (
-        <ModalPlateRequired />
+        <ModalPlateRequired selection="edit" />
       )}
        {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'delete' && (
-        <ModalPlateRequired />
+        <ModalPlateRequired selection="delete" />
+      )}
+      {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'confirm' && (
+        <ModalPlateRequired selection="confirm" />
       )}
     </>
   )
