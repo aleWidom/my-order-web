@@ -33,7 +33,7 @@ export const Search = () => {
               {
                 CategoryID: '0',
                 name: "",
-                photo: "",
+                photo: "https://prima-med.org/wp-content/uploads/2022/06/Result-SSC.jpg",
               }
             );
           }

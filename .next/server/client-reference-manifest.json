@@ -40,14 +40,6 @@
         "async": false
       }
     },
-    "(app-client)/./src/app/page.tsx": {
-      "*": {
-        "id": "(sc_client)/./src/app/page.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
     "(app-client)/./src/context/order/OrderContext.ts": {
       "*": {
         "id": "(sc_client)/./src/context/order/OrderContext.ts",
@@ -80,6 +72,22 @@
         "async": false
       }
     },
+    "(app-client)/./src/context/tables/TableContext.ts": {
+      "*": {
+        "id": "(sc_client)/./src/context/tables/TableContext.ts",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/context/tables/TableProvider.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/context/tables/TableProvider.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
     "(app-client)/./src/context/adm/AdminContext.ts": {
       "*": {
         "id": "(sc_client)/./src/context/adm/AdminContext.ts",
@@ -96,17 +104,9 @@
         "async": false
       }
     },
-    "(app-client)/./src/context/tables/TableContext.ts": {
+    "(app-client)/./src/app/page.tsx": {
       "*": {
-        "id": "(sc_client)/./src/context/tables/TableContext.ts",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./src/context/tables/TableProvider.tsx": {
-      "*": {
-        "id": "(sc_client)/./src/context/tables/TableProvider.tsx",
+        "id": "(sc_client)/./src/app/page.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -203,14 +203,6 @@
       ],
       "async": false
     },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\page.tsx": {
-      "id": "(app-client)/./src/app/page.tsx",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
     "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\order\\OrderContext.ts": {
       "id": "(app-client)/./src/context/order/OrderContext.ts",
       "name": "*",
@@ -243,22 +235,6 @@
       ],
       "async": false
     },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\adm\\AdminContext.ts": {
-      "id": "(app-client)/./src/context/adm/AdminContext.ts",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\adm\\AdminProvider.tsx": {
-      "id": "(app-client)/./src/context/adm/AdminProvider.tsx",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
     "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\tables\\TableContext.ts": {
       "id": "(app-client)/./src/context/tables/TableContext.ts",
       "name": "*",
@@ -275,11 +251,35 @@
       ],
       "async": false
     },
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\adm\\AdminContext.ts": {
+      "id": "(app-client)/./src/context/adm/AdminContext.ts",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\context\\adm\\AdminProvider.tsx": {
+      "id": "(app-client)/./src/context/adm/AdminProvider.tsx",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
     "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\styles\\globals.scss": {
       "id": "(app-client)/./src/styles/globals.scss",
       "name": "*",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\page.tsx": {
+      "id": "(app-client)/./src/app/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -293,11 +293,11 @@
     }
   },
   "entryCSSFiles": {
-    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\page": [
-      "static/css/app/page.css"
-    ],
     "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\layout": [
       "static/css/app/layout.css"
+    ],
+    "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\page": [
+      "static/css/app/page.css"
     ],
     "D:\\Escritorio\\Ale\\repo\\my-order-web\\src\\app\\order\\[id]\\page": [
       "static/css/app/order/[id]/page.css"

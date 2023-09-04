@@ -1,26 +1,34 @@
 "use client"
 import { useContext } from 'react';
-import { OrderContext } from '../../../../context/order/OrderContext';
+import { TableContext, OrderContext } from '@/context';
 import { OrdersPlatesConfirmedView } from './OrdersPlatesConfirmedView';
+import { fetchItemPeopleInTable } from '@/services';
+
 
 
 
 export const OrdersPlatesConfirmed = () => {
 
-	const { cartDefinitive} = useContext(OrderContext);
+	const { cartDefinitive, setCartDefinitive} = useContext(OrderContext);
 
-	/* 	setInterval(() => { 
-			if(cartDefinitive.length) {
-				fetchItemPeopleInTable(JSON.parse(localStorage.getItem('idPeopleTableId') as any))
+	const {idPeopleInTable} = useContext(TableContext);
+
+	console.log(idPeopleInTable)
+
+	 	setInterval(() => { 
+			/* if(cartDefinitive.length) { */
+				fetchItemPeopleInTable(idPeopleInTable)
 				   .then((data) => {
+					console.log("hola")
+					console.log(data)
 					   setCartDefinitive(data);
-					   localStorage.setItem('cartDefinitive', JSON.stringify(data))
+					/*    localStorage.setItem('cartDefinitive', JSON.stringify(data)) */
 				   })
 				   .catch((err) => {
 					   console.log(err);
 				   });
-			}
-	   }, 10000);  */
+			/* } */
+	   }, 10000);  
 
 	return (
 		<OrdersPlatesConfirmedView cartDefinitive={cartDefinitive}/>

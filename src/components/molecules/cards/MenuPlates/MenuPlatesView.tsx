@@ -9,9 +9,10 @@ interface Props {
 
 
 export const MenuPlatesView = ({ results, categorySelected }: Props) => {
+    console.log(categorySelected)
     return (
         <div className={styles.container}>
-            <div className={styles.containerImgCategory} style={{ backgroundImage:`url(${categorySelected.photo})`}}>
+            <div className={styles.containerImgCategory} style={{backgroundImage:`url(${categorySelected.photo})`}}>
                 <h2 className={styles.title}>{categorySelected.name}</h2>
             </div>
             {results.map((e) => (
