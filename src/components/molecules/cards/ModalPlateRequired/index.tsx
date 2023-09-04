@@ -35,12 +35,12 @@ export const ModalPlateRequired = ({ selection }: Props) => {
 	return (
 		<>
 			{selection === "delete" ?
-				<ModalPlateRequiredView header={"Solicitud Eliminada"} title={modalPlate.title} quantity={modalPlate.quantity} selection="delete">
+				<ModalPlateRequiredView header={"Solicitud Eliminada"} title={modalPlate.title} quantity={modalPlate.quantity} selection='delete'>
 					<FaTrashAlt />
 				</ModalPlateRequiredView>
 
 				:
-				<ModalPlateRequiredView header={selection === "confirm" ? "Su pedido se ha procesado correctamente" : selection === "edit" ? "Solicitud Editada" : "Solicitud Agregada"} title={modalPlate.title} quantity={modalPlate.quantity} selection='confirm'>
+				<ModalPlateRequiredView header={selection === "confirm" ? "Su pedido se ha procesado correctamente" : selection === "edit" ? "Solicitud Editada" : "Solicitud Agregada"} title={modalPlate.title} quantity={modalPlate.quantity} selection={selection === "request" ? "request" : selection === "confirm" ? "confirm":""}>
 					<FaRegCheckCircle />
 				</ModalPlateRequiredView>
 			}

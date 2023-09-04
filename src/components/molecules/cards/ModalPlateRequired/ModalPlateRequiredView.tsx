@@ -19,12 +19,13 @@ export const ModalPlateRequiredView = ({ header, title, quantity, children, sele
 					{children}
 				</div>
 				<h2 className={styles.title}>{title}</h2>
-				{selection !== "confirm" &&
+				{selection !== "confirm" && <p className={styles.quantity}>Cantidad: {`${quantity} u.`}</p>}
+				{selection === "request" &&
 					<>
-						<p className={styles.quantity}>Cantidad: {`${quantity} u.`}</p>
 						<small className={styles.edit}>Para editar la orden puede ir a sección mis solicitudes</small>
 						<FaBell className={styles.edit} style={{ marginLeft: '0.4rem' }} />
-					</>}
+					</>
+				}
 			</div>
 		</div>
 	);
