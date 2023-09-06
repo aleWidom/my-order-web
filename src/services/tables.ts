@@ -43,7 +43,7 @@ async function fetchTablesActiveCall() {
 async function updateTableNumberDesactive(tableID: string) {
 	try {
 		const response = await axios.put(
-			/*or get*/ `https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/tables/?desactivate=${tableID}`
+			 `https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/tables/?desactivate=${tableID}`
 		);
 		return response.data;
 	} catch (err) {
@@ -54,7 +54,7 @@ async function updateTableNumberDesactive(tableID: string) {
 async function updateTableNumberCall(tableID: string | undefined) {
 	try {
 		const response = await axios.put(
-			/*or get*/ `https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/tables/?call=${tableID}`
+			`https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/tables/?call=${tableID}`
 		);
 		return response.data;
 	} catch (err) {
@@ -65,7 +65,7 @@ async function updateTableNumberCall(tableID: string | undefined) {
 async function updateTableNumberNotCall(tableID: string | undefined) {
 	try {
 		const response = await axios.put(
-			/*or get*/ `https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/tables/?notCall=${tableID}`
+			 `https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/tables/?notCall=${tableID}`
 		);
 		return response.data;
 	} catch (err) {
@@ -77,7 +77,7 @@ async function updateTableNumberNotCall(tableID: string | undefined) {
 async function updateTableNumberActive(tableID: string | null) {
 	try {
 		const response = await axios.put(
-			/*or get*/ `https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/tables/?activate=${tableID}`
+			 `https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/tables/?activate=${tableID}`
 		);
 		return response.data;
 	} catch (err) {
@@ -118,7 +118,8 @@ async function peopleInTable(idPeopleInTable: string, tableId: string | null) {
 
 async function itemPeopleInTable(idItemPeopleInTable: string, idPeopleInTable: string, quantity: number, idItem: string) {
 	try {
-		const response = await axios.post(`https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/tables/${idItemPeopleInTable}/${JSON.parse(idPeopleInTable)}/${quantity}/${idItem}?itemPeopleInTable`);
+		console.log(idItemPeopleInTable)
+		const response = await axios.post(`https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/tables/${idItemPeopleInTable}/${(idPeopleInTable)}/${quantity}/${idItem}?itemPeopleInTable`);
 		return response;
 	} catch (err) {
 		console.log(err);

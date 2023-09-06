@@ -2,7 +2,6 @@
 import { useContext, useEffect } from 'react';
 import { OrderContext } from '../../../../context';
 import { ModalPlateRequiredView } from './ModalPlateRequiredView';
-import { useSearchParams } from 'next/navigation';
 import { FaRegCheckCircle, FaTrashAlt } from 'react-icons/fa';
 
 
@@ -13,8 +12,6 @@ interface Props {
 export const ModalPlateRequired = ({ selection }: Props) => {
 
 	const { modalPlate, setModalPlate } = useContext(OrderContext);
-
-	const params = useSearchParams();
 
 	useEffect(() => {
 		setTimeout(() => {

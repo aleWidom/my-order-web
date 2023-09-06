@@ -9,7 +9,6 @@ interface Props {
 
 
 export const MenuPlatesView = ({ results, categorySelected }: Props) => {
-    console.log(categorySelected)
     return (
         <div className={styles.container}>
             <div className={styles.containerImgCategory} style={{backgroundImage:`url(${categorySelected.photo})`}}>

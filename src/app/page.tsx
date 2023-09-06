@@ -1,9 +1,10 @@
 
 "use client"
 import { useContext } from "react";
-import { OrderContext, SearchContext } from "@/context";
+import { OrderContext, SearchContext, TableContext } from "@/context";
 import { MainHome, Navbar, FooterView as Footer } from "@/sections";
 import { ModalPlate, MainLoading, ModalPlateRequired, ModalInfo } from "@/components/molecules";
+import { useFetchCarts } from "@/hooks";
 
 export default function HomePage() {
 
@@ -11,6 +12,8 @@ export default function HomePage() {
 
   const { modalInfo } = useContext(SearchContext)
 
+  useFetchCarts()
+  
   return (
     <>
       {loading ?

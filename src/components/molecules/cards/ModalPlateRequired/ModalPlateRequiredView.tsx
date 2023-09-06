@@ -1,4 +1,4 @@
-import { FaBell, FaRegCheckCircle } from 'react-icons/fa';
+import { FaBell } from 'react-icons/fa';
 import styles from './ModalPlateRequired.module.scss'
 
 interface Props {

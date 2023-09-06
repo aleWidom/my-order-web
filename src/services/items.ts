@@ -41,6 +41,7 @@ async function getItemsResults(valueInput: string) {
 
 async function fetchItemPeopleInTable(id_peopleInTable: string) {
 	try {
+		console.log(id_peopleInTable)
 		const fetchItemPeopleInTable = await axios.get(`https://18eqrnlodc.execute-api.us-east-1.amazonaws.com/dev/items?fetchItemPeopleInTable=${id_peopleInTable}`);
 		return fetchItemPeopleInTable.data;
 	} catch (err) {

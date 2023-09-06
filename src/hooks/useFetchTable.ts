@@ -2,7 +2,7 @@
 import { useContext, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation'; 
 import { v4 as uuidv4 } from 'uuid';
-import { fetchTable, peopleInTable, updateTableNumberActive } from '../services';
+import { fetchTable, peopleInTable, peopleInTableFetch, updateTableNumberActive } from '../services';
 import { TableContext } from '../context';
 
 export const useFetchTable = () => {
@@ -25,9 +25,19 @@ export const useFetchTable = () => {
 
 				//Genero el idPeopleInTable
 				const idPeopleInTableUuid = uuidv4().replaceAll('/', '-');
-				setIdPeopleInTable(JSON.stringify(idPeopleInTableUuid));
+				console.log(idPeopleInTableUuid)
+				setIdPeopleInTable(idPeopleInTableUuid);
 				
 				peopleInTable(idPeopleInTableUuid, params.get('table'));
+			}
+			else {
+				peopleInTableFetch(params.get('table'))
+				.then((data)=> {
+					setIdPeopleInTable(data[0].PeopleInTableID)
+				})
+				.catch((err)=> {
+					console.log(err)
+				})
 			}
 			
 		})

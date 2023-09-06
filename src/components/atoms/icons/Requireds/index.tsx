@@ -5,13 +5,13 @@ import { RequiredsView } from "./RequiredsView";
 
 export const Requireds = () => {
 
-	const { cartTemporary, cartDefinitive, modalPlate } = useContext(OrderContext);
+	const { cartTemporary, cartDefinitive } = useContext(OrderContext);
 
     const {table} = useContext(TableContext)
 
 	return (
 		<>
-		{(cartTemporary.length || cartDefinitive.length) /* && modalPlate.stateModal === false */ ?
+		{(cartTemporary.length || cartDefinitive.length) ?
 		<RequiredsView tableID={table.TableID}/> : ""} 
 		</>
 		

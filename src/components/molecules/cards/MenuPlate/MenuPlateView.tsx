@@ -17,9 +17,6 @@ export const MenuPlateView = ({price, description, header, handleClickRequest }:
         </p>
         <p className={styles.price}>${price}</p>
       </div>
-      {/* <div className={styles.containerImg}>
-        <img src={source} className={styles.imgCardDishFood} alt={""} />
-      </div> */}
     </div>
   );
 };

@@ -56,21 +56,18 @@ export const IconButton = ({ buttonName }: Props) => {
 
   const handleDelete = () => {
 
-    /*    if (localStorage.getItem('idPeopleTableId') && localStorage.getItem('idPeopleTableId') !== "undefined") { */
     const cartTemporaryDelete = cartTemporary.filter((item, index) => {
       return index !== modalPlate.index
     })
 
     setCartTemporary(cartTemporaryDelete)
 
-    /*       localStorage.setItem('cartTemporary', JSON.stringify(cartTemporaryDelete)) */
-
     setModalPlate({
       ...modalPlate,
       modalType: 'required',
       modalEditOrDeleteOrConfirm: 'delete',
     });
-    /* } */
+
   };
 
   return (

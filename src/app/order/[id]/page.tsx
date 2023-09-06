@@ -6,14 +6,18 @@ import { OrdersPlatesConfirmed } from "@/components/molecules/cards/OrdersPlates
 import { OrdersPlatesUnConfirmed } from "@/components/molecules/cards/OrdersPlatesUnconfirmed";
 import { ModalPlate, ModalPlateRequired } from "@/components/molecules";
 import { Navbar } from "@/sections";
+import { useFetchCarts } from "@/hooks";
 import styles from './OrderPage.module.scss'
 
 export default function OrderPage({ params }: any) {
 
   const { modalPlate, cartTemporary, cartDefinitive } = useContext(OrderContext)
 
-  console.log(cartDefinitive)
+  useFetchCarts()
 
+  console.log("order")
+  console.log(cartDefinitive)
+  
   return (
     <>
       <Navbar />
