@@ -1,7 +1,7 @@
 
 "use client"
 import { useContext } from "react";
-import { OrderContext, SearchContext, TableContext } from "@/context";
+import { OrderContext, SearchContext} from "@/context";
 import { MainHome, Navbar, FooterView as Footer } from "@/sections";
 import { ModalPlate, MainLoading, ModalPlateRequired, ModalInfo } from "@/components/molecules";
 import { useFetchCarts } from "@/hooks";

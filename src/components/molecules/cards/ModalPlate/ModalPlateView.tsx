@@ -14,7 +14,7 @@ export const ModalPlateView = ({ closedModalPlate, modalPlate, buttonName }: Pro
         <>
             <div className={styles.containerModalPlate} onClick={closedModalPlate}></div>
             <div className={styles.modalPlate}>
-                <button onClick={closedModalPlate} className={styles.buttonClosedModal}>
+                <button onClick={closedModalPlate} className={styles.buttonClosedModal} style={{fontSize:"18px"}}>
                     <Closed />
                 </button>
                 <h2 className={styles.title}>{modalPlate.title}</h2>

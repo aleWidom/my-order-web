@@ -4,10 +4,14 @@ import { SearchContext } from "@/context";
 import { MenuPlatesView } from "./MenuPlatesView";
 
 export const MenuPlates = () => {
-	
+
 	const { results, categorySelected } = useContext(SearchContext);
 
 	return (
-		<MenuPlatesView results={results} categorySelected={categorySelected}/>
+		<>
+			<MenuPlatesView results={results} categorySelected={categorySelected}>
+				{categorySelected.CategoryID !== "0" ? categorySelected.name : "Results"}
+			</MenuPlatesView> :
+		</>
 	);
 };

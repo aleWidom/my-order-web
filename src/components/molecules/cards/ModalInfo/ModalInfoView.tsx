@@ -1,23 +1,24 @@
 import { ModalInfo } from '@/interfaces';
-import { ClosedView as Closed } from '@/components/atoms';
 import styles from './ModalInfo.module.scss';
 
 interface Props {
-	closedModalInfo: () => void;
-	modalInfo: ModalInfo
+	closedModalInfo?: () => void;
+	modalInfo: ModalInfo;
+	children: React.ReactNode
 }
 
-export const ModalInfoView = ({ closedModalInfo, modalInfo }: Props) => {
+export const ModalInfoView = ({ closedModalInfo, modalInfo, children }: Props) => {
 
 	return (
 		<>
 			<div className={styles.containerModalInfo} onClick={closedModalInfo}></div>
-			<button onClick={closedModalInfo} className={styles.buttonClosedModal}>
-				<Closed />
-			</button>
 			<div className={styles.modalInfo}>
+				{children}
 				<p className={styles.description}>{modalInfo.description}</p>
 			</div>
 		</>
 	);
 };
+
+
+
