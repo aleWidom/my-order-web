@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "myorderwebLambdaRoledea08693",
+            "myorderwebLambdaRole16036d34",
             {
               "Fn::Join": [
                 "",
                 [
-                  "myorderwebLambdaRoledea08693",
+                  "myorderwebLambdaRole16036d34",
                   "-",
                   {
                     "Ref": "env"

@@ -1,25 +1,25 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-myorderweb-dev-202043-authRole",
-      "UnauthRoleArn": "arn:aws:iam::013893537323:role/amplify-myorderweb-dev-202043-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::013893537323:role/amplify-myorderweb-dev-202043-authRole",
+      "AuthRoleName": "amplify-myorderweb-dev-185432-authRole",
+      "UnauthRoleArn": "arn:aws:iam::013893537323:role/amplify-myorderweb-dev-185432-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::013893537323:role/amplify-myorderweb-dev-185432-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-myorderweb-dev-202043-deployment",
-      "UnauthRoleName": "amplify-myorderweb-dev-202043-unauthRole",
-      "StackName": "amplify-myorderweb-dev-202043",
-      "StackId": "arn:aws:cloudformation:us-east-1:013893537323:stack/amplify-myorderweb-dev-202043/5bcf5de0-4e9e-11ee-99b3-12b4672f0e63",
-      "AmplifyAppId": "dbsebfmqhfb16"
+      "DeploymentBucketName": "amplify-myorderweb-dev-185432-deployment",
+      "UnauthRoleName": "amplify-myorderweb-dev-185432-unauthRole",
+      "StackName": "amplify-myorderweb-dev-185432",
+      "StackId": "arn:aws:cloudformation:us-east-1:013893537323:stack/amplify-myorderweb-dev-185432/cd209580-50ed-11ee-9b7b-0e7efab0964f",
+      "AmplifyAppId": "d2s128rxcyouhr"
     },
     "categories": {
       "function": {
         "LambdaItems": {
-          "deploymentBucketName": "amplify-myorderweb-dev-202043-deployment",
-          "s3Key": "amplify-builds/LambdaItems-386975566b7753526c44-build.zip"
+          "deploymentBucketName": "amplify-myorderweb-dev-185432-deployment",
+          "s3Key": "amplify-builds/LambdaItems-6c4864762f4159315738-build.zip"
         },
         "LambdaTables": {
-          "deploymentBucketName": "amplify-myorderweb-dev-202043-deployment",
-          "s3Key": "amplify-builds/LambdaTables-47504c4c552f68693376-build.zip"
+          "deploymentBucketName": "amplify-myorderweb-dev-185432-deployment",
+          "s3Key": "amplify-builds/LambdaTables-786146775552782f6e41-build.zip"
         }
       },
       "api": {
