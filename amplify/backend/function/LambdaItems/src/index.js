@@ -3,21 +3,27 @@
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
  */
 
+var mysql = require('mysql');
+
+const config = {
+  host: 'myorderdatabase.cluster-ctulrcqrkejd.us-east-1.rds.amazonaws.com',
+  user: 'admin',
+  database: 'myorder',
+  password: 'admin123456',
+}
+
 
 exports.handler = async (event) => {
 
-    var mysql = require('mysql');
-
-    var connection = mysql.createConnection({
-        host: 'myorderdatabase.cluster-ctulrcqrkejd.us-east-1.rds.amazonaws.com',
-        user: 'admin',
-        password: 'admin123456',
-        database: 'myorder'
-    });
+  
+    let connection;
 
     let result;
 
-    const promiseQuery = new Promise((resolve) => {
+    try {
+      connection = await mysql.createConnection(config)
+
+      const promiseQuery = new Promise((resolve) => {
         connection.query(`SELECT * from Item;`, function (error, results, fields) {
             resolve(results)
         });
@@ -68,7 +74,13 @@ where CategoryID = Item.id_category AND CategoryID=${event.queryStringParameters
         result = await promiseQuery
     }
 
-
+  
+    } catch (err) {
+      return err
+    } finally {
+      if (connection) await connection.end() 
+    }
+  
     return {
         statusCode: 200,
         headers: {
@@ -78,3 +90,6 @@ where CategoryID = Item.id_category AND CategoryID=${event.queryStringParameters
         body: JSON.stringify(result),
     };
 };
+
+
+
