@@ -4,9 +4,7 @@
  **/
 
 
-exports.handler = async (event) => {
-
-    var mysql = require('mysql');
+var mysql = require('mysql');
 
     var connection = mysql.createConnection({
         host: 'myorderdatabase.cluster-ctulrcqrkejd.us-east-1.rds.amazonaws.com',
@@ -15,9 +13,9 @@ exports.handler = async (event) => {
         database: 'myorder'
     });
 
+exports.handler = async (event) => {
 
     let result;
-
 
     const promiseQuery = new Promise((resolve) => {
         connection.query(`SELECT * from Table_`, function (error, results, fields) {
