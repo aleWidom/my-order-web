@@ -5,24 +5,21 @@
 
 var mysql = require('mysql');
 
-const config = {
-  host: 'myorderdatabase.cluster-ctulrcqrkejd.us-east-1.rds.amazonaws.com',
-  user: 'admin',
-  database: 'myorder',
-  password: 'admin123456',
-}
+
 
 
 exports.handler = async (event) => {
 
   
-    let connection;
+    let connection = await mysql.createConnection({
+        host: 'myorderdatabase.cluster-ctulrcqrkejd.us-east-1.rds.amazonaws.com',
+        user: 'admin',
+        database: 'myorder',
+        password: 'admin123456',
+      }
+      )
 
-    let result;
-
-    try {
-      connection = await mysql.createConnection(config)
-
+    try {    
       const promiseQuery = new Promise((resolve) => {
         connection.query(`SELECT * from Table_`, function (error, results, fields) {
             resolve(results)
@@ -134,6 +131,7 @@ VALUES(${JSON.stringify(event.pathParameters.proxy.slice(0, 36))},${JSON.stringi
         result = await promiseQuery
     }
   
+
     } catch (err) {
       return err
     } finally {
