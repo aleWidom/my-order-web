@@ -3,7 +3,7 @@ import axios from 'axios';
 
 async function fetchItemsRestaurant() {
 	try {
-		const allItems= await axios.get(`https://8i36c7itwc.execute-api.us-east-1.amazonaws.com/dev/items`);
+		const allItems= await axios.get(`https://mtjbo54xhf.execute-api.us-east-1.amazonaws.com/dev/items`);
 		return allItems.data;
 	} catch (err) {
 		console.log(err);
@@ -13,7 +13,7 @@ async function fetchItemsRestaurant() {
 
 async function getAllCategoriesIdRestaurant1() {
 	try {
-		const allCategories = await axios.get(`https://8i36c7itwc.execute-api.us-east-1.amazonaws.com/dev/items?categories`);
+		const allCategories = await axios.get(`https://mtjbo54xhf.execute-api.us-east-1.amazonaws.com/dev/items?categories`);
 		return allCategories.data;
 	} catch (err) {
 		console.log(err);
@@ -22,7 +22,7 @@ async function getAllCategoriesIdRestaurant1() {
 
 async function getItemsAccordingToSelectedCategory(idCategorySelected: string) {
 	try {
-		const itemsAcordingToSelectedCategory = await axios.get(`https://8i36c7itwc.execute-api.us-east-1.amazonaws.com/dev/items?itemsAcordingCategory=${idCategorySelected}`)
+		const itemsAcordingToSelectedCategory = await axios.get(`https://mtjbo54xhf.execute-api.us-east-1.amazonaws.com/dev/items?itemsAcordingCategory=${idCategorySelected}`)
 		return itemsAcordingToSelectedCategory.data;
 	} catch (err) {
 		console.log(err);
@@ -31,7 +31,7 @@ async function getItemsAccordingToSelectedCategory(idCategorySelected: string) {
 
 async function getItemsResults(valueInput: string) {
 	try {
-		const searchResults = await axios.get(`https://8i36c7itwc.execute-api.us-east-1.amazonaws.com/dev/items?search=${valueInput}`);
+		const searchResults = await axios.get(`https://mtjbo54xhf.execute-api.us-east-1.amazonaws.com/dev/items?search=${valueInput}`);
 		return searchResults;
 	} catch (err) {
 		console.log(err);
@@ -42,7 +42,7 @@ async function getItemsResults(valueInput: string) {
 async function fetchItemPeopleInTable(id_peopleInTable: string) {
 	try {
 		console.log(id_peopleInTable)
-		const fetchItemPeopleInTable = await axios.get(`https://8i36c7itwc.execute-api.us-east-1.amazonaws.com/dev/items?fetchItemPeopleInTable=${id_peopleInTable}`);
+		const fetchItemPeopleInTable = await axios.get(`https://mtjbo54xhf.execute-api.us-east-1.amazonaws.com/dev/items?fetchItemPeopleInTable=${id_peopleInTable}`);
 		return fetchItemPeopleInTable.data;
 	} catch (err) {
 		console.log(err);
@@ -53,7 +53,7 @@ async function fetchItemPeopleInTable(id_peopleInTable: string) {
 
 async function makeDelivered(idItemPeopleInTable: string | undefined) {
 	try {
-		const  makeDelivered = await axios.post(`https://8i36c7itwc.execute-api.us-east-1.amazonaws.com/dev/items/${idItemPeopleInTable}?makeDelivered`);
+		const  makeDelivered = await axios.post(`https://mtjbo54xhf.execute-api.us-east-1.amazonaws.com/dev/items/${idItemPeopleInTable}?makeDelivered`);
 		return  makeDelivered;
 	} catch (err) {
 		console.log(err);

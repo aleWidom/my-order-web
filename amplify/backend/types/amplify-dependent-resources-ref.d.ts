@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "myOrderWeb": {
+    "tables": {
       "ApiId": "string",
       "ApiName": "string",
       "RootUrl": "string"
