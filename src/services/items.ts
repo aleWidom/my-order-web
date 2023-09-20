@@ -20,14 +20,6 @@ async function getAllCategoriesIdRestaurant1() {
 	}
 }
 
-async function getItemsAccordingToSelectedCategory(idCategorySelected: string) {
-	try {
-		const itemsAcordingToSelectedCategory = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items?itemsAcordingCategory=${idCategorySelected}`)
-		return itemsAcordingToSelectedCategory.data;
-	} catch (err) {
-		console.log(err);
-	}
-}
 
 async function getItemsResults(valueInput: string) {
 	try {
@@ -65,7 +57,6 @@ async function makeDelivered(idItemPeopleInTable: string | undefined) {
 export {
 	fetchItemsRestaurant,
 	getAllCategoriesIdRestaurant1,
-	getItemsAccordingToSelectedCategory,
 	getItemsResults,
 	fetchItemPeopleInTable,
 	makeDelivered,

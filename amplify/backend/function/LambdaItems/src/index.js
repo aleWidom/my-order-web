@@ -30,9 +30,6 @@ exports.handler = async (event) => {
     else if (event.queryStringParameters?.search !== undefined) {
         queryMySql = `select * from Item where title like "%${event.queryStringParameters.search}%"`
     }
-    else if (event.queryStringParameters?.searchCard !== undefined) {
-        queryMySql = `select * from Item where title = "%${event.queryStringParameters.search}%"`
-    }
     else if (event.queryStringParameters?.ranking !== undefined) {
         queryMySql = `SELECT * FROM Item WHERE id IN(2,61,83)`
     }

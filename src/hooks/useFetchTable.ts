@@ -20,6 +20,8 @@ export const useFetchTable = () => {
 				table_call: response?.table_call,
 			})
 
+			console.log(response)
+
 			if (response?.table_active === '0') {
 				updateTableNumberActive(params.get('table'));
 
