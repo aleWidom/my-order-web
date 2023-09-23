@@ -25,23 +25,22 @@ exports.handler = async (event) => {
     let queryMySql = `select * from Item`
     
     if (event.queryStringParameters?.categories !== undefined) {
-        queryMySql = `select * from Category`
+        queryMySql = `SELECT * from Category ORDER BY CategoryID Asc;`
     }
     else if (event.queryStringParameters?.search !== undefined) {
         queryMySql = `select * from Item where title like "%${event.queryStringParameters.search}%"`
     }
-    else if (event.queryStringParameters?.ranking !== undefined) {
-        queryMySql = `SELECT * FROM Item WHERE id IN(2,61,83)`
+    else if (event.queryStringParameters?.fetchItemPeopleInTable !== undefined) {
+        queryMySql = `select id_item as ItemID, title, quantity, price,state from Item_peopleInTable , Item
+        Where Item_peopleInTable.id_item = Item.ItemID AND Item_peopleInTable.id_peopleInTable = ${JSON.stringify(event.queryStringParameters.fetchItemPeopleInTable)} ORDER BY date DESC;`
     }
-    else if (event.queryStringParameters?.dayPlates!== undefined) {
-        queryMySql = `SELECT * FROM Item WHERE id IN(37,85,81,111)`
+    else if (event.queryStringParameters?.itemsAcordingCategory !== undefined) {
+        queryMySql = `select ItemID, title, description, price from Category , Item
+        where CategoryID = Item.id_category AND CategoryID=${event.queryStringParameters.itemsAcordingCategory}`
     }
-    else if (event.queryStringParameters?.specials!== undefined) {
-        queryMySql = `SELECT * FROM Item WHERE id IN(47,72,89)`
+    else if (event.queryStringParameters?.makeDelivered !== undefined) {
+        queryMySql = `Update Item_peopleInTable SET state = "delivered" where ItemPeopleInTableID = ${JSON.stringify(event.pathParameters.proxy.slice(0, 36))} ;`
     }
-    
-   
-
 
     const promiseQuery = new Promise((resolve) => {
         connection.query(`${queryMySql}`, function (error, results, fields) {
@@ -50,7 +49,8 @@ exports.handler = async (event) => {
     })
     result = await promiseQuery
 }
-  catch (err) {
+ 
+    catch (err) {
     return err
   } finally {
     if (connection) await connection.end() 

@@ -28,32 +28,38 @@ exports.handler = async (event) => {
         queryMySql = `select * from Table_ Where table_active = 1`
     }
     else if (event.queryStringParameters?.activeCall !== undefined) {
-        queryMySql = `select * from Table_ Where table_call = 1`
+        queryMySql = `select * from Table_ Where table_call = 1   ORDER BY dateCall desc`
+    }
+    else if (event.queryStringParameters?.resetAllTables !== undefined) {
+        queryMySql = `select * from Table_ Where table_call = 1   ORDER BY dateCall desc`
+    }
+    else if (event.queryStringParameters?.itemPeopleInTableJoin !== undefined) {
+        queryMySql = `select ItemPeopleInTableID as ItemID, title, quantity, state, id_table from PeopleInTable, Item_peopleInTable , Item
+        where  Item_peopleInTable.id_peopleInTable = PeopleInTable.PeopleInTableID AND  Item_peopleInTable.id_item= Item.ItemID AND state != "delivered"  ORDER BY date desc`
+    }
+    else if (event.queryStringParameters?.peopleInTable !== undefined) {
+        queryMySql = `INSERT INTO PeopleInTable (PeopleInTableID,id_table)
+        VALUES ( ${JSON.stringify(event.pathParameters.proxy.slice(0, 36))},${JSON.stringify(event.pathParameters.proxy.slice(37, 40))});`
+    }
+    else if (event.queryStringParameters?.peopleInTableSearc !== undefined) {
+        queryMySql = `Select * from PeopleInTable Where id_table = ${event.pathParameters.proxy} Order by entry Desc`
+    }
+    else if (event.queryStringParameters?.itemPeopleInTable !== undefined) {
+        queryMySql = `INSERT INTO Item_peopleInTable (ItemPeopleInTableID, id_peopleInTable, quantity, id_item, state)
+        VALUES(${JSON.stringify(event.pathParameters.proxy.slice(0, 36))},${JSON.stringify(event.pathParameters.proxy.slice(37, 73))}, ${event.pathParameters.proxy.slice(74, 75)}, ${JSON.stringify(event.pathParameters.proxy.split('/')[3])}, 'in process');`
     }
     else if (event.queryStringParameters?.searchTable !== undefined) {
-       queryMySql = `select * from Table_ Where table_number = ${event.pathParameters.proxy}`
+       queryMySql = `Select * from Table_ Where TableID = ${JSON.stringify(event.queryStringParameters.searchTable)}`
     }
     else if (event.queryStringParameters?.activate !== undefined) {
-        if (event.queryStringParameters.activate === "activate") {
-            queryMySql = `UPDATE Table_ Set table_active = 1 Where table_number = ${event.pathParameters.proxy}`
-        }
-    }
-    else if (event.queryStringParameters?.desactivate !== undefined) {
-        if (event.queryStringParameters?.desactivate === "desactivate") {
-            queryMySql = `UPDATE Table_ Set table_active=0, table_call=0  Where table_number = ${event.pathParameters.proxy}`
-        }
+            queryMySql = `UPDATE Table_ Set table_active = 1 Where tableID = ${JSON.stringify(event.queryStringParameters.activate)}`
     }
     else if (event.queryStringParameters?.call !== undefined) {
-        if (event.queryStringParameters?.call === "call") {
-           queryMySql = `UPDATE Table_ Set table_call= 1 Where table_number = ${event.pathParameters.proxy}`
-        }
-        else if (event.queryStringParameters?.call === "notCall") {
-           queryMySql = `UPDATE Table_ Set table_call= 0 Where table_number = ${event.pathParameters.proxy}`
-        }
-        else if (event.queryStringParameters?.ordersCreate !== undefined) {
-           queryMySql = `INSERT INTO Order_ (id_table) VALUES (${event.pathParameters.proxy});`
-        }
+            queryMySql = `UPDATE Table_ Set table_call= 1 Where tableID = ${JSON.stringify(event.queryStringParameters.call)}`
     }
+    else if (event.queryStringParameters?.notCall !== undefined) {
+        queryMySql = `UPDATE Table_ Set table_call= 0 Where tableID = ${JSON.stringify(event.queryStringParameters.notCall)}`
+}
 
 
     const promiseQuery = new Promise((resolve) => {
@@ -63,7 +69,8 @@ exports.handler = async (event) => {
     })
     result = await promiseQuery
 }
-  catch (err) {
+
+    catch (err) {
     return err
   } finally {
     if (connection) await connection.end() 
