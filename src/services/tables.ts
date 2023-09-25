@@ -109,6 +109,8 @@ async function fetchOrderItem() {
 }
 
 async function peopleInTable(idPeopleInTable: string, tableId: string | null) {
+	console.log(idPeopleInTable)
+	console.log(tableId)
 	try {
 		const response = await axios.post(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/${idPeopleInTable}/${tableId}?peopleInTable`);
 		return response.data;
