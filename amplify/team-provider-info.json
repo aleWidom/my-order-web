@@ -15,11 +15,11 @@
       "function": {
         "LambdaItems": {
           "deploymentBucketName": "amplify-myorderweb-dev-140938-deployment",
-          "s3Key": "amplify-builds/LambdaItems-7355533359466c465767-build.zip"
+          "s3Key": "amplify-builds/LambdaItems-6d70326577455634435a-build.zip"
         },
         "LambdaTables": {
           "deploymentBucketName": "amplify-myorderweb-dev-140938-deployment",
-          "s3Key": "amplify-builds/LambdaTables-6e307836794f4e796e48-build.zip"
+          "s3Key": "amplify-builds/LambdaTables-703645367061636a7236-build.zip"
         }
       },
       "api": {

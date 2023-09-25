@@ -24,7 +24,7 @@ exports.handler = async (event) => {
      
     let queryMySql = `select * from Item`
     
-    if (event.queryStringParameters?.categories !== undefined) {
+    if (event.queryStringParameters?.categories !== undefined) {  
         queryMySql = `SELECT * from Category ORDER BY CategoryID Asc;`
     }
     else if (event.queryStringParameters?.search !== undefined) {
