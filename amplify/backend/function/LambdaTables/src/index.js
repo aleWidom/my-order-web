@@ -31,7 +31,7 @@ exports.handler = async (event) => {
         queryMySql = `select * from Table_ Where table_call = 1   ORDER BY dateCall desc`
     }
     else if (event.queryStringParameters?.resetAllTables !== undefined) {
-        queryMySql = `select * from Table_ Where table_call = 1   ORDER BY dateCall desc`
+        queryMySql = `UPDATE Table_ set table_call = 0, table_active = 0`
     }
     else if (event.queryStringParameters?.itemPeopleInTableJoin !== undefined) {
         queryMySql = `select ItemPeopleInTableID as ItemID, title, quantity, state, id_table from PeopleInTable, Item_peopleInTable , Item
@@ -54,6 +54,9 @@ exports.handler = async (event) => {
     else if (event.queryStringParameters?.activate !== undefined) {
             queryMySql = `UPDATE Table_ Set table_active = 1 Where tableID = ${JSON.stringify(event.queryStringParameters.activate)}`
     }
+    else if (event.queryStringParameters?.desactivate !== undefined) {
+        queryMySql = `UPDATE Table_ Set table_active=0, table_call=0  Where tableID = ${JSON.stringify(event.queryStringParameters.desactivate)}`
+}
     else if (event.queryStringParameters?.call !== undefined) {
             queryMySql = `UPDATE Table_ Set table_call= 1 Where tableID = ${JSON.stringify(event.queryStringParameters.call)}`
     }
@@ -88,3 +91,7 @@ exports.handler = async (event) => {
         body: JSON.stringify(result),
     };
 };
+
+
+
+
