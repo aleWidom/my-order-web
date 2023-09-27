@@ -22,15 +22,12 @@ export const useFetchTable = () => {
 				table_call: response?.table_call,
 			})
 
-			console.log("useFetchTable")
-			console.log(response)
-
 			if (response?.table_active === '0') {
 				updateTableNumberActive(params.get('table'));
 
 				//Genero el idPeopleInTable
 				const idPeopleInTableUuid = uuidv4().replaceAll('/', '-');
-				console.log(idPeopleInTableUuid)
+
 				setIdPeopleInTable(idPeopleInTableUuid);
 				
 				peopleInTable(idPeopleInTableUuid, params.get('table'));

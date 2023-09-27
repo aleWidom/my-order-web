@@ -9,8 +9,6 @@ export const useFetchCarts = () => {
 
 	const { idPeopleInTable } = useContext(TableContext);
 
-	console.log(idPeopleInTable)
-
 	useEffect(() => {
 		if (idPeopleInTable !== "") {
 			fetchItemPeopleInTable(idPeopleInTable)
