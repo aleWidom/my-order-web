@@ -10,6 +10,8 @@ export const useFetchTable = () => {
 
 	const { setTable, setIdPeopleInTable } = useContext(TableContext);
 
+	console.log(params.get('table'))
+
 	useEffect(() => {
 		fetchTable(params.get('table'))
 		.then((response) => {
@@ -20,6 +22,7 @@ export const useFetchTable = () => {
 				table_call: response?.table_call,
 			})
 
+			console.log("useFetchTable")
 			console.log(response)
 
 			if (response?.table_active === '0') {
