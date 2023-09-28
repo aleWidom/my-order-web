@@ -14,9 +14,6 @@ export default function OrderPage({ params }: any) {
   const { modalPlate, cartTemporary, cartDefinitive } = useContext(OrderContext)
 
   useFetchCarts()
-
-  console.log("order")
-  console.log(cartDefinitive)
   
   return (
     <>

@@ -39,10 +39,10 @@ exports.handler = async (event) => {
     }
     else if (event.queryStringParameters?.peopleInTable !== undefined) {
         queryMySql = `INSERT INTO PeopleInTable (PeopleInTableID,id_table)
-        VALUES ( ${JSON.stringify(event.pathParameters.proxy.slice(0, 36))},${JSON.stringify(event.pathParameters.proxy.slice(37, 40))});`
+        VALUES ( ${JSON.stringify(event.pathParameters.proxy.slice(0, 36))}, ${JSON.stringify(event.pathParameters.proxy.slice(37, 73))});`
     }
-    else if (event.queryStringParameters?.peopleInTableSearc !== undefined) {
-        queryMySql = `Select * from PeopleInTable Where id_table = ${event.pathParameters.proxy} Order by entry Desc`
+    else if (event.queryStringParameters?.peopleInTableSearch !== undefined) {
+        queryMySql = `Select * from PeopleInTable Where id_table = ${JSON.stringify(event.queryStringParameters.peopleInTableSearch)} Order by entry Desc`
     }
     else if (event.queryStringParameters?.itemPeopleInTable !== undefined) {
         queryMySql = `INSERT INTO Item_peopleInTable (ItemPeopleInTableID, id_peopleInTable, quantity, id_item, state)
@@ -91,7 +91,5 @@ exports.handler = async (event) => {
         body: JSON.stringify(result),
     };
 };
-
-
 
 
