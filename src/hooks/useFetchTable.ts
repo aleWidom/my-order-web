@@ -10,8 +10,6 @@ export const useFetchTable = () => {
 
 	const { setTable, setIdPeopleInTable } = useContext(TableContext);
 
-	console.log(params.get('table'))
-
 	useEffect(() => {
 		fetchTable(params.get('table'))
 		.then((response) => {
