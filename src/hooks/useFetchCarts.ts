@@ -13,7 +13,9 @@ export const useFetchCarts = () => {
 		if (idPeopleInTable !== "") {
 			fetchItemPeopleInTable(idPeopleInTable)
 				.then((data) => {
-					setCartDefinitive(data)
+					if(data) {
+						setCartDefinitive(data)
+					}
 				})
 				.catch((err) => {
 					console.log(err)

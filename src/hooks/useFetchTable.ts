@@ -13,33 +13,36 @@ export const useFetchTable = () => {
 	useEffect(() => {
 		fetchTable(params.get('table'))
 		.then((response) => {
-			setTable({
-				TableID: response?.TableID,
-				table_number: response?.table_number,
-				table_active: response?.table_active,
-				table_call: response?.table_call,
-			})
-
-			if (response?.table_active === '0') {
-				updateTableNumberActive(params.get('table'));
-
-				//Genero el idPeopleInTable
-				const idPeopleInTableUuid = uuidv4().replaceAll('/', '-');
-
-				setIdPeopleInTable(idPeopleInTableUuid);
-				
-				peopleInTable(idPeopleInTableUuid, params.get('table'));
-			}
-			else {
-				peopleInTableFetch(params.get('table'))
-				.then((data)=> {
-					setIdPeopleInTable(data[0].PeopleInTableID)
+			if(response) {
+				setTable({
+					TableID: response?.TableID,
+					table_number: response?.table_number,
+					table_active: response?.table_active,
+					table_call: response?.table_call,
 				})
-				.catch((err)=> {
-					console.log(err)
-				})
+	
+				if (response?.table_active === '0') {
+					updateTableNumberActive(params.get('table'));
+	
+					//Genero el idPeopleInTable
+					const idPeopleInTableUuid = uuidv4().replaceAll('/', '-');
+	
+					setIdPeopleInTable(idPeopleInTableUuid);
+					
+					peopleInTable(idPeopleInTableUuid, params.get('table'));
+				}
+				else {
+					peopleInTableFetch(params.get('table'))
+					.then((data)=> {
+						if(data) {
+							setIdPeopleInTable(data[0].PeopleInTableID)
+						}
+					})
+					.catch((err)=> {
+						console.log(err)
+					})
+				}
 			}
-			
 		})
 		.catch((err)=> {
 			console.log(err)

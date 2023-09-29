@@ -20,22 +20,24 @@ export const Search = () => {
       getItemsResults(valueInput)
         //TODO DATA NO DEBE SER ANY
         .then(({ data }: any) => {
-          if (data.length === 0) {
-            setModalInfo({
-              description: "No hay elementos que coincidan con la búsqueda.",
-              state: true,
-              section: "form"
-            })
-            setValueInput("");
-          } else {
-            setResults(data);
-            setCategorySelected(
-              {
-                CategoryID: '0',
-                name: "",
-                photo: "",
-              }
-            );
+          if(data) {
+            if (data.length === 0) {
+              setModalInfo({
+                description: "No hay elementos que coincidan con la búsqueda.",
+                state: true,
+                section: "form"
+              })
+              setValueInput("");
+            } else {
+              setResults(data);
+              setCategorySelected(
+                {
+                  CategoryID: '0',
+                  name: "",
+                  photo: "",
+                }
+              );
+            }
           }
         })
         .catch((err) => err);
