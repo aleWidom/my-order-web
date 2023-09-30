@@ -14,13 +14,12 @@ export const ModalPlateView = ({ closedModalPlate, modalPlate, buttonName }: Pro
         <>
             <div className={styles.containerModalPlate} onClick={closedModalPlate}></div>
             <div className={styles.modalPlate}>
-                <button onClick={closedModalPlate} className={styles.buttonClosedModal} style={{fontSize:"18px"}}>
+                <button onClick={closedModalPlate} className={styles.buttonClosedModal} style={{fontSize:"12px"}}>
                     <Closed />
                 </button>
                 <h2 className={styles.title}>{modalPlate.title}</h2>
                 <p className={styles.description}>{modalPlate.description}</p>
-                <p className={styles.price}>${modalPlate.price}</p>
-                <small className={styles.priceUnit}> (precio x unidad)</small>
+                <p className={styles.price}><span className={styles.priceUnit}>Precio x unidad:</span> ${modalPlate.price}</p>
                 {buttonName !== "Eliminar" &&
                     <div className={styles.containerQuantity}>
                         <p className={styles.quantity}>Cantidad: </p>

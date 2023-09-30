@@ -52,11 +52,14 @@
 .price {
 	font-weight: bold;
 	color: $color-secondary;
+	font-size: 1rem;
 }
 
 .priceUnit {
 	margin-top: -0.5rem;
 	color: $color-secondary;
+	font-size: 0.8rem;
+	font-weight: 400;
 }
 
 .containerQuantity {

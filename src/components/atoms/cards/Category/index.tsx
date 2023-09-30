@@ -10,7 +10,7 @@ const selected = {
 }
 
 const notSelected = {
-  backgroundColor: "#181818",
+  backgroundColor: "#242424",
   border: "solid 1px #fff",
   color: "#fff" 
 }
