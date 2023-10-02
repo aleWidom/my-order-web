@@ -19,7 +19,7 @@ export const ModalPlateView = ({ closedModalPlate, modalPlate, buttonName }: Pro
                 </button>
                 <h2 className={styles.title}>{modalPlate.title}</h2>
                 <p className={styles.description}>{modalPlate.description}</p>
-                <p className={styles.price}><span className={styles.priceUnit}>Precio x unidad:</span> ${modalPlate.price}</p>
+                <p className={styles.price}><span className={styles.priceUnit}>Precio unitario:</span> ${modalPlate.price}</p>
                 {buttonName !== "Eliminar" &&
                     <div className={styles.containerQuantity}>
                         <p className={styles.quantity}>Cantidad: </p>
