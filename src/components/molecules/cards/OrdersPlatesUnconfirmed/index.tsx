@@ -11,12 +11,16 @@ export const OrdersPlatesUnConfirmed = () => {
 
 	const {cartTemporary, modalPlate, setModalPlate, setCartDefinitive, setCartTemporary, cartDefinitive} = useContext(OrderContext);
 
-	const {idPeopleInTable} = useContext(TableContext)
+	const {idPeopleInTable, table} = useContext(TableContext)
+
+	console.log(table)
 	
 	const handleConfirmRequest = () => {
 
+		const idOrder = uuidv4().replaceAll('/', 'a') 
+
 		cartTemporary.map((e) => (
-			itemPeopleInTable(uuidv4().replaceAll('/', 'a'), idPeopleInTable, e.quantity, e.ItemID)
+			itemPeopleInTable(uuidv4().replaceAll('/', 'a'),  idOrder, idPeopleInTable, table.table_number as any , e.quantity, e.ItemID)
 		))
 	
 		setCartDefinitive([

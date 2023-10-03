@@ -118,9 +118,9 @@ async function peopleInTable(idPeopleInTable: string, tableId: string | null) {
 }
 
 
-async function itemPeopleInTable(idItemPeopleInTable: string, idPeopleInTable: string, quantity: number, idItem: string) {
+async function itemPeopleInTable(idItemPeopleInTable: string, orderNumber: string, idPeopleInTable: string, numberTable: string, quantity: number, idItem: string) {
 	try {
-		const response = await axios.post(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/${idItemPeopleInTable}/${idPeopleInTable}/${quantity}/${idItem}?itemPeopleInTable`);
+		const response = await axios.post(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/${idItemPeopleInTable}/${orderNumber}/${idPeopleInTable}/${numberTable}/${quantity}/${idItem}?itemPeopleInTable`);
 		return response;
 	} catch (err) {
 		console.log(err);

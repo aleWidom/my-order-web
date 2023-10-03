@@ -45,8 +45,8 @@ exports.handler = async (event) => {
         queryMySql = `Select * from PeopleInTable Where id_table = ${JSON.stringify(event.queryStringParameters.peopleInTableSearch)} Order by entry Desc`
     }
     else if (event.queryStringParameters?.itemPeopleInTable !== undefined) {
-        queryMySql = `INSERT INTO Item_peopleInTable (ItemPeopleInTableID, id_peopleInTable, quantity, id_item, state)
-        VALUES(${JSON.stringify(event.pathParameters.proxy.slice(0, 36))},${JSON.stringify(event.pathParameters.proxy.slice(37, 73))}, ${event.pathParameters.proxy.slice(74, 75)}, ${JSON.stringify(event.pathParameters.proxy.split('/')[3])}, 'in process');`
+        queryMySql = `INSERT INTO Item_peopleInTable (ItemPeopleInTableID, orderNumberID, id_peopleInTable, numberTable, quantity, id_item, state)
+        VALUES(${JSON.stringify(event.pathParameters.proxy.slice(0,36))}, ${JSON.stringify(event.pathParameters.proxy.slice(37,73))}, ${JSON.stringify(event.pathParameters.proxy.slice(74,110))}, ${JSON.stringify(event.pathParameters.proxy.split('/')[3])}, ${JSON.stringify(event.pathParameters.proxy.split('/')[4])}, ${JSON.stringify(event.pathParameters.proxy.split('/')[5])}, 'in process')`
     }
     else if (event.queryStringParameters?.searchTable !== undefined) {
        queryMySql = `Select * from Table_ Where TableID = ${JSON.stringify(event.queryStringParameters.searchTable)}`
@@ -88,7 +88,7 @@ exports.handler = async (event) => {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "*"
         },
-        body: JSON.stringify(result),
+        body: JSON.stringify(result)
     };
 };
 
