@@ -34,8 +34,8 @@ exports.handler = async (event) => {
         queryMySql = `UPDATE Table_ set table_call = 0, table_active = 0`
     }
     else if (event.queryStringParameters?.itemPeopleInTableJoin !== undefined) {
-        queryMySql = `select ItemPeopleInTableID as ItemID, title, quantity, state, id_table from PeopleInTable, Item_peopleInTable , Item
-        where  Item_peopleInTable.id_peopleInTable = PeopleInTable.PeopleInTableID AND  Item_peopleInTable.id_item= Item.ItemID AND state != "delivered"  ORDER BY date desc`
+        queryMySql = `select ItemPeopleInTableID, orderNumberID, numberTable, quantity, title, id_item, state from PeopleInTable, Item_peopleInTable , Item
+        where  Item_peopleInTable.id_peopleInTable = PeopleInTable.PeopleInTableID AND  Item_peopleInTable.id_item= Item.ItemID AND state != "delivered" order by date DESC, numberTable ASC;`
     }
     else if (event.queryStringParameters?.peopleInTable !== undefined) {
         queryMySql = `INSERT INTO PeopleInTable (PeopleInTableID,id_table)
