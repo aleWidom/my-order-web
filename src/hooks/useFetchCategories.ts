@@ -9,7 +9,7 @@ export const useFetchCategories = () => {
 	useEffect(() => {
 		getAllCategoriesIdRestaurant1()
 			.then((data) => {
-				if(data) {
+				if(data !== undefined) {
 					setCategoriesMenuRestaurant(data);
 				}
 			})

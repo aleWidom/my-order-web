@@ -12,7 +12,7 @@ export const useFetchCallTable = () => {
 	useEffect(() => {  
         fetchTable(params.get('table'))
         .then((response)=> {
-           if(response) {
+           if(response !== undefined) {
             if(response?.table_call === '1') {
                 setSittingOnTheTableCall(true)
                }

@@ -17,7 +17,7 @@ interface Props {
 export const OrderPlateConfirmed = ({cartProduct}: Props) => {
   return (
     <OrderPlateConfirmedView cartProduct={cartProduct} 
-    state={cartProduct.state === 'delivered' ? {title: "Entregado", style: delivered} : {title: "Su pedido se está preparando", style: process} } />
+    state={cartProduct.state === 'delivered' ? {title: "Entregado", style: delivered} : {title: "Su pedido se ha solicitado correctamente.", style: process} } />
   )
 }
 

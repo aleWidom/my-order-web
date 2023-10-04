@@ -12,7 +12,7 @@ export const useFetchItems = () => {
 	useEffect(() => {   
         fetchItemsRestaurant()
         .then((data)=> {
-            if(data) {
+            if(data !== undefined) {
                 setItemsRestaurant(data)
             }
         })

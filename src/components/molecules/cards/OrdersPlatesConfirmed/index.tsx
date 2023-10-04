@@ -1,8 +1,8 @@
 "use client"
 import { useContext } from 'react';
-import { TableContext, OrderContext } from '@/context';
+import { OrderContext } from '@/context';
 import { OrdersPlatesConfirmedView } from './OrdersPlatesConfirmedView';
-import { fetchItemPeopleInTable } from '@/services';
+
 
 
 

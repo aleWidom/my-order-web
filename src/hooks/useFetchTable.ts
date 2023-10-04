@@ -13,7 +13,7 @@ export const useFetchTable = () => {
 	useEffect(() => {
 		fetchTable(params.get('table'))
 			.then((response) => {
-				if (response) {
+				if (response !== undefined) {
 					setTable({
 						TableID: response?.TableID,
 						table_number: response?.table_number,
