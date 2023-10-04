@@ -19,7 +19,7 @@
         },
         "LambdaTables": {
           "deploymentBucketName": "amplify-myorderweb-dev-140938-deployment",
-          "s3Key": "amplify-builds/LambdaTables-7a2b5562706b7a6f4c46-build.zip"
+          "s3Key": "amplify-builds/LambdaTables-75666857635372676c53-build.zip"
         }
       },
       "api": {
