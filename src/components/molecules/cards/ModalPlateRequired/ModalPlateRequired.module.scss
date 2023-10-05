@@ -46,21 +46,27 @@
 	color: $color-terciary; 
 }
 
+.containerEditBell {
+	background-color: $color-secondary;
+	width: 100%;
+	display: flex;
+	flex-direction: column; 
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+}
 
 
 .edit, .bell {
 	text-align: center;
+	color: $color-primary
 }
 
 .bell {
-	margin-top: 0.25rem;
-	color: $color-secondary;
 	font-size: 1.25rem;
-	margin-bottom: -0.25rem;
 }
 
 .edit {
-	color: $color-four;
 	font-size: 0.8rem;
 }
 
