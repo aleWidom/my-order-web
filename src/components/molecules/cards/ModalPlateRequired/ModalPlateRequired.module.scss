@@ -46,11 +46,25 @@
 	color: $color-terciary; 
 }
 
-.edit {
-	font-size: 0.7rem;
-	color: $color-four;
+
+
+.edit, .bell {
 	text-align: center;
 }
+
+.bell {
+	margin-top: 0.25rem;
+	color: $color-secondary;
+	font-size: 1.25rem;
+	margin-bottom: -0.25rem;
+}
+
+.edit {
+	color: $color-four;
+	font-size: 0.8rem;
+}
+
+
 
 .containerAdd, .containerSubstract  {
 	display: flex;
