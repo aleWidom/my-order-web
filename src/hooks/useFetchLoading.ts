@@ -9,7 +9,7 @@ export const useFetchLoading = () => {
 
     useEffect(()=> {
 
-            if(itemsRestaurant.length && categoriesMenuRestaurant.length && cardsDayPlates.length && cardsRankingPlates.length && cardsSpecialsCheff.length) {
+            if(itemsRestaurant?.length && categoriesMenuRestaurant?.length && cardsDayPlates?.length && cardsRankingPlates?.length && cardsSpecialsCheff?.length) {
                 setLoading(false)
             }
         // eslint-disable-next-line react-hooks/exhaustive-deps
