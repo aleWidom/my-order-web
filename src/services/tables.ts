@@ -120,12 +120,22 @@ async function peopleInTable(idPeopleInTable: string, tableId: string | null) {
 
 async function itemPeopleInTable(idItemPeopleInTable: string, orderNumber: string, idPeopleInTable: string, numberTable: string, quantity: number, idItem: string) {
 	try {
-		const response = await axios.post(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/${idItemPeopleInTable}/${orderNumber}/${idPeopleInTable}/${numberTable}/${quantity}/${idItem}?itemPeopleInTable`);
+		const response = await axios.post(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/${idItemPeopleInTable}/${orderNumber}/${idPeopleInTable}/${numberTable}/${quantity}/${idItem}?itemPeopleInTable`,  {
+			idItemPeopleInTable,
+			orderNumber,
+			idPeopleInTable,
+			numberTable,
+			quantity,
+			idItem
+		});
+		console.log(response)
 		return response;
 	} catch (err) {
 		console.log(err);
 	}
 }
+
+
 
 
 
@@ -145,3 +155,24 @@ export {
 };
 
 
+
+/* async function itemPeopleInTable2(idItemPeopleInTable: string, orderNumber: string,  idPeopleInTable: string, numberTable: string, quantity: string, idItem: string) {
+	
+	INSERT INTO Item_peopleInTable (ItemPeopleInTableID, orderNumberID, id_peopleInTable, numberTable, quantity, id_item, state) VALUES(${JSON.stringify(event.body.data.idItemPeopleInTable)}, ${JSON.stringify(event.body.data.orderNumber)}, ${JSON.stringify(event.body.data.idPeopleInTable)}, ${JSON.stringify(event.body.data.numberTable)}, ${JSON.stringify(event.body.data.quantity)},  ${JSON.stringify(event.body.data.idItem)} , 'in process')
+	
+		try {
+			const response = await axios.post(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?itemPeopleInTable2`, {
+				idItemPeopleInTable,
+				orderNumber,
+				idPeopleInTable,
+				numberTable,
+				quantity,
+				idItem
+			});
+		
+			return response;
+		} catch (err) {
+			console.log("error")
+			console.log(err);
+		}
+	} */
