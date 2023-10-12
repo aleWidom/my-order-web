@@ -11,9 +11,13 @@ exports.handler = async (event) => {
     let connection;
 
     let result;
+    
+    let body = JSON.parse(event.body)
 
     
  try {
+     
+       
      
      connection= mysql.createConnection({
         host: 'myorderdatabase.cluster-ctulrcqrkejd.us-east-1.rds.amazonaws.com',
@@ -44,10 +48,6 @@ exports.handler = async (event) => {
     else if (event.queryStringParameters?.peopleInTableSearch !== undefined) {
         queryMySql = `Select * from PeopleInTable Where id_table = ${JSON.stringify(event.queryStringParameters.peopleInTableSearch)} Order by entry Desc`
     }
-    else if (event.queryStringParameters?.itemPeopleInTable !== undefined) {
-        queryMySql = `INSERT INTO Item_peopleInTable (ItemPeopleInTableID, orderNumberID, id_peopleInTable, numberTable, quantity, id_item, state)
-        VALUES(${JSON.stringify(event.pathParameters.proxy.slice(0,36))}, ${JSON.stringify(event.pathParameters.proxy.slice(37,73))}, ${JSON.stringify(event.pathParameters.proxy.slice(74,110))}, ${JSON.stringify(event.pathParameters.proxy.split('/')[3])}, ${JSON.stringify(event.pathParameters.proxy.split('/')[4])}, ${JSON.stringify(event.pathParameters.proxy.split('/')[5])}, 'in process')`
-    }
     else if (event.queryStringParameters?.searchTable !== undefined) {
        queryMySql = `Select * from Table_ Where TableID = ${JSON.stringify(event.queryStringParameters.searchTable)}`
     }
@@ -63,6 +63,12 @@ exports.handler = async (event) => {
     else if (event.queryStringParameters?.notCall !== undefined) {
         queryMySql = `UPDATE Table_ Set table_call= 0 Where tableID = ${JSON.stringify(event.queryStringParameters.notCall)}`
 }
+  else if (event.queryStringParameters?.itemPeopleInTable !== undefined) {
+        queryMySql = `INSERT INTO Item_peopleInTable (ItemPeopleInTableID, orderNumberID, id_peopleInTable, numberTable, quantity, id_item, state)
+        VALUES ${body.detail.map((value)=> (
+			`(${JSON.stringify(value.ItemPeopleInTableID)}, ${JSON.stringify(body.orderNumber)}, ${JSON.stringify(body.idPeopleInTable)}, ${JSON.stringify(body.numberTable)}, ${JSON.stringify(value.quantity)}, ${JSON.stringify(value.id_item)}, 'in process')`
+		))}`
+    }
 
 
     const promiseQuery = new Promise((resolve) => {
@@ -82,13 +88,14 @@ exports.handler = async (event) => {
 
 
 
-    return {
+      return {
         statusCode: 200,
-        headers: {
+          headers: {
+            "Access-Control-Allow-Headers" : "Content-Type",
             "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*"
+            "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PUT,PATCH"
         },
-        body: JSON.stringify(result)
+        body: JSON.stringify(result),
     };
 };
 

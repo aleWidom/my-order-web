@@ -1,5 +1,5 @@
 "use client"
-import { useContext} from 'react';
+import { useContext } from 'react';
 import { OrderContext } from '../../../../context/order/OrderContext';
 import { TableContext } from '@/context';
 import { v4 as uuidv4 } from 'uuid';
@@ -9,22 +9,25 @@ import { itemPeopleInTable } from '@/services';
 
 export const OrdersPlatesUnConfirmed = () => {
 
-	const {cartTemporary, modalPlate, setModalPlate, setCartDefinitive, setCartTemporary, cartDefinitive} = useContext(OrderContext);
+	const { cartTemporary, modalPlate, setModalPlate, setCartDefinitive, setCartTemporary, cartDefinitive} = useContext(OrderContext);
 
-	const {idPeopleInTable, table} = useContext(TableContext)
-	
+	const { idPeopleInTable, table } = useContext(TableContext)
+
 	const handleConfirmRequest = () => {
 
-		const idOrder = uuidv4().replaceAll('/', 'a') 
+		const idOrder = uuidv4().replaceAll('/', 'a')
 
-		cartTemporary.map((e) => (
-			itemPeopleInTable(uuidv4().replaceAll('/', 'a'),  idOrder, idPeopleInTable, table.table_number as any , e.quantity, e.ItemID)
-		))
-	
+		itemPeopleInTable({
+			numberTable: table.table_number,
+			orderNumber: idOrder,
+			idPeopleInTable: idPeopleInTable,
+			detail: cartTemporary
+		})
+
 		setCartDefinitive([
 			...cartTemporary, ...cartDefinitive
 		])
-		
+
 		setCartTemporary([])
 
 		setModalPlate({
@@ -36,7 +39,7 @@ export const OrdersPlatesUnConfirmed = () => {
 	}
 
 	return (
-		<OrdersPlatesUnConfirmedView handleConfirmRequest={handleConfirmRequest} cartTemporary={cartTemporary}/>
+		<OrdersPlatesUnConfirmedView handleConfirmRequest={handleConfirmRequest} cartTemporary={cartTemporary} />
 	);
 };
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { TableRestaurant } from '../interfaces';
+import { ItemPeopleInTable, TableRestaurant } from '../interfaces';
 
 
 
@@ -118,16 +118,9 @@ async function peopleInTable(idPeopleInTable: string, tableId: string | null) {
 }
 
 
-async function itemPeopleInTable(idItemPeopleInTable: string, orderNumber: string, idPeopleInTable: string, numberTable: string, quantity: number, idItem: string) {
+async function itemPeopleInTable(body:ItemPeopleInTable) {
 	try {
-		const response = await axios.post(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?itemPeopleInTable`,  {
-			idItemPeopleInTable,
-			orderNumber,
-			idPeopleInTable,
-			numberTable,
-			quantity,
-			idItem
-		});
+		const response = await axios.post(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?itemPeopleInTable`,body);
 		console.log(response)
 		return response;
 	} catch (err) {

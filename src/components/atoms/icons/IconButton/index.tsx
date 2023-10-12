@@ -1,6 +1,7 @@
 "use client"
 import { useContext } from 'react';
-import { OrderContext } from '@/context';
+import { OrderContext, TableContext } from '@/context';
+import { v4 as uuidv4 } from 'uuid';
 import { FaRegCheckCircle, FaTrashAlt } from 'react-icons/fa';
 import { IconButtonView } from './IconButtonView'
 
@@ -16,14 +17,19 @@ export const IconButton = ({ buttonName }: Props) => {
 
   const { modalPlate, setModalPlate, cartTemporary, setCartTemporary } = useContext(OrderContext);
 
+  const { idPeopleInTable, table } = useContext(TableContext)
+
   const handleClickRequest = () => {
+
+    const ItemPeopleInTableID = uuidv4().replaceAll('/', 'a') 
 
     setCartTemporary(
       [{
-        ItemID: modalPlate.ItemID,
+        ItemPeopleInTableID,
         title: modalPlate.title,
         quantity: modalPlate.quantity,
         price: modalPlate.price,
+        id_item: modalPlate.ItemID
       },
       ...cartTemporary])
 

@@ -25,13 +25,20 @@ export interface CategoryRestaurant {
 	photo: string;
 }
 
+
+export interface ItemPeopleInTable {
+	numberTable: string | undefined,
+	orderNumber: string,
+	idPeopleInTable: string,
+	detail: PlateSelected[]
+}
+
 export interface PlateSelected {
-	ItemID: string;
+	ItemPeopleInTableID: string,
 	title: string;
 	quantity: number;
 	price: string;
-	state?: string
-	id_table?: string
+	id_item: string;
 }
 
 export interface ModalPlate {
