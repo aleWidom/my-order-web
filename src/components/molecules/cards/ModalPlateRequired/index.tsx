@@ -13,6 +13,8 @@ export const ModalPlateRequired = ({ selection }: Props) => {
 
 	const { modalPlate, setModalPlate } = useContext(OrderContext);
 
+	console.log(selection)
+
 	useEffect(() => {
 		setTimeout(() => {
 			setModalPlate({
@@ -37,7 +39,7 @@ export const ModalPlateRequired = ({ selection }: Props) => {
 				</ModalPlateRequiredView>
 
 				:
-				<ModalPlateRequiredView header={selection === "confirm" ? "Su pedido se ha procesado correctamente" : selection === "edit" ? "Solicitud Editada" : "Solicitud Agregada"} title={modalPlate.title} quantity={modalPlate.quantity} selection={selection === "request" ? "request" : selection === "confirm" ? "confirm":""}>
+				<ModalPlateRequiredView header={selection === "orderConfirmed" ? "Su pedido se ha procesado correctamente" : selection === "edit" ? "Solicitud Editada" : "Solicitud Agregada"} title={modalPlate.title} quantity={modalPlate.quantity} selection={selection === "request" ? "request" : selection === "orderConfirmed" ? "orderConfirmed":""}>
 					<FaRegCheckCircle />
 				</ModalPlateRequiredView>
 			}

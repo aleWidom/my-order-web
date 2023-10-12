@@ -19,7 +19,7 @@ export const ModalPlateRequiredView = ({ header, title, quantity, children, sele
 					{children}
 				</div>
 				<h2 className={styles.title}>{title}</h2>
-				{selection !== "confirm" && <p className={styles.quantity}>Cantidad: {`${quantity} u.`}</p>}
+				{selection !== "orderConfirmed" && <p className={styles.quantity}>Cantidad: {`${quantity} u.`}</p>}
 				{selection === "request" &&
 					<div className={styles.containerEditBell}>
 						<FaBell className={styles.bell}/>

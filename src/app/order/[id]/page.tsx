@@ -45,8 +45,11 @@ export default function OrderPage({ params }: any) {
        {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'delete' && (
         <ModalPlateRequired selection="delete" />
       )}
-      {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'confirm' && (
-        <ModalPlateRequired selection="confirm" />
+      {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'orderConfirmed' && (
+        <ModalPlateRequired selection="orderConfirmed" />
+      )}
+       {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'orderError' && (
+        <ModalPlateRequired selection="orderError" />
       )}
     </>
   )
