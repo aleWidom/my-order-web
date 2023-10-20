@@ -23,8 +23,8 @@ export default function HomePage() {
           <MainHome />
           <Footer />
           {modalPlate.stateModal && modalPlate.modalType === 'main' && <ModalPlate buttonName='Agregar' />}
-          {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'temporary' && (
-            <ModalPlateRequired selection="request" />
+          {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.stateOrder === 'temporary' && (
+            <ModalPlateRequired  />
           )}
           {modalInfo.state && <ModalInfo />}
         </>}

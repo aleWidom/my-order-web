@@ -2,30 +2,31 @@ import { FaBell } from 'react-icons/fa';
 import styles from './ModalPlateRequired.module.scss'
 
 interface Props {
-	header: string,
+	header: string | undefined,
 	title: string,
 	quantity: number,
-	selection: string,
+	stateOrder: string | undefined,
 	children: React.ReactNode
 
 }
 
-export const ModalPlateRequiredView = ({ header, title, quantity, children, selection }: Props) => {
+export const ModalPlateRequiredView = ({ header, title, quantity, children, stateOrder }: Props) => {
+	console.log(title)
 	return (
 		<div className={styles.containerModalPlate}>
 			<div className={styles.modalPlate}>
-				<div className={selection === "delete" ? styles.containerSubstract : styles.containerAdd}>
-					<small>{header}</small>
+				<div className={stateOrder === "delete" || stateOrder === "orderError"  ? styles.containerSubstract : styles.containerAdd}>
 					{children}
+					<small>{header}</small>
 				</div>
 				<h2 className={styles.title}>{title}</h2>
-				{selection !== "orderConfirmed" && <p className={styles.quantity}>Cantidad: {`${quantity} u.`}</p>}
-				{selection === "request" &&
+				 {stateOrder === "temporary" || stateOrder === "edit" || stateOrder === "delete" ? <p className={styles.quantity}>Cantidad: {`${quantity} u.`}</p>: ""} 
+				 {stateOrder === "temporary" &&
 					<div className={styles.containerEditBell}>
 						<FaBell className={styles.bell}/>
 						<small className={styles.edit}>Edite su orden en la sección mis solicitudes.</small>
 					</div>
-				}
+				}  
 			</div>
 		</div>
 	);

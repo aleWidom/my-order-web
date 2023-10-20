@@ -21,7 +21,7 @@ export const OrderPlateUnConfirmed= ({ cartProduct, index }: Props) => {
 			price: cartProduct.price,
 			quantity: cartProduct.quantity,
 			modalType: 'main',
-			modalEditOrDeleteOrConfirm: 'edit',
+			stateOrder: 'edit',
 			index: index
 		});
 	};
@@ -34,7 +34,7 @@ export const OrderPlateUnConfirmed= ({ cartProduct, index }: Props) => {
 			title: cartProduct.title,
 			quantity: cartProduct.quantity,
 			modalType: 'main',
-			modalEditOrDeleteOrConfirm: 'delete',
+			stateOrder: 'delete',
 			index: index
 		});
 	};

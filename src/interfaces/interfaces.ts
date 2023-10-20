@@ -50,7 +50,8 @@ export interface ModalPlate {
 	quantity: number;
 	stateModal?: boolean,
 	modalType?: 'main' | 'required',
-	modalEditOrDeleteOrConfirm?: 'temporary' | 'edit'| 'delete' | 'orderConfirmed' | 'orderError',
+	stateOrder?: 'temporary' | 'edit'| 'delete' | 'orderConfirmed' | 'orderError',
+	headerModalRequest?: string,
 	index?: number
 }
 

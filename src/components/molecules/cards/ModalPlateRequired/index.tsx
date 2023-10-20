@@ -2,18 +2,16 @@
 import { useContext, useEffect } from 'react';
 import { OrderContext } from '../../../../context';
 import { ModalPlateRequiredView } from './ModalPlateRequiredView';
-import { FaRegCheckCircle, FaTrashAlt } from 'react-icons/fa';
+import { FaRegCheckCircle, FaTimesCircle } from 'react-icons/fa';
 
 
-interface Props {
-	selection: string
-}
 
-export const ModalPlateRequired = ({ selection }: Props) => {
+
+export const ModalPlateRequired = () => {
 
 	const { modalPlate, setModalPlate } = useContext(OrderContext);
 
-	console.log(selection)
+	console.log(modalPlate)
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -25,6 +23,7 @@ export const ModalPlateRequired = ({ selection }: Props) => {
 				description: "",
 				price: "",
 				modalType: 'main',
+				headerModalRequest: ""
 			});
 
 		}, 4000);
@@ -33,16 +32,9 @@ export const ModalPlateRequired = ({ selection }: Props) => {
 
 	return (
 		<>
-			{selection === "delete" ?
-				<ModalPlateRequiredView header={"Solicitud Eliminada"} title={modalPlate.title} quantity={modalPlate.quantity} selection='delete'>
-					<FaTrashAlt />
-				</ModalPlateRequiredView>
-
-				:
-				<ModalPlateRequiredView header={selection === "orderConfirmed" ? "Su pedido se ha procesado correctamente" : selection === "edit" ? "Solicitud Editada" : "Solicitud Agregada"} title={modalPlate.title} quantity={modalPlate.quantity} selection={selection === "request" ? "request" : selection === "orderConfirmed" ? "orderConfirmed":""}>
-					<FaRegCheckCircle />
-				</ModalPlateRequiredView>
-			}
+			<ModalPlateRequiredView header={modalPlate.headerModalRequest} title={modalPlate.title} quantity={modalPlate.quantity} stateOrder={modalPlate.stateOrder}>
+				{modalPlate.stateOrder === "orderError" ? <FaTimesCircle/> : <FaRegCheckCircle/>}
+			</ModalPlateRequiredView>
 		</>
 	)
 };

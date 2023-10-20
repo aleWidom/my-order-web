@@ -36,8 +36,12 @@ export const IconButton = ({ buttonName }: Props) => {
     setModalPlate({
       ...modalPlate,
       modalType: 'required',
-      modalEditOrDeleteOrConfirm: 'temporary',
+      stateOrder: 'temporary',
+      headerModalRequest: "Solicitud Agregada"
     });
+
+    
+    console.log(modalPlate)
 
   };
 
@@ -55,7 +59,8 @@ export const IconButton = ({ buttonName }: Props) => {
     setModalPlate({
       ...modalPlate,
       modalType: 'required',
-      modalEditOrDeleteOrConfirm: 'edit',
+      stateOrder: 'edit',
+      headerModalRequest: "Solicitud Editada"
     });
 
   };
@@ -71,7 +76,8 @@ export const IconButton = ({ buttonName }: Props) => {
     setModalPlate({
       ...modalPlate,
       modalType: 'required',
-      modalEditOrDeleteOrConfirm: 'delete',
+      stateOrder: 'delete',
+      headerModalRequest: "Solicitud Eliminada"
     });
 
   };

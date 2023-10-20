@@ -33,20 +33,27 @@ export const OrdersPlatesUnConfirmed = () => {
 					...cartTemporary, ...cartDefinitive
 				])
 		
-				setCartTemporary([])
+				setCartTemporary([])	
+
+				console.log(modalPlate)
 		
 				setModalPlate({
 					...modalPlate,
 					stateModal: true,
-					modalEditOrDeleteOrConfirm: 'orderConfirmed',
+					stateOrder: 'orderConfirmed',
 					modalType: 'required',
+					headerModalRequest: "Su pedido se ha solicitado correctamente"
 				});
 			} else {
+				
+				setLoadingButton(false)
+
 				setModalPlate({
 					...modalPlate,
 					stateModal: true,
-					modalEditOrDeleteOrConfirm: 'orderError',
+					stateOrder: 'orderError',
 					modalType: 'required',
+					headerModalRequest: "Por favor vuelva a solicitar el pedido"
 				});
 			}
 		}).catch((err)=> {

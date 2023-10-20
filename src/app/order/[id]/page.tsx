@@ -33,23 +33,14 @@ export default function OrderPage({ params }: any) {
           </div>
         }
       </div>
-      {modalPlate.stateModal && modalPlate.modalType === 'main' && modalPlate.modalEditOrDeleteOrConfirm === 'edit' && (
+      {modalPlate.stateModal && modalPlate.modalType === 'main' && modalPlate.stateOrder=== 'edit' && (
         <ModalPlate buttonName='Editar' />
       )}
-      {modalPlate.stateModal && modalPlate.modalType === 'main' && modalPlate.modalEditOrDeleteOrConfirm === 'delete' && (
+      {modalPlate.stateModal && modalPlate.modalType === 'main' && modalPlate.stateOrder=== 'delete' && (
         <ModalPlate buttonName='Eliminar' />
       )}
-      {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'edit' && (
-        <ModalPlateRequired selection="edit" />
-      )}
-       {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'delete' && (
-        <ModalPlateRequired selection="delete" />
-      )}
-      {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'orderConfirmed' && (
-        <ModalPlateRequired selection="orderConfirmed" />
-      )}
-       {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.modalEditOrDeleteOrConfirm === 'orderError' && (
-        <ModalPlateRequired selection="orderError" />
+      {modalPlate.stateModal && modalPlate.modalType === 'required' && (
+        <ModalPlateRequired />
       )}
     </>
   )
