@@ -49,7 +49,7 @@ export const Quantity = () => {
 
 	return (
 		<>
-			{page === '/' || modalPlate.modalEditOrDeleteOrConfirm === 'edit' ?
+			{page === '/' || modalPlate.stateOrder === 'edit' ?
 				<QuantityView
 					modalPlate={modalPlate}
 					substract={{ operation: substractQuantity, styleSign: modalPlate.quantity > 1 ? signSubstract : signSubstractInactive}}
