@@ -42,7 +42,7 @@ export const OrdersPlatesUnConfirmed = () => {
 					stateModal: true,
 					stateOrder: 'orderConfirmed',
 					modalType: 'required',
-					headerModalRequest: "Su pedido se ha solicitado correctamente"
+					headerModalRequest: "Su pedido se ha solicitado correctamente."
 				});
 			} else {
 				
@@ -53,7 +53,7 @@ export const OrdersPlatesUnConfirmed = () => {
 					stateModal: true,
 					stateOrder: 'orderError',
 					modalType: 'required',
-					headerModalRequest: "Por favor vuelva a solicitar el pedido"
+					headerModalRequest: "Por favor vuelva a solicitar el pedido."
 				});
 			}
 		}).catch((err)=> {

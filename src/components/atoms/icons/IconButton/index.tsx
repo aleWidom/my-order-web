@@ -37,7 +37,7 @@ export const IconButton = ({ buttonName }: Props) => {
       ...modalPlate,
       modalType: 'required',
       stateOrder: 'temporary',
-      headerModalRequest: "Solicitud Agregada"
+      headerModalRequest: "Solicitud Agregada."
     });
 
     
@@ -60,7 +60,7 @@ export const IconButton = ({ buttonName }: Props) => {
       ...modalPlate,
       modalType: 'required',
       stateOrder: 'edit',
-      headerModalRequest: "Solicitud Editada"
+      headerModalRequest: "Solicitud Editada."
     });
 
   };
@@ -77,7 +77,7 @@ export const IconButton = ({ buttonName }: Props) => {
       ...modalPlate,
       modalType: 'required',
       stateOrder: 'delete',
-      headerModalRequest: "Solicitud Eliminada"
+      headerModalRequest: "Solicitud Eliminada."
     });
 
   };
