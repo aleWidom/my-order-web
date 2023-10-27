@@ -32,7 +32,7 @@ exports.handler = async (event) => {
     }
     else if (event.queryStringParameters?.fetchItemPeopleInTable !== undefined) {
         queryMySql = `select id_item as ItemID, title, orderNumberID, numberTable , quantity, price,state, date from Item_peopleInTable , Item
-        Where Item_peopleInTable.id_item = Item.ItemID AND Item_peopleInTable.id_peopleInTable = ${JSON.stringify(event.queryStringParameters.fetchItemPeopleInTable)} ORDER BY date DESC;`
+        Where Item_peopleInTable.id_item = Item.ItemID ORDER BY date DESC;`
     }
     else if (event.queryStringParameters?.itemsAcordingCategory !== undefined) {
         queryMySql = `select ItemID, title, description, price from Category , Item
