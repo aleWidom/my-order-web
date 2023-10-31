@@ -41,24 +41,11 @@ async function fetchItemPeopleInTable(id_peopleInTable: string) {
 }
 
 
-
-async function makeDelivered(idItemPeopleInTable: string | undefined) {
-	try {
-		const  makeDelivered = await axios.post(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items/${idItemPeopleInTable}?makeDelivered`);
-		return  makeDelivered;
-	} catch (err) {
-		console.log(err);
-	}
-}
-
-
-
 export {
 	fetchItemsRestaurant,
 	getAllCategoriesIdRestaurant1,
 	getItemsResults,
 	fetchItemPeopleInTable,
-	makeDelivered,
 };
 
 	
