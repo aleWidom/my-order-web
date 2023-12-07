@@ -22,6 +22,7 @@ export const useFetchTable = () => {
 					})
 
 					if (response?.table_active === '0') {
+						console.log(response)
 						updateTableNumberActive(params.get('table'));
 
 						//Genero el idPeopleInTable
