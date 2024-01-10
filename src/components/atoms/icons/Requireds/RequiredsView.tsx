@@ -12,6 +12,7 @@ interface Props {
 export const RequiredsView = ({ tableID }: Props) => {
 	return (
 		<div className={styles.required}>
+			2
 			<Link href={`/order/${tableID}`} className={styles.link}>
 				<FaBell />
 			</Link>
