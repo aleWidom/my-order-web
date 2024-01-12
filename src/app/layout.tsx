@@ -1,4 +1,4 @@
-import {OrderProvider, SearchProvider, TableProvider } from '@/context'
+import { Footer } from '@/sections'
 import '@/styles/globals.scss'
 
 
@@ -14,15 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-        <TableProvider>
-          <OrderProvider>
-            <SearchProvider>
-              <body>
-                {children}
-              </body>
-            </SearchProvider>
-          </OrderProvider>
-        </TableProvider>
+      <body>
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

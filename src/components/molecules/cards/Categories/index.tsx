@@ -1,16 +1,28 @@
-"use client"
-import { useContext } from 'react';
-import { OrderContext} from '@/context';
-import { CategoriesView } from './CategoriesView';
+/* import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'; */
+import { Category} from '@/components/atoms';
+import { getAllCategoriesIdRestaurant1 } from '@/services';
+import { CategoryRestaurant } from '@/interfaces';
+import styles from './Categories.module.scss';
 
-export const Categories = () => {
 
-	const { categoriesMenuRestaurant} = useContext(OrderContext) 
+
+
+export const Categories = async () => {
+
+	const  categoriesMenuRestaurant = await getAllCategoriesIdRestaurant1()
 
 	return (
-		<>
-		{categoriesMenuRestaurant.length ? <CategoriesView categoriesMenuRestaurant={categoriesMenuRestaurant}/> : ""}
-		</>
+			<div className={styles.containerCategories}>
+				{/* <Swiper spaceBetween={50} slidesPerView={3}> */}
+					{categoriesMenuRestaurant?.map((category:CategoryRestaurant) => (
+					/* 		<SwiperSlide key={category.CategoryID}> */
+                                <Category key={category.CategoryID} category={category}/>
+						/* 	</SwiperSlide> */
+						))} 
+			{/* 	</Swiper> */}
+			</div>
 	);
 };
+
 

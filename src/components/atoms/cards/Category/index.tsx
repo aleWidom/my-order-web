@@ -1,19 +1,9 @@
+'use client'
 import { useContext } from "react";
 import { OrderContext, SearchContext } from "@/context";
-import { CategoryView } from "./CategoryView";
 import { CategoryRestaurant } from "@/interfaces";
+import styles from "./Category.module.scss";
 
-
-const selected = {
-  backgroundColor: "#fff",
-  border: "solid 1px #fff" 
-}
-
-const notSelected = {
-  backgroundColor: "#202020",
-  border: "solid 1px #fff",
-  color: "#fff" 
-}
 
 interface Props {
   category: CategoryRestaurant,
@@ -38,8 +28,11 @@ export const Category = ({ category }: Props) => {
   };
 
   return (
-    <CategoryView category={category} handleClick={handleClickCategory} 
-    styleButton={category.name === categorySelected.name ? selected : notSelected}/>
+    <div onClick={handleClickCategory(category)} className={`${styles.buttonGral} ${category.name === categorySelected.name ? styles.selected : styles.notSelected}`} >
+      <p>
+        {category.name}
+      </p>
+    </div>
   );
 
 };

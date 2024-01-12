@@ -1,7 +1,7 @@
 "use client"
-import {  useContext } from "react";
+import { useContext } from "react";
 import { OrderContext } from "../../../../context";
-import { MenuPlateView } from "./MenuPlateView";
+import styles from "./MenuPlate.module.scss";
 
 
 interface Props {
@@ -11,9 +11,9 @@ interface Props {
   header: string;
 }
 
-export const MenuPlate = ({price, description, header, id}: Props) => {
-  
-  const {setModalPlate } = useContext(OrderContext);
+export const MenuPlate = ({ price, description, header, id }: Props) => {
+
+  const { setModalPlate } = useContext(OrderContext);
 
   const handleClickRequest = () => {
     setModalPlate({
@@ -28,7 +28,22 @@ export const MenuPlate = ({price, description, header, id}: Props) => {
   };
 
   return (
-   <MenuPlateView handleClickRequest={handleClickRequest} price={price} header={header} 
-    description={description.length > 40 ? description.slice(0, 40) + "..." : description}/>
+    <div className={styles.containerCardMenu} onClick={handleClickRequest}>
+      <div className={styles.containerDescription}>
+        <h4 className={styles.header}>{header}</h4>
+        <p className={styles.description}>
+          {description.length > 40 ? description.slice(0, 40) + "..." : description}
+        </p>
+        <p className={styles.price}>${price}</p>
+      </div>
+    </div>
   );
+
 };
+
+
+
+
+
+
+

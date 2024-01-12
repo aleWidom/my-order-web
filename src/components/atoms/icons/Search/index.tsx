@@ -1,11 +1,15 @@
 "use client"
 import { useContext } from "react";
+import { FaSearch } from "react-icons/fa";
 import { SearchContext } from "../../../../context";
 import { getItemsResults } from "../../../../services";
-import { SearchView } from "./SearchView";
+import styles from "./Search.module.scss";
+
 
 export const Search = () => {
+  
   const { valueInput, setValueInput, setResults, setCategorySelected, setModalInfo } =
+
     useContext(SearchContext);
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -20,7 +24,7 @@ export const Search = () => {
       getItemsResults(valueInput)
         //TODO DATA NO DEBE SER ANY
         .then(({ data }: any) => {
-          if(data) {
+          if (data) {
             if (data.length === 0) {
               setModalInfo({
                 description: "No hay elementos que coincidan con la búsqueda.",
@@ -45,6 +49,12 @@ export const Search = () => {
   };
 
   return (
-    <SearchView handleSubmit={handleSubmit}/>
+    <button onClick={handleSubmit} className={styles.button}>
+      <FaSearch />
+    </button>
   );
 };
+
+
+
+

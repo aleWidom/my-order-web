@@ -1,8 +1,7 @@
 "use client"
 import { useContext } from "react";
 import { OrderContext, SearchContext } from "../../../../context";
-
-import { InputSearchView } from "./InputSearchView";
+import styles from "./InputSearch.module.scss";
 
 export const InputSearch = () => {
 
@@ -19,6 +18,18 @@ export const InputSearch = () => {
   };
 
   return (
-    <InputSearchView handleChange={handleChange} handleFocus={handleFocus} valueInput={valueInput}/>
+    <input
+      onChange={handleChange}
+      onFocus={handleFocus}
+      value={valueInput}
+      placeholder={"Buscar..."}
+      className={styles.inputSearch}
+    />
   );
 };
+
+
+
+
+
+

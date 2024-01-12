@@ -9,8 +9,8 @@ interface ContextProps {
 	setTable: (description: TableRestaurant) => void,
 	idPeopleInTable: string,
 	setIdPeopleInTable: (description: string) => void;
-	sittingOnTheTableCall: boolean | undefined;
-	setSittingOnTheTableCall: (description: boolean | undefined ) => void;
+	/* sittingOnTheTableCall: boolean | undefined;
+	setSittingOnTheTableCall: (description: boolean | undefined ) => void; */
 	sittingOnTheTableActivate: boolean | undefined;
 	setSittingOnTheTableActivate: (description: boolean | undefined ) => void;
 }

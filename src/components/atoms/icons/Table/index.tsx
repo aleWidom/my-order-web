@@ -1,14 +1,20 @@
-import { useContext } from "react"
-import { TableContext } from "@/context"
-import { TableView } from "./TableView"
 
+import styles from './Table.module.scss'
 
+interface TableProps {
+    tableNumber: string | undefined
+}
 
-export const Table = () => {
-    
-	const {table}= useContext(TableContext)
+export const Table = ({tableNumber}:TableProps) => { 
   
     return (
-        <TableView numberTable={table.table_number}/>
+        <div className={styles.containerTable}>
+            <p className={styles.table}>Mesa</p>
+            <p className={styles.tableNumber}>{`${tableNumber}`}</p>
+        </div>
+
     )
 }
+
+
+	

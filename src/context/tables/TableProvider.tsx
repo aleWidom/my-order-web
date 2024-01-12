@@ -19,7 +19,7 @@ export const TableProvider = ({ children }: Props) => {
 
 	const [idPeopleInTable, setIdPeopleInTable] = useState<string>("");
 
-	const [sittingOnTheTableCall, setSittingOnTheTableCall] = useState<boolean | undefined>(false);
+	/* const [sittingOnTheTableCall, setSittingOnTheTableCall] = useState<boolean | undefined>(false); */
 	
 	const [sittingOnTheTableActivate, setSittingOnTheTableActivate] = useState<boolean | undefined>(false);
 
@@ -30,8 +30,8 @@ export const TableProvider = ({ children }: Props) => {
 				setTable,
 				idPeopleInTable, 
 				setIdPeopleInTable,
-				sittingOnTheTableCall, 
-				setSittingOnTheTableCall,
+/* 				sittingOnTheTableCall, 
+				setSittingOnTheTableCall, */
 				sittingOnTheTableActivate,
 				setSittingOnTheTableActivate,
 			}}

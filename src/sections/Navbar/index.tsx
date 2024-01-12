@@ -1,16 +1,26 @@
-"use client"
-import { usePathname } from 'next/navigation'
-import { Requireds } from '@/components/atoms';
-import { NavbarView } from './NavbarView';
 
-export const Navbar = () => {
+import { MainBrand, Table } from '@/components/atoms';
+import styles from './Navbar.module.scss';
+import { TableRestaurant } from '@/interfaces';
 
-	const pathname  = usePathname()
 
+interface NavbarProps {
+	table: TableRestaurant | undefined
+}
+
+export const Navbar = async ({ table }: NavbarProps) => {
 	return (
-		<NavbarView>
-		  {pathname === '/' && <Requireds />} 
-		</NavbarView>
-	)
-	
-};
+		<nav className={styles.containerNavbarHome}>
+			<div className={styles.containerMenuBrand}>
+				<MainBrand tableID={table?.TableID} />
+			</div>
+			<div className={styles.containerTableWaiter}>
+				<Table tableNumber={table?.table_number} />
+			</div>
+		</nav>
+	);
+}
+
+
+
+

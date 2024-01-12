@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { OrderContext } from './OrderContext';
-import { PlateRestaurant, PlateSelected, CategoryRestaurant, ModalPlate } from '../../interfaces';
+/* import { PlateRestaurant, PlateSelected, CategoryRestaurant, ModalPlate } from '../../interfaces'; */
 
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 export const OrderProvider = ({ children }: Props) => {
 
-	const [itemsRestaurant, setItemsRestaurant] = useState<PlateRestaurant[]>([]);
+	/* const [itemsRestaurant, setItemsRestaurant] = useState<PlateRestaurant[]>([]);
 
 	const [categoriesMenuRestaurant, setCategoriesMenuRestaurant] = useState<CategoryRestaurant[]>([]);
 
@@ -18,11 +18,11 @@ export const OrderProvider = ({ children }: Props) => {
 
 	const [cardsDayPlates, setCardsDayPlates] = useState<PlateRestaurant[]>([]);
 
-	const [cardsSpecialsCheff, setCardsSpecialsCheff] = useState<PlateRestaurant[]>([]);
+	const [cardsSpecialsCheff, setCardsSpecialsCheff] = useState<PlateRestaurant[]>([]); */
 
 	const [menuWaiterActive, setMenuWaiterActive] = useState<boolean>(false);
 
-	const [modalPlate, setModalPlate] = useState<ModalPlate>({
+/* 	const [modalPlate, setModalPlate] = useState<ModalPlate>({
 		ItemID: '',
 		title: '',
 		description: '',
@@ -40,22 +40,22 @@ export const OrderProvider = ({ children }: Props) => {
 
 	const [loadingOrder, setLoadingOrder] = useState<boolean>(true);
 
-	const [clickedButtonEditOrDelete, setClickedButtonEditOrDelete] = useState<string>('false');
+	const [clickedButtonEditOrDelete, setClickedButtonEditOrDelete] = useState<string>('false'); */
 
 	return (
 		<OrderContext.Provider
 			value={{
-				itemsRestaurant, 
+				/* itemsRestaurant, 
 				setItemsRestaurant,
 				categoriesMenuRestaurant,
 				setCategoriesMenuRestaurant,
 				cardsRankingPlates,
 				setCardsRankingPlates,
 				cardsDayPlates,
-				setCardsDayPlates,
+				setCardsDayPlates, */
 				menuWaiterActive,
 				setMenuWaiterActive,
-				modalPlate,
+				/* modalPlate,
 				setModalPlate,
 				cartTemporary,
 				setCartTemporary,
@@ -68,7 +68,7 @@ export const OrderProvider = ({ children }: Props) => {
 				loadingOrder, 
 				setLoadingOrder,
 				clickedButtonEditOrDelete, 
-				setClickedButtonEditOrDelete
+				setClickedButtonEditOrDelete */
 			}}
 		>
 			{children}

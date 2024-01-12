@@ -1,13 +1,13 @@
 import { MainBrand } from "../../../atoms";
 import BeatLoader from "react-spinners/BeatLoader";
 import styles from './MainLoading.module.scss'
-import {useFetchCallTable,  useFetchTable, useFetchLoading, useFetchCardsDayPlates, useFetchCardsRankingPlates, useFetchCardsSpecialsCheff, useFetchCategories, useFetchItems} from "../../../../hooks";
+ import {useFetchCallTable,  useFetchTable, useFetchLoading, useFetchCardsDayPlates, useFetchCardsRankingPlates, useFetchCardsSpecialsCheff, useFetchCategories, useFetchItems} from "../../../../hooks"; 
 
 
 export const MainLoading = () => {
 
 
-  useFetchItems()
+/*   useFetchItems()
 
   useFetchCategories();
 
@@ -21,9 +21,9 @@ export const MainLoading = () => {
 
 	useFetchCardsSpecialsCheff();
   
-  useFetchLoading() 
+  useFetchLoading() */ 
 
-
+  useFetchTable()
 
   return (
     <div className={styles.containerLoading}>

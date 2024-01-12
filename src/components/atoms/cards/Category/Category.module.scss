@@ -15,3 +15,13 @@
 }
 
 
+ .selected  {
+  background-color: $color-secondary;
+  border: solid 1px $color-secondary
+}
+
+.notSelected  {
+  background-color: #202020;
+  border: solid 1px  $color-secondary;
+  color: $color-secondary
+}

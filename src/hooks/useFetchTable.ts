@@ -6,13 +6,16 @@ import { fetchTable, peopleInTable, peopleInTableFetch, updateTableNumberActive 
 import { TableContext } from '../context';
 
 export const useFetchTable = () => {
+
 	const params = useSearchParams();
 
 	const { setTable, setIdPeopleInTable } = useContext(TableContext);
 
 	useEffect(() => {
 		fetchTable(params.get('table'))
-			.then((response) => {
+			.then((response:any) => {
+				console.log(response, 'useFetchTable')
+				console.log(response)
 				if (response !== undefined) {
 					setTable({
 						TableID: response?.TableID,
@@ -43,9 +46,6 @@ export const useFetchTable = () => {
 							console.log(err)
 						})
 					}
-
-					
-
 				}
 			})
 			.catch((err) => {

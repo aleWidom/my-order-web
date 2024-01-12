@@ -1,33 +1,38 @@
 
-"use client"
-import { useContext } from "react";
-import { OrderContext, SearchContext} from "@/context";
-import { MainHome, Navbar, FooterView as Footer } from "@/sections";
-import { ModalPlate, MainLoading, ModalPlateRequired, ModalInfo } from "@/components/molecules";
-import { useFetchCarts } from "@/hooks";
+import { OrderProvider, TableProvider } from "@/context"
+import { Navbar, MainHome, Footer } from "@/sections"
+import { fetchTable } from "@/services"
+/* import { ModalPlate, MainLoading, ModalPlateRequired, ModalInfo } from "@/components/molecules"; */
 
-export default function HomePage() {
+interface HomePageProps {
+  searchParams: {
+    table: string
+  }
+}
 
-  const { loading, modalPlate } = useContext(OrderContext);
+export default async function HomePage({ searchParams }: HomePageProps) {
 
-  const { modalInfo } = useContext(SearchContext)
 
-  useFetchCarts()
+  const table = await fetchTable(searchParams?.table)
+  /*   const { modalPlate } = useContext(OrderContext);
   
+    const { modalInfo } = useContext(SearchContext) */
+
+  /*   useFetchCarts() */
+
+
   return (
     <>
-      {loading ?
-        <MainLoading /> :
-        <>
-          <Navbar />
-          <MainHome />
-          <Footer />
-          {modalPlate.stateModal && modalPlate.modalType === 'main' && <ModalPlate buttonName='Agregar' />}
-          {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.stateOrder === 'temporary' && (
-            <ModalPlateRequired  />
-          )}
-          {modalInfo.state && <ModalInfo />}
-        </>}
+      <Navbar table={table} />
+      <MainHome table={table} />
+
+
+      {/*    {modalPlate.stateModal && modalPlate.modalType === 'main' && <ModalPlate buttonName='Agregar' />}
+      {modalPlate.stateModal && modalPlate.modalType === 'required' && modalPlate.stateOrder === 'temporary' && (
+        <ModalPlateRequired />
+      )}
+      {modalInfo.state && <ModalInfo />} */}
+
     </>
   )
 }
