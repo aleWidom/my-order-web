@@ -1,4 +1,4 @@
-"use client"
+
 import { useContext } from "react";
 import { FaSearch } from "react-icons/fa";
 import { SearchContext } from "../../../../context";
@@ -6,9 +6,10 @@ import { getItemsResults } from "../../../../services";
 import styles from "./Search.module.scss";
 
 
+
 export const Search = () => {
   
-  const { valueInput, setValueInput, setResults, setCategorySelected, setModalInfo } =
+  /* const { valueInput, setValueInput, setResults, setCategorySelected, setModalInfo } =
 
     useContext(SearchContext);
 
@@ -46,10 +47,10 @@ export const Search = () => {
         })
         .catch((err) => err);
     }
-  };
+  }; */
 
   return (
-    <button onClick={handleSubmit} className={styles.button}>
+    <button type="submit" /* onClick={handleSubmit} */ className={styles.button}>
       <FaSearch />
     </button>
   );

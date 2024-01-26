@@ -1,27 +1,24 @@
-/* import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'; */
-import { Category} from '@/components/atoms';
-import { getAllCategoriesIdRestaurant1 } from '@/services';
-import { CategoryRestaurant } from '@/interfaces';
+import { CategoriesView } from './CategoriesView';
+import { fetchItemsRestaurant, getAllCategoriesIdRestaurant1 } from '@/services';
+import { CategoryRestaurant, PlateRestaurant } from '@/interfaces';
 import styles from './Categories.module.scss';
 
 
+interface CategoriesProps {
+	tableID: string | undefined,
+	categoryID: string
+}
 
 
-export const Categories = async () => {
+export const Categories = async ({tableID, categoryID}: CategoriesProps) => {
 
-	const  categoriesMenuRestaurant = await getAllCategoriesIdRestaurant1()
+	const categoriesMenuRestaurant: CategoryRestaurant[] = await getAllCategoriesIdRestaurant1()
 
+	
 	return (
-			<div className={styles.containerCategories}>
-				{/* <Swiper spaceBetween={50} slidesPerView={3}> */}
-					{categoriesMenuRestaurant?.map((category:CategoryRestaurant) => (
-					/* 		<SwiperSlide key={category.CategoryID}> */
-                                <Category key={category.CategoryID} category={category}/>
-						/* 	</SwiperSlide> */
-						))} 
-			{/* 	</Swiper> */}
-			</div>
+		<div className={styles.containerCategories}>
+			<CategoriesView categoriesMenuRestaurant={categoriesMenuRestaurant} tableID={tableID} categoryID={categoryID}/>
+		</div>
 	);
 };
 

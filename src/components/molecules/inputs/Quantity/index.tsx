@@ -1,9 +1,9 @@
 "use client"
-import { useContext } from 'react';
-import { OrderContext } from '@/context';
-/* import { QuantityView } from './QuantityView' */
+import { useEffect, useState } from 'react'
+import { FaRegTrashAlt } from "react-icons/fa";
+import styles from './Quantity.module.scss'
 
-const signSubstract = {
+/* const signSubstract = {
 	fontSize: "1.3rem",
 }
 
@@ -21,70 +21,136 @@ const signAddInactive = {
 	fontSize: "1.3rem",
 	color: "rgb(87, 87, 87)"
 }
-
+ */
 
 export const Quantity = () => {
 
-	const { modalPlate, setModalPlate } = useContext(OrderContext);
+	const [quantity, setQuantity] = useState(0)
 
-	const page = "/"
+	const [buttonQuantity, setButtonQuantity] = useState(false)
+
+	const [request, setRequest] = useState("inactive")
+
+	useEffect(() => {
+		if (request === "inProcess") {
+			setTimeout(() => {
+				setRequest("success")
+			}, 10000);
+		}
+	}, [request])
+
+
+	const addItem = () => {
+		setButtonQuantity(true)
+		setQuantity(1)
+	}
+
+	const deleteItem = () => {
+		setButtonQuantity(false)
+	};
 
 	const addQuantity = () => {
-		if (modalPlate.quantity > 0 && modalPlate.quantity < 9) {
-			setModalPlate({
-				...modalPlate,
-				quantity: modalPlate.quantity + 1,
-			});
-		}
+		setQuantity(quantity + 1)
 	};
 
 	const substractQuantity = () => {
-		if (modalPlate.quantity > 1) {
-			setModalPlate({
-				...modalPlate,
-				quantity: modalPlate.quantity - 1,
-			});
-		}
+		setQuantity(quantity - 1)
+	};
+
+	const submit = () => {
+		setRequest("inProcess")
+
+		/* itemPeopleInTable({
+			numberTable: table.table_number,
+			orderNumber: idOrder,
+			idPeopleInTable: idPeopleInTable,
+			detail: cartTemporary
+		}) */
+		/* setAddPlate(false) */
+		/* setRequest(true) */
+	};
+
+	const deleteRequest = () => {
+		setRequest("inactive")
+		setButtonQuantity(false)
 	};
 
 	return (
+
 		<>
-			{/* {page === '/' || modalPlate.stateOrder === 'edit' ?
+			{
+				request === "inProcess" || request === "success" ?
+					<div >
+						{request === "inProcess" && <button onClick={deleteRequest} className={styles.deleteRequest}>Cancelar solicitud.</button>}
+						{request === "success" && <button className={styles.success}>Solicitado.</button>}
+					</div>
+					:
+					buttonQuantity === false ? <button onClick={addItem} className={styles.buttonQuantity}>+</button> :
+						<div className={styles.containerActive}>
+							<div className={styles.containerQuantity}>
+								{quantity > 1 ? <button onClick={substractQuantity} className={styles.buttonSign}>-</button> : <button onClick={deleteItem} className={styles.buttonSignTrash}><FaRegTrashAlt /></button>}
+								<small style={{ color: "white" }}>{quantity}u.</small>
+								<button onClick={addQuantity} className={styles.buttonSign}>+</button>
+							</div>
+							<button onClick={submit} className={styles.request}>Solicitar</button>
+						</div>
+			}
+		</>
+
+	)
+}
+
+{/* <div className={styles.containerQuantity}>
+		{addPlate === false ?:
+		<>
+		<div >
+			{quantity > 1 ? <button onClick={substractQuantity}>-</button> : <button onClick={deleteItem }><FaRegTrashAlt/></button>}
+			<small style={{color: "grey"}}>{quantity}u.</small>
+			<button onClick={addQuantity}>+</button>
+		</div>
+		{request ? 
+		<button onClick={deleteRequest}>Cancelar solicitud.</button>:
+			<>
+		 <button onClick={submit}>Solicitar</button>
+		 </>
+		  }
+		</>
+		}		
+		</div> */}
+
+{/* {page === '/' || modalPlate.stateOrder === 'edit' ?
 				<QuantityView
 					modalPlate={modalPlate}
 					substract={{ operation: substractQuantity, styleSign: modalPlate.quantity > 1 ? signSubstract : signSubstractInactive}}
 					add={{ operation: addQuantity, styleSign: modalPlate.quantity > 0 && modalPlate.quantity < 9 ? signAdd : signAddInactive}} /> :
 				`${modalPlate.quantity} u.`} */}
-		</>
-	)
-}
 
 
-import { ModalPlate } from '@/interfaces';
+/* import { ModalPlate } from '@/interfaces';
 import styles from './QuantityView.module.scss'
 
 interface Props {
-    modalPlate: ModalPlate;
-    substract: any;
-    add: any
-}
+	modalPlate: ModalPlate;
+	substract: any;
+	add: any
+} */
 
 /* export const QuantityView = ({ modalPlate, substract, add }: Props) => {
-    return (
-        <div className={styles.containerQuantitySigns}>
-            <button onClick={substract.operation} className={styles.buttonQuantity}>
-                <p className={styles.containerSign}>
-                    <small style={substract.styleSign}>-</small>
-                </p>
-            </button>
-            <p className={styles.quantitySelected}>{modalPlate.quantity}</p>
-            <button onClick={add.operation} className={styles.buttonQuantity}>
-                <p className={styles.containerSign}>
-                    <small style={add.styleSign}>+</small>
-                </p>
-            </button>
-        </div>
-    )
+	return (
+		<div className={styles.containerQuantitySigns}>
+			<button onClick={substract.operation} className={styles.buttonQuantity}>
+				<p className={styles.containerSign}>
+					<small style={substract.styleSign}>-</small>
+				</p>
+			</button>
+			<p className={styles.quantitySelected}>{modalPlate.quantity}</p>
+			<button onClick={add.operation} className={styles.buttonQuantity}>
+				<p className={styles.containerSign}>
+					<small style={add.styleSign}>+</small>
+				</p>
+			</button>
+		</div>
+	)
 }
 
 

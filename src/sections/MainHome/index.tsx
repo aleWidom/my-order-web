@@ -1,35 +1,28 @@
 
-/* import { SearchContext } from '@/context'; */
 import { CallWaiter, Categories, FormSearch, MainPlates, MenuPlates } from '@/components/molecules';
-import { fetchTable, updateTableNumberCall, updateTableNumberNotCall } from '@/services';
+import { PlateRestaurant, TableRestaurant } from '@/interfaces';
+import {getItemsResults } from '@/services';
 import styles from './MainHome.module.scss'
-import { TableRestaurant } from '@/interfaces';
-
-
 
 interface MainHomeProps {
-	table: TableRestaurant | undefined
+	table: TableRestaurant | undefined,
+	query: string,
+	categoryID: string
 }
 
 
-export const MainHome = async ({ table }: MainHomeProps) => {
+export const MainHome = async ({ table, query, categoryID }: MainHomeProps) => {
 
-	/* const { results } = useContext(SearchContext); */
-
-	/* const { setModalInfo } = useContext(SearchContext); */
-
-	
-
-	console.log(table)
-
+	const results:PlateRestaurant[] = await getItemsResults(query, categoryID)
 
 	return (
 		<div className={styles.mainContainerHome}>
-			<CallWaiter table={table} message='Llamar al moza/o a la mesa.' color='red' />
-			<FormSearch />
-			{/* <Categories /> */}
-			{/* {results.length === 0 ? <MainPlates /> : <MenuPlates />} */}
+			<CallWaiter tableID={table?.TableID} />
+			<FormSearch tableID={table?.TableID}/>
+			<Categories tableID={table?.TableID} categoryID={categoryID}/>
+			{results?.length === 0 ? <MainPlates/> : <MenuPlates results={results} categoryID={categoryID}/>}
 		</div>
 	)
 }
+
 

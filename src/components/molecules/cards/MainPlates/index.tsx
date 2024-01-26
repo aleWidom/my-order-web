@@ -1,7 +1,5 @@
-/* import { Swiper } from 'swiper';
-import 'swiper/css/navigation';
-import 'swiper/css'; */
-import { MainPlate } from '@/components/molecules';
+
+import { MainPlatesView } from './MainPlatesView';
 import { fetchItemsRestaurant } from '@/services';
 import { PlateRestaurant } from '@/interfaces';
 import styles from './MainPlates.module.scss';
@@ -46,17 +44,10 @@ export const MainPlates = async () => {
 
 	return (
 		<>
-			{cardsAllMainPlates.map((categoryMainPlates, i) => (
+			{cardsAllMainPlates.map((cardAllMainPlates, i) => (
 				<div className={styles.cardsPlates} key={i}>
-					<h3 className={styles.title}>{categoryMainPlates.header}</h3>
-					{/* <Swiper slidesPerView={1.2} spaceBetween={20}> */}
-						{categoryMainPlates.plates.length &&
-							categoryMainPlates.plates.map((e: any) => (
-							/* 	<SwiperSlide key={e.ItemID}> */
-									<MainPlate key={e.ItemID} source={e.photo} header={e.title.length > 35 ? e.title.slice(0, 35) + '...' :  e.title} price={e.price} description={e.description} id={e.ItemID} />
-						/* 		</SwiperSlide> */
-							))}
-					{/* </Swiper> */}
+					<h3 className={styles.title}>{cardAllMainPlates.header}</h3>
+					<MainPlatesView plates={cardAllMainPlates.plates}/>
 				</div>
 			))}
 		</>

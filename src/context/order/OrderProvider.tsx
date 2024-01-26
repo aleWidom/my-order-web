@@ -20,7 +20,7 @@ export const OrderProvider = ({ children }: Props) => {
 
 	const [cardsSpecialsCheff, setCardsSpecialsCheff] = useState<PlateRestaurant[]>([]); */
 
-	const [menuWaiterActive, setMenuWaiterActive] = useState<boolean>(false);
+	
 
 /* 	const [modalPlate, setModalPlate] = useState<ModalPlate>({
 		ItemID: '',
@@ -53,8 +53,6 @@ export const OrderProvider = ({ children }: Props) => {
 				setCardsRankingPlates,
 				cardsDayPlates,
 				setCardsDayPlates, */
-				menuWaiterActive,
-				setMenuWaiterActive,
 				/* modalPlate,
 				setModalPlate,
 				cartTemporary,

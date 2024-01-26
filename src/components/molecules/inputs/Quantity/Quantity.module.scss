@@ -1,0 +1,101 @@
+@import '../../../../styles/config';
+
+
+.buttonQuantity {
+	border: none;
+	width: 1.8rem;
+	height: 1.8rem;
+	font-size: 1rem;
+	background-color: $color-secondary;
+	
+}
+
+.containerActive {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	border: none;
+	padding: 0.5rem;
+	border: 1px solid $color-secondary;
+	border-radius: 0.25rem;
+}
+
+.containerQuantity {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.25rem;
+}
+
+.buttonSign, .buttonSignTrash {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	width: 1.5rem;
+	height: 1.5rem;
+
+}
+
+.buttonSign {
+	font-size: 1.5rem;
+}
+
+.buttonSignTrash {
+	font-size: 1.25rem;
+}
+
+.request {
+	background-color: $color-secondary;
+	width: 100%;
+	padding: 0.25rem;
+	border: none;
+	height: 1.5rem;
+	font-size: 1rem;
+	color: $color-primary;
+	
+}
+
+.deleteRequest, .success {
+	border: none;
+	background-color: $color-four;
+	padding: 0.5rem;
+}
+
+.deleteRequest {
+	background-color: $color-four;
+}
+
+.success {
+	background-color: $color-five;
+}
+
+
+/* .containerQuantitySigns {
+	width: 30%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border: solid 1px $color-secondary;
+	padding: 0.25rem;
+	border-radius: 2.6rem;
+	background-color: $color-secondary;
+}
+
+
+
+.quantitySelected {
+	color: $color-primary;
+}
+
+.containerSign {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} */

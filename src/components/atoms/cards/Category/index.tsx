@@ -1,34 +1,27 @@
 'use client'
-import { useContext } from "react";
-import { OrderContext, SearchContext } from "@/context";
+import { useRouter } from "next/navigation";
 import { CategoryRestaurant } from "@/interfaces";
 import styles from "./Category.module.scss";
 
 
-interface Props {
+interface CategoryProps {
   category: CategoryRestaurant,
+  tableID: string | undefined,
+  categoryID: string
 }
 
 
-export const Category = ({ category }: Props) => {
+export const Category = ({ category, tableID, categoryID }: CategoryProps) => {
 
-  const { itemsRestaurant } = useContext(OrderContext);
-
-  const { categorySelected, setValueInput, setCategorySelected, setResults } = useContext(SearchContext);
+  const router = useRouter()
 
   const handleClickCategory = (cardSelected: CategoryRestaurant) => () => {
-
-    const resultsCategory = itemsRestaurant.filter((item) => {
-      return item.id_category === cardSelected.CategoryID
-    })
-    setCategorySelected(cardSelected);
-    setResults(resultsCategory);
-    setValueInput('');
-
+    // Redireccionamos al index con una query
+    router.push(`?table=${tableID}&query=${""}&category=${cardSelected.CategoryID}`);
   };
 
   return (
-    <div onClick={handleClickCategory(category)} className={`${styles.buttonGral} ${category.name === categorySelected.name ? styles.selected : styles.notSelected}`} >
+    <div onClick={handleClickCategory(category)} className={`${styles.buttonGral} ${category.CategoryID === categoryID ? styles.selected : styles.notSelected}`}>
       <p>
         {category.name}
       </p>
@@ -37,3 +30,4 @@ export const Category = ({ category }: Props) => {
 
 };
 
+/*   */

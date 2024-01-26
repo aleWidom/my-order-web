@@ -1,9 +1,10 @@
+import { PlateRestaurant } from '@/interfaces';
 import axios from 'axios';
 
 
 async function fetchItemsRestaurant() {
 	try {
-		const allItems= await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items`);
+		const allItems = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items`);
 		return allItems.data;
 	} catch (err) {
 		console.log(err);
@@ -21,10 +22,17 @@ async function getAllCategoriesIdRestaurant1() {
 }
 
 
-async function getItemsResults(valueInput: string) {
+async function getItemsResults(valueInput: string | undefined, categoryID: string) {
 	try {
 		const searchResults = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items?search=${valueInput}`);
-		return searchResults;
+		if (categoryID !== "0") {
+			const platesByCategory = searchResults.data.filter((plate: PlateRestaurant) => {
+				return plate.id_category === categoryID
+			})
+			return platesByCategory
+		} else {
+			return searchResults.data
+		}
 	} catch (err) {
 		console.log(err);
 	}
@@ -48,5 +56,5 @@ export {
 	fetchItemPeopleInTable,
 };
 
-	
+
 

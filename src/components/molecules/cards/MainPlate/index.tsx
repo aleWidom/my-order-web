@@ -1,7 +1,5 @@
-"use client"
-import { useContext } from 'react';
+import { Quantity } from '@/components/molecules';
 import Image from 'next/image';
-import { OrderContext } from '../../../../context';
 import styles from './MainPlate.module.scss'
 
 
@@ -15,7 +13,7 @@ interface Props {
 
 export const MainPlate = ({ header, price, source, description, id }: Props) => {
 
-/* 	const { modalPlate, setModalPlate } = useContext(OrderContext); */
+	/* 	const { modalPlate, setModalPlate } = useContext(OrderContext); */
 
 	/* const onClickCardHome = () => {
 		setModalPlate({
@@ -31,11 +29,12 @@ export const MainPlate = ({ header, price, source, description, id }: Props) => 
 
 	return (
 		<div className={styles.container} /* onClick={onClickCardHome} */>
-			<Image src={'/'} alt={'plate'}/>
-{/* 			<div className={styles.containerImg} style={{ backgroundImage: `url(${source})` }}></div> */}
-			<h5 className={styles.title}>{header}</h5>
+				<Image src={`${source}`} alt={'plate'} width={100} height={100} className={styles.containerImg} priority />
+				<h5 className={styles.title}>{header}</h5>
+				<small className={styles.price}>$ {price}</small>
+				<Quantity/>
 		</div>
-	);	
+	);
 
 }
 

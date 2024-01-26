@@ -7,6 +7,7 @@ import { SearchContext, TableContext } from '../../../../context';
 
 export const ModalInfo = () => {
 
+
 	const { modalInfo, setModalInfo } = useContext(SearchContext);
 
 	const { sittingOnTheTableCall } = useContext(TableContext);
