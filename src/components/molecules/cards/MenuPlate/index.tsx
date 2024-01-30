@@ -6,9 +6,10 @@ interface Props {
   price: string;
   description: string;
   header: string;
+  tableNumber: string | undefined
 }
 
-export const MenuPlate = ({ price, description, header }: Props) => {
+export const MenuPlate = ({ price, description, header, tableNumber }: Props) => {
   return (
    <>
     <div className={styles.containerCardMenu}>
@@ -19,7 +20,7 @@ export const MenuPlate = ({ price, description, header }: Props) => {
         </p>
         <p className={styles.price}>${price}</p>
       </div>
-      <Quantity/>
+      <Quantity tableNumber={tableNumber}/>
     </div>
 
    </>

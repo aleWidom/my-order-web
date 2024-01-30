@@ -9,9 +9,10 @@ interface Props {
 	source: string,
 	description: string,
 	id: string,
+	tableNumber: string | undefined
 }
 
-export const MainPlate = ({ header, price, source, description, id }: Props) => {
+export const MainPlate = ({ header, price, source, description, id, tableNumber }: Props) => {
 
 	/* 	const { modalPlate, setModalPlate } = useContext(OrderContext); */
 
@@ -32,7 +33,7 @@ export const MainPlate = ({ header, price, source, description, id }: Props) => 
 				<Image src={`${source}`} alt={'plate'} width={100} height={100} className={styles.containerImg} priority />
 				<h5 className={styles.title}>{header}</h5>
 				<small className={styles.price}>$ {price}</small>
-				<Quantity/>
+				<Quantity tableNumber={tableNumber}/>
 		</div>
 	);
 

@@ -1,7 +1,9 @@
 "use client"
 import { useEffect, useState } from 'react'
 import { FaRegTrashAlt } from "react-icons/fa";
+import { v4 as uuidv4 } from 'uuid';
 import styles from './Quantity.module.scss'
+import { itemPeopleInTable } from '@/services';
 
 /* const signSubstract = {
 	fontSize: "1.3rem",
@@ -23,7 +25,11 @@ const signAddInactive = {
 }
  */
 
-export const Quantity = () => {
+interface QuantityProps {
+	tableNumber: string | undefined
+}
+
+export const Quantity = ({tableNumber}: QuantityProps) => {
 
 	const [quantity, setQuantity] = useState(0)
 
@@ -31,13 +37,13 @@ export const Quantity = () => {
 
 	const [request, setRequest] = useState("inactive")
 
-	useEffect(() => {
+	/* useEffect(() => {
 		if (request === "inProcess") {
 			setTimeout(() => {
 				setRequest("success")
 			}, 10000);
 		}
-	}, [request])
+	}, [request]) */
 
 
 	const addItem = () => {
@@ -58,16 +64,20 @@ export const Quantity = () => {
 	};
 
 	const submit = () => {
-		setRequest("inProcess")
 
-		/* itemPeopleInTable({
-			numberTable: table.table_number,
+		const idOrder = uuidv4().replaceAll('/', 'a')
+
+		const idOrder2 = uuidv4().replaceAll('/', 'a')
+
+		setButtonQuantity(false)
+
+		itemPeopleInTable({
+			numberTable: tableNumber,
 			orderNumber: idOrder,
-			idPeopleInTable: idPeopleInTable,
-			detail: cartTemporary
-		}) */
-		/* setAddPlate(false) */
-		/* setRequest(true) */
+			idPeopleInTable: idOrder2,
+			detail: []
+		}) 
+	
 	};
 
 	const deleteRequest = () => {
@@ -79,12 +89,12 @@ export const Quantity = () => {
 
 		<>
 			{
-				request === "inProcess" || request === "success" ?
+				/* request === "inProcess" || request === "success" ?
 					<div >
 						{request === "inProcess" && <button onClick={deleteRequest} className={styles.deleteRequest}>Cancelar solicitud.</button>}
 						{request === "success" && <button className={styles.success}>Solicitado.</button>}
 					</div>
-					:
+					: */
 					buttonQuantity === false ? <button onClick={addItem} className={styles.buttonQuantity}>+</button> :
 						<div className={styles.containerActive}>
 							<div className={styles.containerQuantity}>
