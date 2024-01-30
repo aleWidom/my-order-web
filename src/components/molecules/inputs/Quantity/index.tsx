@@ -26,16 +26,19 @@ const signAddInactive = {
  */
 
 interface QuantityProps {
-	tableNumber: string | undefined
+	tableNumber: string | undefined,
+	price: string,
+	title: string,
+	idItem: string
 }
 
-export const Quantity = ({tableNumber}: QuantityProps) => {
+export const Quantity = ({ tableNumber, price, title, idItem }: QuantityProps) => {
 
 	const [quantity, setQuantity] = useState(0)
 
 	const [buttonQuantity, setButtonQuantity] = useState(false)
 
-	const [request, setRequest] = useState("inactive")
+/* 	const [request, setRequest] = useState("inactive") */
 
 	/* useEffect(() => {
 		if (request === "inProcess") {
@@ -66,102 +69,47 @@ export const Quantity = ({tableNumber}: QuantityProps) => {
 	const submit = () => {
 
 		const idOrder = uuidv4().replaceAll('/', 'a')
-
-		const idOrder2 = uuidv4().replaceAll('/', 'a')
-
+		
 		setButtonQuantity(false)
 
 		itemPeopleInTable({
 			numberTable: tableNumber,
 			orderNumber: idOrder,
-			idPeopleInTable: idOrder2,
-			detail: []
-		}) 
-	
-	};
+			idPeopleInTable: "26838345-28ec-4b64-bc59-7bd9dc305791",
+			detail: [{
+				id_item: idItem,
+				price: price,
+				quantity,
+				title
+			}]
+		})
 
-	const deleteRequest = () => {
-		setRequest("inactive")
-		setButtonQuantity(false)
+
+
 	};
 
 	return (
 
 		<>
 			{
-				/* request === "inProcess" || request === "success" ?
-					<div >
-						{request === "inProcess" && <button onClick={deleteRequest} className={styles.deleteRequest}>Cancelar solicitud.</button>}
-						{request === "success" && <button className={styles.success}>Solicitado.</button>}
-					</div>
-					: */
-					buttonQuantity === false ? <button onClick={addItem} className={styles.buttonQuantity}>+</button> :
-						<div className={styles.containerActive}>
-							<div className={styles.containerQuantity}>
-								{quantity > 1 ? <button onClick={substractQuantity} className={styles.buttonSign}>-</button> : <button onClick={deleteItem} className={styles.buttonSignTrash}><FaRegTrashAlt /></button>}
-								<small style={{ color: "white" }}>{quantity}u.</small>
-								<button onClick={addQuantity} className={styles.buttonSign}>+</button>
-							</div>
-							<button onClick={submit} className={styles.request}>Solicitar</button>
+				buttonQuantity === false ? <button onClick={addItem} className={styles.buttonQuantity}>+</button> :
+					<div className={styles.containerActive}>
+						<div className={styles.containerQuantity}>
+							{quantity > 1 ? <button onClick={substractQuantity} className={styles.buttonSign}>-</button> : <button onClick={deleteItem} className={styles.buttonSignTrash}><FaRegTrashAlt /></button>}
+							<small style={{ color: "white" }}>{quantity}u.</small>
+							<button onClick={addQuantity} className={styles.buttonSign}>+</button>
 						</div>
+						<button onClick={submit} className={styles.request}>Solicitar</button>
+					</div>
 			}
 		</>
 
 	)
 }
 
-{/* <div className={styles.containerQuantity}>
-		{addPlate === false ?:
-		<>
-		<div >
-			{quantity > 1 ? <button onClick={substractQuantity}>-</button> : <button onClick={deleteItem }><FaRegTrashAlt/></button>}
-			<small style={{color: "grey"}}>{quantity}u.</small>
-			<button onClick={addQuantity}>+</button>
-		</div>
-		{request ? 
-		<button onClick={deleteRequest}>Cancelar solicitud.</button>:
-			<>
-		 <button onClick={submit}>Solicitar</button>
-		 </>
-		  }
-		</>
-		}		
-		</div> */}
-
-{/* {page === '/' || modalPlate.stateOrder === 'edit' ?
-				<QuantityView
-					modalPlate={modalPlate}
-					substract={{ operation: substractQuantity, styleSign: modalPlate.quantity > 1 ? signSubstract : signSubstractInactive}}
-					add={{ operation: addQuantity, styleSign: modalPlate.quantity > 0 && modalPlate.quantity < 9 ? signAdd : signAddInactive}} /> :
-				`${modalPlate.quantity} u.`} */}
-
-
-/* import { ModalPlate } from '@/interfaces';
-import styles from './QuantityView.module.scss'
-
-interface Props {
-	modalPlate: ModalPlate;
-	substract: any;
-	add: any
+/* else if (event.queryStringParameters?.itemPeopleInTable !== undefined) {
+	queryMySql = `INSERT INTO Item_peopleInTable (ItemPeopleInTableID, orderNumberID, id_peopleInTable, numberTable, quantity, id_item, state)
+	VALUES ${body.detail.map((value)=> (
+		`(${JSON.stringify(value.ItemPeopleInTableID)}, ${JSON.stringify(body.orderNumber)}, ${JSON.stringify(body.idPeopleInTable)}, ${JSON.stringify(body.numberTable)}, ${JSON.stringify(value.quantity)}, ${JSON.stringify(value.id_item)}, 'in process')`
+	))}`
 } */
-
-/* export const QuantityView = ({ modalPlate, substract, add }: Props) => {
-	return (
-		<div className={styles.containerQuantitySigns}>
-			<button onClick={substract.operation} className={styles.buttonQuantity}>
-				<p className={styles.containerSign}>
-					<small style={substract.styleSign}>-</small>
-				</p>
-			</button>
-			<p className={styles.quantitySelected}>{modalPlate.quantity}</p>
-			<button onClick={add.operation} className={styles.buttonQuantity}>
-				<p className={styles.containerSign}>
-					<small style={add.styleSign}>+</small>
-				</p>
-			</button>
-		</div>
-	)
-}
-
-
- */

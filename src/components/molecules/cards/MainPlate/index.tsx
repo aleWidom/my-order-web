@@ -4,15 +4,15 @@ import styles from './MainPlate.module.scss'
 
 
 interface Props {
-	header: string,
+	title: string,
 	price: string,
 	source: string,
 	description: string,
-	id: string,
+	idItem: string,
 	tableNumber: string | undefined
 }
 
-export const MainPlate = ({ header, price, source, description, id, tableNumber }: Props) => {
+export const MainPlate = ({ title, price, source, tableNumber, idItem }: Props) => {
 
 	/* 	const { modalPlate, setModalPlate } = useContext(OrderContext); */
 
@@ -31,9 +31,9 @@ export const MainPlate = ({ header, price, source, description, id, tableNumber 
 	return (
 		<div className={styles.container} /* onClick={onClickCardHome} */>
 				<Image src={`${source}`} alt={'plate'} width={100} height={100} className={styles.containerImg} priority />
-				<h5 className={styles.title}>{header}</h5>
+				<h5 className={styles.title}>{title}</h5>
 				<small className={styles.price}>$ {price}</small>
-				<Quantity tableNumber={tableNumber}/>
+				<Quantity tableNumber={tableNumber} price={price} title={title} idItem={idItem}/>
 		</div>
 	);
 

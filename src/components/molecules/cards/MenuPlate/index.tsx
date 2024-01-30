@@ -5,22 +5,23 @@ import styles from "./MenuPlate.module.scss";
 interface Props {
   price: string;
   description: string;
-  header: string;
-  tableNumber: string | undefined
+  title: string;
+  tableNumber: string | undefined,
+  idItem: string
 }
 
-export const MenuPlate = ({ price, description, header, tableNumber }: Props) => {
+export const MenuPlate = ({ price, description, title, tableNumber, idItem }: Props) => {
   return (
    <>
     <div className={styles.containerCardMenu}>
       <div className={styles.containerDescription}>
-        <h4 className={styles.header}>{header}</h4>
+        <h4 className={styles.header}>{title}</h4>
         <p className={styles.description}>
           {description}
         </p>
         <p className={styles.price}>${price}</p>
       </div>
-      <Quantity tableNumber={tableNumber}/>
+      <Quantity tableNumber={tableNumber} title={title} price={price} idItem={idItem}/>
     </div>
 
    </>

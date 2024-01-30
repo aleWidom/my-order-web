@@ -34,7 +34,6 @@ export interface ItemPeopleInTable {
 }
 
 export interface PlateSelected {
-	ItemPeopleInTableID: string,
 	title: string;
 	quantity: number;
 	price: string;

@@ -5,7 +5,7 @@ import { PlateRestaurant } from '@/interfaces';
 import styles from './MainPlates.module.scss';
 
 interface MainPlatesProps {
-	tableNumber: string | undefined
+	tableNumber: string | undefined,
 }
 
 export const MainPlates = async ({tableNumber}:MainPlatesProps) => {
