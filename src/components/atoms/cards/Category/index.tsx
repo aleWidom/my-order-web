@@ -1,27 +1,32 @@
-'use client'
-import { useRouter } from "next/navigation";
+import { useCategoriesStore, useItemsStore} from '@/store';
 import { CategoryRestaurant } from "@/interfaces";
 import styles from "./Category.module.scss";
+import { useSearchStore } from '@/store/search-store';
 
 
 interface CategoryProps {
   category: CategoryRestaurant,
-  tableID: string | undefined,
-  categoryID: string
 }
 
 
-export const Category = ({ category, tableID, categoryID }: CategoryProps) => {
+export const Category = ({ category }: CategoryProps) => {
 
-  const router = useRouter()
+  const categorySelected = useCategoriesStore(state => state.categorySelected)
+
+  const setCategorySelected = useCategoriesStore(state => state.setCategorySelected)
+
+  const setPlates = useItemsStore(state => state.setPlates) 
+
+  const setQuery = useSearchStore(state=> state.setQuery)
 
   const handleClickCategory = (cardSelected: CategoryRestaurant) => () => {
-    // Redireccionamos al index con una query
-    router.push(`?table=${tableID}&query=${""}&category=${cardSelected.CategoryID}`);
+        setCategorySelected(cardSelected)
+        setPlates("", cardSelected.CategoryID)
+        setQuery("")
   };
 
   return (
-    <div onClick={handleClickCategory(category)} className={`${styles.buttonGral} ${category.CategoryID === categoryID ? styles.selected : styles.notSelected}`}>
+    <div onClick={handleClickCategory(category)} className={`${styles.buttonGral} ${category.CategoryID === categorySelected.CategoryID ? styles.selected : styles.notSelected} `}>
       <p>
         {category.name}
       </p>
@@ -29,5 +34,3 @@ export const Category = ({ category, tableID, categoryID }: CategoryProps) => {
   );
 
 };
-
-/*   */

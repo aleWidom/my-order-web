@@ -1,15 +1,15 @@
-"use client"
+/* "use client"
 import { useContext, useEffect } from 'react';
-import { OrderContext } from '../../../../context';
+import { OrderContext } from '../../../../context'; */
 /* import { ModalPlateRequiredView } from './ModalPlateRequiredView'; */
-import { FaRegCheckCircle, FaTimesCircle } from 'react-icons/fa';
+/* import { FaRegCheckCircle, FaTimesCircle } from 'react-icons/fa'; */
 
 
 
 
 export const ModalPlateRequired = () => {
 
-	const { modalPlate, setModalPlate } = useContext(OrderContext);
+	/* const { modalPlate, setModalPlate } = useContext(OrderContext);
 
 	console.log(modalPlate)
 
@@ -26,9 +26,9 @@ export const ModalPlateRequired = () => {
 				headerModalRequest: ""
 			});
 
-		}, 4000);
+		}, 4000); */
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [modalPlate]);
+/* 	}, [modalPlate]); */
 
 	return (
 		<>
@@ -40,7 +40,7 @@ export const ModalPlateRequired = () => {
 };
 
 
-import { FaBell } from 'react-icons/fa';
+/* import { FaBell } from 'react-icons/fa';
 import styles from './ModalPlateRequired.module.scss'
 
 interface Props {
@@ -50,7 +50,7 @@ interface Props {
 	stateOrder: string | undefined,
 	children: React.ReactNode
 
-}
+} */
 
 /* export const ModalPlateRequiredView = ({ header, title, quantity, children, stateOrder }: Props) => {
 	console.log(title)

@@ -4,11 +4,9 @@ import { fetchItemsRestaurant } from '@/services';
 import { PlateRestaurant } from '@/interfaces';
 import styles from './MainPlates.module.scss';
 
-interface MainPlatesProps {
-	tableNumber: string | undefined,
-}
 
-export const MainPlates = async ({tableNumber}:MainPlatesProps) => {
+
+export const MainPlates = async () => {
 	
 	const allItems = await fetchItemsRestaurant()
 
@@ -50,7 +48,7 @@ export const MainPlates = async ({tableNumber}:MainPlatesProps) => {
 			{cardsAllMainPlates.map((cardAllMainPlates, i) => (
 				<div className={styles.cardsPlates} key={i}>
 					<h3 className={styles.title}>{cardAllMainPlates.header}</h3>
-					<MainPlatesView plates={cardAllMainPlates.plates} tableNumber={tableNumber}/>
+					<MainPlatesView plates={cardAllMainPlates.plates}/>
 				</div>
 			))}
 		</>

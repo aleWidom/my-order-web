@@ -1,5 +1,5 @@
 export interface TableRestaurant {
-	TableID: string | undefined;
+	TableID: string;
 	table_number: string | undefined;
 	table_active: string | undefined;
 	table_call: string | undefined;

@@ -1,36 +1,29 @@
 
 import Image from "next/image";
 import { MenuPlate } from "@/components/molecules";
-import { getAllCategoriesIdRestaurant1 } from "@/services";
 import { CategoryRestaurant, PlateRestaurant } from "@/interfaces";
+import { useCategoriesStore } from "@/store";
 import styles from './MenuPlates.module.scss'
 
+
 interface MenuPlatesProps {
-    results: PlateRestaurant[],
-    categoryID: string,
-    tableNumber: string | undefined
+    plates: PlateRestaurant[]
 }
 
+export const MenuPlates = async ({ plates }: MenuPlatesProps) => {
 
-export const MenuPlates= async ({results, categoryID, tableNumber}: MenuPlatesProps) => {
+    const categorySelected = useCategoriesStore(state => state.categorySelected)
 
-    const categoriesMenuRestaurant: CategoryRestaurant[] = await getAllCategoriesIdRestaurant1()
-
-    const categorySelected: CategoryRestaurant | undefined = categoriesMenuRestaurant.find((category)=> {
-        return category.CategoryID === categoryID
-    })
-
-
- return (
+    return (
         <div className={styles.container}>
-             <Image className={styles.containerImgCategory} width={100} height={100} alt={"headerResult"} src={`${categoryID === "0" ? "https://cache.careers360.mobi/media/presets/860X430/article_images/2020/10/3/10th-results.webp" : categorySelected?.photo}`}/>
-                <h2 className={styles.title}>{categoryID === "0" ? "" :categorySelected?.name}</h2>
-            {results.map((e) => (
-                <MenuPlate key={e.ItemID} title={e.title} description={e.description} price={e.price} tableNumber={tableNumber} idItem={e.ItemID}/>
-            ))} 
+            <Image className={styles.containerImgCategory} width={100} height={100} alt={"headerResult"} src={`${categorySelected.CategoryID === "0" ? "https://www.history.org.uk/library/1308/0000/0172/Exam_Results_image_chalk_board_640.jpg" : categorySelected?.photo}`} />
+            <h2 className={styles.title}>{categorySelected.CategoryID === "0" ? "" : categorySelected?.name}</h2>
+            {plates.map((e) => (
+                <MenuPlate key={e.ItemID} title={e.title} description={e.description} price={e.price} idItem={e.ItemID} />
+            ))}
         </div>
     );
-}; 
+};
 
 
 

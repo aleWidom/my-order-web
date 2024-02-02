@@ -1,4 +1,4 @@
-"use client"
+/* "use client"
 import { useContext } from 'react';
 import { OrderContext, TableContext } from '@/context';
 import { v4 as uuidv4 } from 'uuid';
@@ -90,3 +90,4 @@ export const IconButton = ({ buttonName }: Props) => {
     </>
   )
 }
+ */

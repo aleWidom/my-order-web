@@ -1,53 +1,25 @@
 "use client"
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { FaRegTrashAlt } from "react-icons/fa";
 import { v4 as uuidv4 } from 'uuid';
-import styles from './Quantity.module.scss'
+import { useTableStore } from '@/store';
 import { itemPeopleInTable } from '@/services';
+import styles from './Quantity.module.scss'
 
-/* const signSubstract = {
-	fontSize: "1.3rem",
-}
-
-const signSubstractInactive = {
-	fontSize: "1.3rem",
-	color: "rgb(87, 87, 87)"
-}
-
-
-const signAdd = {
-	fontSize: "1.3rem"
-}
-
-const signAddInactive = {
-	fontSize: "1.3rem",
-	color: "rgb(87, 87, 87)"
-}
- */
 
 interface QuantityProps {
-	tableNumber: string | undefined,
 	price: string,
 	title: string,
 	idItem: string
 }
 
-export const Quantity = ({ tableNumber, price, title, idItem }: QuantityProps) => {
+export const Quantity = ({price, title, idItem }: QuantityProps) => {
 
 	const [quantity, setQuantity] = useState(0)
 
 	const [buttonQuantity, setButtonQuantity] = useState(false)
 
-/* 	const [request, setRequest] = useState("inactive") */
-
-	/* useEffect(() => {
-		if (request === "inProcess") {
-			setTimeout(() => {
-				setRequest("success")
-			}, 10000);
-		}
-	}, [request]) */
-
+	const table = useTableStore(state => state.tableRestaurant)
 
 	const addItem = () => {
 		setButtonQuantity(true)
@@ -73,7 +45,7 @@ export const Quantity = ({ tableNumber, price, title, idItem }: QuantityProps) =
 		setButtonQuantity(false)
 
 		itemPeopleInTable({
-			numberTable: tableNumber,
+			numberTable: table.TableID,
 			orderNumber: idOrder,
 			idPeopleInTable: "26838345-28ec-4b64-bc59-7bd9dc305791",
 			detail: [{

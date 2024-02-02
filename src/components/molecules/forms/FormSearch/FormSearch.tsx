@@ -1,34 +1,38 @@
-'use client'
-import { useRouter} from "next/navigation";
+import { ChangeEvent, useState } from 'react';
 import { Search } from '@/components/atoms';
 import { InputSearch } from '@/components/molecules';
+import { useSearchStore } from '@/store/search-store';
 import styles from './FormSearch.module.scss';
+import { useItemsStore } from '@/store';
 
 
-interface FormSearchProps {
-	tableID: string | undefined,
-}
 
-export const FormSearch = ({ tableID }: FormSearchProps) => {
+export const FormSearch = () => {
 
-	const router = useRouter();
+	const [value, setValue] = useState("")
 
-	function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-		// Prevenimos que la página se refresque al enviar el formulario
+	const setQuery = useSearchStore(state=> state.setQuery)
+
+	const setPlates = useItemsStore(state => state.setPlates) 
+
+	const query = useSearchStore(state=> state.query)
+
+	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setValue(event.target.value)
+	  }
+	
+
+	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		// Obtenemos el valor del input
-		const query: string = event.currentTarget.query.value;
-
-		// Redireccionamos al index con una query
-		router.push(`?table=${tableID}&query=${query}&category=0`);          
-		
-		event.currentTarget.query.value = ""
+		setQuery(value)
+		setPlates(value, "0")
+		setValue("")
 	};
 
 	return (
 		<div className={styles.container}>
 			<form className={styles.containerFormSearch} onSubmit={handleSubmit}>
-				<InputSearch />
+				<InputSearch value={value} handleChange={handleChange} />
 				<Search />
 			</form>
 		</div>

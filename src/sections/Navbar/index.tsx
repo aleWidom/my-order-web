@@ -1,21 +1,15 @@
 
-import { MainBrand, Table } from '@/components/atoms';
+import {MainBrand , Table } from '@/components/atoms';
 import styles from './Navbar.module.scss';
-import { TableRestaurant } from '@/interfaces';
 
-
-interface NavbarProps {
-	table: TableRestaurant | undefined
-}
-
-export const Navbar = async ({ table }: NavbarProps) => {
+export const Navbar = async () => {
 	return (
 		<nav className={styles.containerNavbarHome}>
 			<div className={styles.containerMenuBrand}>
-				<MainBrand tableID={table?.TableID} />
+				<MainBrand />
 			</div>
 			<div className={styles.containerTableWaiter}>
-				<Table tableNumber={table?.table_number} />
+				<Table  />
 			</div>
 		</nav>
 	);

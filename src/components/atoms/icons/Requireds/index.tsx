@@ -1,4 +1,4 @@
-"use client"
+/* "use client"
 import { useContext } from "react";
 import { OrderContext, TableContext } from "@/context";
 import { RequiredsView } from "./RequiredsView";
@@ -20,4 +20,4 @@ export const Requireds = () => {
 
 
 
-
+ */

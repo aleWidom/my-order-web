@@ -8,6 +8,8 @@ export * from './cards/MenuPlates'
 export * from './cards/MenuPlate'
 export * from './cards/ModalPlate'
 export * from './cards/ModalInfo'
+export * from './cards/Orders'
 export * from './cards/ModalPlateRequired'
 export * from './inputs/Quantity'
+
 

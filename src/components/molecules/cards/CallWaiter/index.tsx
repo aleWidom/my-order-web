@@ -1,20 +1,16 @@
-"use client"
 import { useLayoutEffect, useState } from 'react';
-import { CallWaiterView } from './CallWaiterView';
-/* import { SearchContext, TableContext } from '../../../../context'; */
+import { useTableStore } from '@/store';
 import { fetchTable, updateTableNumberCall, updateTableNumberNotCall } from '../../../../services';
+import { CallWaiterView } from './CallWaiterView';
 
-
-interface CallWaiterProps {
-	tableID: string | undefined
-}
-
-export const CallWaiter = ({tableID}: CallWaiterProps) => {
+export const CallWaiter = () => {
 
 	const [sittingOnTheTableCall ,setSittingOnTheTableCall] = useState(false)
 
+	const table = useTableStore(state => state.tableRestaurant)
+
 	useLayoutEffect(() => {
-		fetchTable(tableID)
+		fetchTable(table.TableID)
         .then((response)=> {
            if(response !== undefined) {
             if(response?.table_call === '1') {
@@ -28,47 +24,19 @@ export const CallWaiter = ({tableID}: CallWaiterProps) => {
         .catch((err)=> {
             console.log(err)
         })
-	}, [])
+	}, [table])
 
 
 
 
 	const handleCall = () => {
-	/* 	setModalInfo({
-			description: 'Su moza/o se acercará a su mesa.',
-			state: true,
-			section: 'call',
-		}); */
-
-		/* setTimeout(() => {
-			setModalInfo({
-				description: '',
-				state: false,
-				section: '',
-			});
-		}, 3000); */
-
-		updateTableNumberCall(tableID); 
+		updateTableNumberCall(table.TableID); 
 		setSittingOnTheTableCall(true);
 
 	};
 
 	const handleNotCall = () => {
-		/* setModalInfo({
-			description: 'Se ha cancelado el llamado de su moza/o a su mesa.',
-			state: true,
-			section: 'call',
-		}); */
-
-	/* 	setTimeout(() => {
-			setModalInfo({
-				description: '',
-				state: false,
-				section: '',
-			});
-		}, 3000); */
-
-	    updateTableNumberNotCall(tableID)
+	    updateTableNumberNotCall(table.TableID)
 		setSittingOnTheTableCall(false);
 	};
 

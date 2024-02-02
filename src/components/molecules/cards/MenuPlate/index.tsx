@@ -6,11 +6,10 @@ interface Props {
   price: string;
   description: string;
   title: string;
-  tableNumber: string | undefined,
   idItem: string
 }
 
-export const MenuPlate = ({ price, description, title, tableNumber, idItem }: Props) => {
+export const MenuPlate = ({ price, description, title,  idItem }: Props) => {
   return (
    <>
     <div className={styles.containerCardMenu}>
@@ -21,7 +20,7 @@ export const MenuPlate = ({ price, description, title, tableNumber, idItem }: Pr
         </p>
         <p className={styles.price}>${price}</p>
       </div>
-      <Quantity tableNumber={tableNumber} title={title} price={price} idItem={idItem}/>
+      <Quantity title={title} price={price} idItem={idItem}/>
     </div>
 
    </>
