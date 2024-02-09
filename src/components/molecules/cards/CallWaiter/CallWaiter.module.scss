@@ -23,11 +23,11 @@
 }
 
 .green {
-	border: hsl(135, 70%, 51%) 1px solid;
-	color: hsl(135, 70%, 51%)
+	border: $color-five 1px solid;
+	color: $color-five
 }
 
 .red {
-	border: #fe0000 1px solid;
-	color: #fe0000
+	border: $color-terciary 1px solid;
+	color: $color-terciary;
 }

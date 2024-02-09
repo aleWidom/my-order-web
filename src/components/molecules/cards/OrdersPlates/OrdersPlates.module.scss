@@ -1,0 +1,39 @@
+@import '../../../../styles/utils';
+
+.mainContainerOrders {
+	width: 100%;
+	padding: 0px 1.5rem;
+	margin-top: 1rem;
+	color: $color-secondary;
+} 
+
+.containerRequest {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	border-bottom: 2.5px $color-five solid;
+}
+
+.title {
+	width: 100%;
+	font-size: 1.25rem;
+	font-weight: bold;
+	margin-top: 16px;	
+}
+
+.arrow {
+	color: $color-five;
+	font-size: 2rem;
+}
+
+.quantityOrder {
+	background-color: $color-five;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 30px;
+	border-radius: 0.4rem;
+	margin-bottom: 2px;
+}

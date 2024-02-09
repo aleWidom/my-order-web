@@ -5,23 +5,21 @@
   width: 6rem;
   justify-content: center;
   align-items: center;
-  height: 2rem;
-  box-sizing: border-box;
-  border-radius: 0.5rem;
+  height: 1rem;
+  border-radius: 0.4rem;
   padding: 1rem;
   font-size: 0.8rem;
   cursor: pointer;
   text-decoration: none;
+  border: solid 1px $color-secondary;
 }
 
 
   .selected  {
   background-color: $color-secondary;
-  border: solid 1px $color-secondary
 }
 
  .notSelected  {
   background-color: #202020;
-  border: solid 1px  $color-secondary;
   color: $color-secondary
 }

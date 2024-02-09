@@ -1,7 +1,8 @@
 
 import { Navbar, MainHome } from "@/sections"
 
-export default async function HomePage() {
+export default async function HomePage() {  
+
   return (
     <>
       <Navbar  />
@@ -9,3 +10,6 @@ export default async function HomePage() {
     </>
   )
 }
+
+
+

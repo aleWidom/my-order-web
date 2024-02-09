@@ -54,9 +54,20 @@ export interface ModalPlate {
 	index?: number
 }
 
-export interface ModalInfo {
+export interface ModalInfoInterface {
 	description: string;
 	state: boolean;
 	section: string;
 }
 
+
+export interface Order {
+	ItemID: string,
+	title: string,
+	orderNumberID: string,
+	numberTable: string,
+	quantity: string,
+	price: number,
+	state: string,
+	date: string
+}

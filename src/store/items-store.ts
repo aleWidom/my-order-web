@@ -6,6 +6,8 @@ import { create } from 'zustand'
 interface State {
     plates: PlateRestaurant[],
     setPlates: (query: string, categoryID: string) => Promise<void>,
+    section: string,
+    setSection: (section: string) => void,
 }
 
 export const useItemsStore = create<State>((set) => ({
@@ -17,5 +19,14 @@ export const useItemsStore = create<State>((set) => ({
         ...state,
          plates: platesRestaurantSelected
       })) 
-    }
+    },
+    
+    section: "main",
+
+    setSection: (section: string) => {
+      set(state=>({
+        ...state,
+         section
+      })) 
+    },
 }))

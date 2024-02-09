@@ -10,12 +10,13 @@ import styles from './Categories.module.scss';
 export const Categories = () => {
 
 	const categories = useCategoriesStore(state => state.categories)
-
+	
 	const setCategories = useCategoriesStore(state => state.setCategories)
 
 	useLayoutEffect(() => {
 		setCategories()
 	}, [setCategories])
+
 
 
 	return (

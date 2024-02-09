@@ -4,7 +4,11 @@ import { fetchTable } from '@/services';
 
 interface State {
   tableRestaurant: TableRestaurant,
-  setTable: (idTable: string) => Promise<void>,
+  setTable: (table: TableRestaurant) => void,
+  sittingOnTheTableCall: boolean,
+  setSittingOnTheTableCall: (condition: boolean) => void,
+  idPeopleInTable: string,
+  setIdPeopleInTable: (idPeople: string) => void
 }
 
 export const useTableStore = create<State>((set) => {
@@ -16,13 +20,32 @@ export const useTableStore = create<State>((set) => {
       table_call: ""
     },
 
-    setTable: async (idTable: string) => {
-        const tableRestaurant = await fetchTable(idTable)
-        set(state => ({
-          ...state,
-          tableRestaurant,
-        }))
+    setTable: async (table: TableRestaurant) => {
+      set(state => ({
+        ...state,
+        tableRestaurant: table
+      }))
+    },
+
+    sittingOnTheTableCall: false,
+
+    setSittingOnTheTableCall: (condition: boolean) => {
+      set(state => ({
+        ...state,
+        sittingOnTheTableCall: condition
+      }))
+    },
+
+    idPeopleInTable: "",
+
+    setIdPeopleInTable: (idPeople: string) => {
+      set(state => ({
+        ...state,
+        idPeopleInTable: idPeople
+      }))
     }
+
+
   }
 })
 

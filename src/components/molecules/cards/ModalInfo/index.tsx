@@ -1,65 +1,41 @@
-/* "use client"
-import { useContext } from 'react';
-import { FaConciergeBell, FaStopCircle, FaTimes } from 'react-icons/fa';
-import { SearchContext, TableContext } from '../../../../context'; */
-/* import { ModalInfoView } from './ModalInfoView'; */
+import { useEffect } from 'react'
+import { FaTimes } from 'react-icons/fa'
+import { BsPersonCheckFill , BsPersonFillDash } from 'react-icons/bs'
+import { useSearchStore } from '@/store'
+import { ModalInfoInterface } from '@/interfaces'
+import styles from './ModalInfo.module.scss'
 
-
-/* export const ModalInfo = () => {
-
-
-	const { modalInfo, setModalInfo } = useContext(SearchContext);
-
-	const { sittingOnTheTableCall } = useContext(TableContext);
-
-	const closedModalInfo = () => {
-		setModalInfo({
-			state: false,
-			description: '',
-			section: '',
-		});
-	};
-
-	return (
-		<> */
-		{/* 	{modalInfo.section === "form" &&
-				<ModalInfoView closedModalInfo={closedModalInfo} modalInfo={modalInfo}>
-					<FaTimes style={{ fontSize: "30px", color: "red" }} />
-				</ModalInfoView>}
-			{modalInfo.section !== "form" && sittingOnTheTableCall === true &&
-				<ModalInfoView  modalInfo={modalInfo}>
-					<FaConciergeBell style={{ fontSize: "30px", color: "white" }} />
-				</ModalInfoView>}
-			{modalInfo.section !== "form" && sittingOnTheTableCall === false &&
-				<ModalInfoView  modalInfo={modalInfo}>
-					<FaTimes style={{ fontSize: "30px", color: "white" }} />
-				</ModalInfoView>} */}
-	/* 	</>
-	)
-}
- */
-
-/* import { ModalInfo } from '@/interfaces';
-import styles from './ModalInfo.module.scss';
-
-interface Props {
-	closedModalInfo?: () => void;
-	modalInfo: ModalInfo;
-	children: React.ReactNode
+interface ModalSearchProps {
+	modalInfo: ModalInfoInterface
 }
 
-export const ModalInfoView = ({ closedModalInfo, modalInfo, children }: Props) => {
+export const ModalInfo = ({ modalInfo }: ModalSearchProps) => {
+
+	const setModalInfo = useSearchStore(state => state.setModalInfo)
+
+	useEffect(() => {
+		setTimeout(() => {
+			setModalInfo({
+				state: false,
+				description: "",
+				section: ""
+			})
+		}, 2250);
+	}, [modalInfo.state === true])
 
 	return (
-		<>
-			<div className={styles.containerModalInfo} onClick={closedModalInfo}></div>
+		<div className={styles.containerModalInfo}>
 			<div className={styles.modalInfo}>
-				{children}
+				{modalInfo.section === "form" ? 
+				<FaTimes style={{ fontSize: "30px", color: "red" }} /> : 
+				modalInfo.description === "Su moza/o se aceraca a su mesa." ? <BsPersonCheckFill style={{ fontSize: "30px", color: "white" }}/> :  <BsPersonFillDash style={{ fontSize: "30px", color: "white" }} />
+				}
 				<p className={styles.description}>{modalInfo.description}</p>
 			</div>
-		</>
-	);
-}; */
+		</div>
+
+	)
+}
 
 
-
+ 

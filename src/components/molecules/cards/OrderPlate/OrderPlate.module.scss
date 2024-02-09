@@ -1,0 +1,36 @@
+@import '../../../../styles/config';
+
+.containerCardOrderDefinitive {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 8rem;
+	border-bottom: solid 1px $color-four;
+}
+
+.containerDescription {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.title {
+	color: $color-secondary;
+	font-weight: bold;
+}
+
+.price {
+	color: $color-secondary;
+}
+
+.quantity {
+	color: $color-secondary
+}
+
+.button {
+	width: 100px;
+	border: none;
+	background-color: $color-secondary;
+	padding: 0.25rem;
+}

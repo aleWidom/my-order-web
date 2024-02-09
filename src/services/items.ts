@@ -13,7 +13,6 @@ async function fetchItemsRestaurant() {
 
 
 async function getAllCategoriesIdRestaurant1() {
-	console.log("categories")
 	try {
 		const allCategories = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items?categories`);
 		return allCategories.data;

@@ -28,14 +28,31 @@
 	background-color: $color-primary;
 }
 
-.title {
+.titleSuccess {
 	text-align: center;
 	font-size: 0.9rem;
 	font-weight: bold;
-	color: $color-secondary
+	color: $color-five
 }
 
-.quantity {
+.titleError {
+	text-align: center;
+	font-size: 0.9rem;
+	font-weight: bold;
+	color: $color-terciary
+}
+
+.iconSuccess {
+	font-size: 2rem;
+	color: $color-five;
+}
+
+.iconError {
+	font-size: 2rem;
+	color: $color-terciary
+}
+
+/* .quantity {
 	text-align: center;
 	font-size: 0.8rem;
 	color: $color-secondary
@@ -44,7 +61,7 @@
 .delete {
 	font-size: 1.5rem;
 	color: $color-terciary; 
-}
+} */
 
 .containerEditBell {
 	border-top: solid 1px $color-secondary;

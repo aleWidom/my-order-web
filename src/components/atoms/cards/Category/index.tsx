@@ -19,10 +19,13 @@ export const Category = ({ category }: CategoryProps) => {
 
   const setQuery = useSearchStore(state=> state.setQuery)
 
+  const setSection= useItemsStore(state => state.setSection)
+
   const handleClickCategory = (cardSelected: CategoryRestaurant) => () => {
         setCategorySelected(cardSelected)
         setPlates("", cardSelected.CategoryID)
         setQuery("")
+        setSection("")
   };
 
   return (

@@ -7,8 +7,9 @@
 	padding: 0px;
 	cursor: pointer;
 	z-index: 2;
-	border-bottom: solid $color-secondary 1px;
-	border-right: solid $color-secondary 1px;
+	padding: 4px;
+	border-bottom: solid $color-four 1px;
+	border-right: solid $color-four 1px;
 }
 
 .containerImg {
@@ -22,7 +23,7 @@
 	font-size: 0.9rem;
 	width: 100%;
 	font-weight: 400;
-	color: $color-secondary;
+	color: $color-six;
 	padding: 0.5rem 0.5rem;
 	margin-bottom: 0.5rem;
 }

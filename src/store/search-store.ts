@@ -1,19 +1,35 @@
+import {ModalInfoInterface } from '@/interfaces'
 import { create } from 'zustand'
-import { TableRestaurant } from '../interfaces/interfaces';
-import { fetchTable } from '@/services';
 
 interface State {
   query: string,
-  setQuery: (value: string) => void
+  setQuery: (value: string) => void,
+  modalInfo: ModalInfoInterface,
+ setModalInfo: (objectInfo: ModalInfoInterface) => void, 
 }
 
 export const useSearchStore = create<State>((set) => ({
   query: "",
+
   setQuery: (value: string) => {
     set(state => ({
       ...state,
       query: value
     }))
   },
+  modalInfo: {
+    description: "",
+    state: false,
+    section: ""
+  },
+
+  setModalInfo: (objectInfo: ModalInfoInterface) => {
+    set(state => ({
+      ...state,
+      modalInfo: objectInfo
+    }))
+  }
 
 }))
+
+

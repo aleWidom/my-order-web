@@ -1,10 +1,11 @@
 "use client"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaRegTrashAlt } from "react-icons/fa";
 import { v4 as uuidv4 } from 'uuid';
-import { useTableStore } from '@/store';
+import { useOrdersStore, useTableStore } from '@/store';
 import { itemPeopleInTable } from '@/services';
 import styles from './Quantity.module.scss'
+import { error } from 'console';
 
 
 interface QuantityProps {
@@ -13,13 +14,21 @@ interface QuantityProps {
 	idItem: string
 }
 
-export const Quantity = ({price, title, idItem }: QuantityProps) => {
+export const Quantity = ({ price, title, idItem }: QuantityProps) => {
 
 	const [quantity, setQuantity] = useState(0)
 
 	const [buttonQuantity, setButtonQuantity] = useState(false)
 
 	const table = useTableStore(state => state.tableRestaurant)
+
+	const idPeopleInTable = useTableStore(state => state.idPeopleInTable)
+
+	const setRequest = useOrdersStore(state => state.setRequest)
+
+	const setMessageRequest = useOrdersStore(state => state.setMessageRequest)
+
+
 
 	const addItem = () => {
 		setButtonQuantity(true)
@@ -41,13 +50,15 @@ export const Quantity = ({price, title, idItem }: QuantityProps) => {
 	const submit = () => {
 
 		const idOrder = uuidv4().replaceAll('/', 'a')
-		
+
 		setButtonQuantity(false)
 
+		setRequest(true)
+
 		itemPeopleInTable({
-			numberTable: table.TableID,
+			numberTable: table.table_number,
 			orderNumber: idOrder,
-			idPeopleInTable: "26838345-28ec-4b64-bc59-7bd9dc305791",
+			idPeopleInTable,
 			detail: [{
 				id_item: idItem,
 				price: price,
@@ -55,9 +66,15 @@ export const Quantity = ({price, title, idItem }: QuantityProps) => {
 				title
 			}]
 		})
-
-
-
+			.then((response) => {
+				if (response?.status === 200) {
+					setMessageRequest("success")
+				}
+			})
+			.catch((err:any) => {
+				setMessageRequest("error")
+				console.log(err)
+			})
 	};
 
 	return (

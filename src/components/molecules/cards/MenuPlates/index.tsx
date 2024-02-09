@@ -10,7 +10,7 @@ interface MenuPlatesProps {
     plates: PlateRestaurant[]
 }
 
-export const MenuPlates = async ({ plates }: MenuPlatesProps) => {
+export const MenuPlates = ({ plates }: MenuPlatesProps) => {
 
     const categorySelected = useCategoriesStore(state => state.categorySelected)
 
@@ -19,7 +19,7 @@ export const MenuPlates = async ({ plates }: MenuPlatesProps) => {
             <Image className={styles.containerImgCategory} width={100} height={100} alt={"headerResult"} src={`${categorySelected.CategoryID === "0" ? "https://www.history.org.uk/library/1308/0000/0172/Exam_Results_image_chalk_board_640.jpg" : categorySelected?.photo}`} />
             <h2 className={styles.title}>{categorySelected.CategoryID === "0" ? "" : categorySelected?.name}</h2>
             {plates.map((e) => (
-                <MenuPlate key={e.ItemID} title={e.title} description={e.description} price={e.price} idItem={e.ItemID} />
+                    <MenuPlate key={e.ItemID} title={e.title} description={e.description} price={e.price} idItem={e.ItemID} />
             ))}
         </div>
     );
