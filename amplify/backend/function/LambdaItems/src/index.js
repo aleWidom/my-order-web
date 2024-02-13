@@ -41,6 +41,9 @@ exports.handler = async (event) => {
     else if (event.queryStringParameters?.makeDelivered !== undefined) {
         queryMySql = `Update Item_peopleInTable SET state = "delivered" where ItemPeopleInTableID = ${JSON.stringify(event.pathParameters.proxy.slice(0, 36))} ;`
     }
+    else if (event.queryStringParameters?.deleteItem !== undefined) {
+        queryMySql = `DELETE FROM Item_peopleInTable WHERE OrderNumberID = ${JSON.stringify(event.queryStringParameters.deleteItem)} ;`
+    }
 
     const promiseQuery = new Promise((resolve) => {
         connection.query(`${queryMySql}`, function (error, results, fields) {

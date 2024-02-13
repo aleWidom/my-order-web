@@ -96,9 +96,5 @@ export const Quantity = ({ price, title, idItem }: QuantityProps) => {
 	)
 }
 
-/* else if (event.queryStringParameters?.itemPeopleInTable !== undefined) {
-	queryMySql = `INSERT INTO Item_peopleInTable (ItemPeopleInTableID, orderNumberID, id_peopleInTable, numberTable, quantity, id_item, state)
-	VALUES ${body.detail.map((value)=> (
-		`(${JSON.stringify(value.ItemPeopleInTableID)}, ${JSON.stringify(body.orderNumber)}, ${JSON.stringify(body.idPeopleInTable)}, ${JSON.stringify(body.numberTable)}, ${JSON.stringify(value.quantity)}, ${JSON.stringify(value.id_item)}, 'in process')`
-	))}`
-} */
+ 
+

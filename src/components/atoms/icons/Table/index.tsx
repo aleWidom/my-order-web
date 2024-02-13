@@ -2,7 +2,7 @@
 "use client"
 import { useItemsStore, useTableStore } from '@/store';
 import { v4 as uuidv4 } from 'uuid';
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { fetchTable, peopleInTable, peopleInTableFetch, updateTableNumberActive } from '@/services';
 import styles from './Table.module.scss'
@@ -21,7 +21,7 @@ export const Table = () => {
 
     const setPlates = useItemsStore(state => state.setPlates)
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (idTable !== null) {
             fetchTable(idTable)
                 .then((response) => {
@@ -62,7 +62,7 @@ export const Table = () => {
     }, [])
 
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         setPlates("", "0")
     }, [])
 
@@ -74,6 +74,9 @@ export const Table = () => {
 
     )
 }
+
+
+
 
 
 
