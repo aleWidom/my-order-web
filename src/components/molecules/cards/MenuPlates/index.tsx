@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import { MenuPlate } from "@/components/molecules";
-import { CategoryRestaurant, PlateRestaurant } from "@/interfaces";
+import { PlateRestaurant } from "@/interfaces";
 import { useCategoriesStore } from "@/store";
 import styles from './MenuPlates.module.scss'
 
@@ -19,7 +19,7 @@ export const MenuPlates = ({ plates }: MenuPlatesProps) => {
             <Image className={styles.containerImgCategory} width={100} height={100} alt={"headerResult"} src={`${categorySelected.CategoryID === "0" ? "https://www.history.org.uk/library/1308/0000/0172/Exam_Results_image_chalk_board_640.jpg" : categorySelected?.photo}`} />
             <h2 className={styles.title}>{categorySelected.CategoryID === "0" ? "" : categorySelected?.name}</h2>
             {plates.map((e) => (
-                    <MenuPlate key={e.ItemID} title={e.title} description={e.description} price={e.price} idItem={e.ItemID} />
+                <MenuPlate key={e.ItemID} title={e.title} description={e.description} price={e.price} idItem={e.ItemID} />
             ))}
         </div>
     );

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { FaTimes } from 'react-icons/fa'
-import { BsPersonCheckFill , BsPersonFillDash } from 'react-icons/bs'
+import { BsPersonCheckFill, BsPersonFillDash } from 'react-icons/bs'
 import { useSearchStore } from '@/store'
 import { ModalInfoInterface } from '@/interfaces'
 import styles from './ModalInfo.module.scss'
@@ -26,9 +26,9 @@ export const ModalInfo = ({ modalInfo }: ModalSearchProps) => {
 	return (
 		<div className={styles.containerModalInfo}>
 			<div className={styles.modalInfo}>
-				{modalInfo.section === "form" ? 
-				<FaTimes style={{ fontSize: "30px", color: "red" }} /> : 
-				modalInfo.description === "Su moza/o se aceraca a su mesa." ? <BsPersonCheckFill style={{ fontSize: "30px", color: "white" }}/> :  <BsPersonFillDash style={{ fontSize: "30px", color: "white" }} />
+				{modalInfo.section === "form" ?
+					<FaTimes style={{ fontSize: "30px", color: "red" }} /> :
+					modalInfo.description === "Su moza/o se aceraca a su mesa." ? <BsPersonCheckFill style={{ fontSize: "30px", color: "white" }} /> : <BsPersonFillDash style={{ fontSize: "30px", color: "white" }} />
 				}
 				<p className={styles.description}>{modalInfo.description}</p>
 			</div>
@@ -38,4 +38,3 @@ export const ModalInfo = ({ modalInfo }: ModalSearchProps) => {
 }
 
 
- 

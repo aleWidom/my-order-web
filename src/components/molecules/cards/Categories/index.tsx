@@ -10,7 +10,7 @@ import styles from './Categories.module.scss';
 export const Categories = () => {
 
 	const categories = useCategoriesStore(state => state.categories)
-	
+
 	const setCategories = useCategoriesStore(state => state.setCategories)
 
 	useLayoutEffect(() => {
@@ -25,7 +25,7 @@ export const Categories = () => {
 				{
 					categories?.map((category: CategoryRestaurant) => (
 						<SwiperSlide key={category.CategoryID}>
-							<Category category={category}/>
+							<Category category={category} />
 						</SwiperSlide>
 					))
 				}

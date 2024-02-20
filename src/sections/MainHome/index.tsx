@@ -14,7 +14,7 @@ export const MainHome = () => {
 
 	const request = useOrdersStore(state => state.request)
 
-	const modalInfo = useSearchStore(state=> state.modalInfo)
+	const modalInfo = useSearchStore(state => state.modalInfo)
 
 	return (
 		<>

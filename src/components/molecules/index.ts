@@ -11,5 +11,5 @@ export * from './cards/OrderPlate'
 export * from './cards/OrdersPlates'
 export * from './cards/ModalPlateRequired'
 export * from './inputs/Quantity'
-
+export * from './loading'
 

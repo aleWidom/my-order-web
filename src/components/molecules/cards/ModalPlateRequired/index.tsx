@@ -1,4 +1,3 @@
-"use client"
 import { useEffect } from 'react';
 import { useOrdersStore } from '@/store';
 import styles from './ModalPlateRequired.module.scss'
@@ -9,7 +8,7 @@ interface ModalPlateRequiredProps {
 }
 
 
-export const ModalPlateRequired = ({request}: ModalPlateRequiredProps) => {
+export const ModalPlateRequired = ({ request }: ModalPlateRequiredProps) => {
 
 	const setRequest = useOrdersStore(state => state.setRequest)
 
