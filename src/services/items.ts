@@ -48,12 +48,22 @@ async function fetchItemPeopleInTable(id_peopleInTable: string) {
 	}
 }
 
+async function deleteItem (orderId: string) {
+	try {
+		const deleteItem = await axios.delete(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items?deleteItem=${orderId}`);
+		return deleteItem
+	} catch (err) {
+		console.log(err);
+	}
+}
+
 
 export {
 	fetchItemsRestaurant,
 	getAllCategoriesIdRestaurant1,
 	getItemsResults,
 	fetchItemPeopleInTable,
+	deleteItem
 };
 
 
