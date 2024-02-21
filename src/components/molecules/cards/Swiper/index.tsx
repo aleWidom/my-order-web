@@ -1,23 +1,21 @@
 "use client"
-import Swiper from "swiper"
 import { SwiperSlide } from "swiper/react"
 import { CategoryRestaurant } from "@/interfaces"
 import { Category } from "@/components/atoms"
 
 
 
-interface CarrouselCategoriesProps {
-    categories: CategoryRestaurant[],
+interface SwiperProps {
+    data: [],
     spaceBetween: number,
     slidesPerView: number
 }
 
-export const CarrouselCategories = ({ categories, spaceBetween, slidesPerView }: CarrouselCategoriesProps) => {
-
+export const Swiper = ({ data, spaceBetween, slidesPerView }: SwiperProps) => {
     return (
         <>
             {
-                categories?.map((category: CategoryRestaurant) => (
+                data?.map((category: CategoryRestaurant) => (
                     <SwiperSlide key={category.CategoryID} style={{ width: `calc(100% / ${slidesPerView})`, marginRight: `${spaceBetween}px` }}>
                         <Category category={category} />
                     </SwiperSlide>
