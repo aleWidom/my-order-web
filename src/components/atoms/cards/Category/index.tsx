@@ -1,4 +1,4 @@
-import { useCategoriesStore, useItemsStore} from '@/store';
+import { useCategoriesStore, useItemsStore } from '@/store';
 import { CategoryRestaurant } from "@/interfaces";
 import styles from "./Category.module.scss";
 import { useSearchStore } from '@/store/search-store';
@@ -15,17 +15,17 @@ export const Category = ({ category }: CategoryProps) => {
 
   const setCategorySelected = useCategoriesStore(state => state.setCategorySelected)
 
-  const setPlates = useItemsStore(state => state.setPlates) 
+  const setPlates = useItemsStore(state => state.setPlates)
 
-  const setQuery = useSearchStore(state=> state.setQuery)
+  const setQuery = useSearchStore(state => state.setQuery)
 
-  const setSection= useItemsStore(state => state.setSection)
+  const setSection = useItemsStore(state => state.setSection)
 
   const handleClickCategory = (cardSelected: CategoryRestaurant) => () => {
-        setCategorySelected(cardSelected)
-        setPlates("", cardSelected.CategoryID)
-        setQuery("")
-        setSection("")
+    setCategorySelected(cardSelected)
+    setPlates("", cardSelected.CategoryID)
+    setQuery("")
+    setSection("")
   };
 
   return (

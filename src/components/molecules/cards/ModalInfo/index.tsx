@@ -1,3 +1,4 @@
+"use client"
 import { useEffect } from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { BsPersonCheckFill, BsPersonFillDash } from 'react-icons/bs'
@@ -21,6 +22,7 @@ export const ModalInfo = ({ modalInfo }: ModalSearchProps) => {
 				section: ""
 			})
 		}, 2250);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [modalInfo.state === true])
 
 	return (

@@ -1,4 +1,5 @@
 
+"use client"
 import { useLayoutEffect } from 'react'
 import { TiArrowSortedDown } from "react-icons/ti";
 import { OrderPlate } from '@/components/molecules'
@@ -27,6 +28,7 @@ export const OrdersPlates = () => {
 				console.log(err)
 				return err
 			})
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [request === true, idPeopleInTable])
 
 	return (

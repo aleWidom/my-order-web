@@ -1,3 +1,4 @@
+"use client"
 import { useEffect } from 'react';
 import { useOrdersStore } from '@/store';
 import styles from './ModalPlateRequired.module.scss'

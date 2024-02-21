@@ -4,30 +4,29 @@ import { useSearchParams } from 'next/navigation';
 import { fetchTable } from '../services';
 import { useTableStore } from '@/store';
 
-
 export const useFetchCallTable = () => {
 
     const setSittingOnTheTableCall = useTableStore(state => state.setSittingOnTheTableCall)
 
     const params = useSearchParams();
 
+    const queryStringTable = params.get('table') || ""
+
     useEffect(() => {
-        if (params.get('table') !== null) {
-            fetchTable(params.get('table'))
-                .then((response) => {
-                    if (response !== undefined) {
-                        if (response?.table_call === '1') {
-                            setSittingOnTheTableCall(true)
-                        }
-                        else {
-                            setSittingOnTheTableCall(false)
-                        }
+        fetchTable(queryStringTable)
+            .then((response) => {
+                if (response !== undefined) {
+                    if (response?.table_call === '1') {
+                        setSittingOnTheTableCall(true)
                     }
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-        }
+                    else {
+                        setSittingOnTheTableCall(false)
+                    }
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 };

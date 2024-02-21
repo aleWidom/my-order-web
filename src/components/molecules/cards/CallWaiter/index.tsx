@@ -1,6 +1,6 @@
-import { useLayoutEffect } from 'react';
+"use client"
 import { useSearchStore, useTableStore } from '@/store';
-import { fetchTable, updateTableNumberCall, updateTableNumberNotCall } from '../../../../services';
+import { updateTableNumberCall, updateTableNumberNotCall } from '../../../../services';
 import { CallWaiterView } from './CallWaiterView';
 
 export const CallWaiter = () => {
@@ -10,8 +10,6 @@ export const CallWaiter = () => {
 	const sittingOnTheTableCall = useTableStore(state => state.sittingOnTheTableCall)
 
 	const setSittingOnTheTableCall = useTableStore(state => state.setSittingOnTheTableCall)
-
-	const modalInfo = useSearchStore(state => state.modalInfo)
 
 	const setModalInfo = useSearchStore(state => state.setModalInfo)
 

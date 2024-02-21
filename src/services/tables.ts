@@ -30,7 +30,7 @@ async function fetchTablesActiveCall() {
 	}
 }
 
-async function fetchTable(tableID: string | null) {
+async function fetchTable(tableID: string) {
 	try {
 		const response = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?searchTable=${tableID}`);
 		const data: TableRestaurant[] = response.data;
@@ -53,7 +53,7 @@ async function updateTableNumberDesactive(tableID: string) {
 	}
 }
 
-async function updateTableNumberCall(tableID: string | undefined) {
+async function updateTableNumberCall(tableID: string) {
 	try {
 		const response = await axios.put(
 			/*or get*/ `https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/?call=${tableID}`
@@ -88,7 +88,7 @@ async function updateTableNumberActive(tableID: string) {
 }
 
 
-async function peopleInTableFetch(tableID: string | null) {
+async function peopleInTableFetch(tableID: string) {
 	try {
 		const response = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/?peopleInTableSearch=${tableID}`);
 		return response.data;

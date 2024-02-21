@@ -22,7 +22,7 @@ async function getAllCategoriesIdRestaurant1() {
 }
 
 
-async function getItemsResults(valueInput: string | undefined, categoryID: string) {
+async function getItemsResults(valueInput: string, categoryID: string) {
 	try {
 		const searchResults = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items?search=${valueInput}`);
 		if (categoryID !== "0") {
@@ -48,7 +48,7 @@ async function fetchItemPeopleInTable(id_peopleInTable: string) {
 	}
 }
 
-async function deleteItem (orderId: string) {
+async function deleteItem(orderId: string) {
 	try {
 		const deleteItem = await axios.delete(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items?deleteItem=${orderId}`);
 		return deleteItem

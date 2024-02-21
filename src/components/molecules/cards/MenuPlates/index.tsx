@@ -1,4 +1,4 @@
-
+"use client"
 import Image from "next/image";
 import { MenuPlate } from "@/components/molecules";
 import { PlateRestaurant } from "@/interfaces";

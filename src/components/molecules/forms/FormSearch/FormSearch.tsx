@@ -1,3 +1,4 @@
+"use client"
 import { ChangeEvent, useState } from 'react';
 import { Search } from '@/components/atoms';
 import { InputSearch } from '@/components/molecules';
