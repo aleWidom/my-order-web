@@ -1,32 +1,19 @@
 "use client"
 import { useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { fetchTable } from '../services';
 import { useTableStore } from '@/store';
+import { TableRestaurant } from '@/interfaces';
 
-export const useFetchCallTable = () => {
+export const useFetchCallTable = (table: TableRestaurant) => {
 
     const setSittingOnTheTableCall = useTableStore(state => state.setSittingOnTheTableCall)
 
-    const params = useSearchParams();
-
-    const queryStringTable = params.get('table') || ""
-
     useEffect(() => {
-        fetchTable(queryStringTable)
-            .then((response) => {
-                if (response !== undefined) {
-                    if (response?.table_call === '1') {
-                        setSittingOnTheTableCall(true)
-                    }
-                    else {
-                        setSittingOnTheTableCall(false)
-                    }
-                }
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+        if (table.table_call === '1') {
+            setSittingOnTheTableCall(true)
+        }
+        else if (table.table_call === '0') {
+            setSittingOnTheTableCall(false)
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 };

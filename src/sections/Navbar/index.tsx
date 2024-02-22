@@ -1,15 +1,22 @@
 
-import {MainBrand , Table } from '@/components/atoms';
+import { MainBrand, SearchTable } from '@/components/atoms';
 import styles from './Navbar.module.scss';
+import { Suspense } from 'react';
 
-export const Navbar = async () => {
+interface NavbarProps {
+	tableID: string
+}
+
+export const Navbar = async ({ tableID }: NavbarProps) => {
 	return (
 		<nav className={styles.containerNavbarHome}>
 			<div className={styles.containerMenuBrand}>
 				<MainBrand />
 			</div>
 			<div className={styles.containerTableWaiter}>
-				<Table  />
+				<Suspense fallback={"Cargando"}>
+					<SearchTable tableID={tableID} />
+				</Suspense>
 			</div>
 		</nav>
 	);

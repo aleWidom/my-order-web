@@ -1,25 +1,21 @@
 'use client'
-import {useLayoutEffect, useState } from "react"
 import { MainPlates, MenuPlates } from "@/components/molecules"
-import { PlateRestaurant } from "@/interfaces"
-
-interface PlatesRestauranteProps {
-    results: PlateRestaurant[]
-}
+import { useItemsStore } from "@/store"
 
 
-export const Plates = ({results}: PlatesRestauranteProps) => {
 
-  const [results2, setResults]= useState(results)
 
- 
-  
+export const Plates = () => {
 
-  console.log(results2)
+
+  const plates = useItemsStore(state => state.plates)
+
+  const section = useItemsStore(state => state.section)
+
 
   return (
     <>
-    {results2 ? <MainPlates/> : <MenuPlates results2={results2} /* results={results} */ /* categorySelected={categorySelected}  *//>}
+      {section === "main" ? <MainPlates plates={plates} /> : <MenuPlates plates={plates} />}
     </>
   )
 }

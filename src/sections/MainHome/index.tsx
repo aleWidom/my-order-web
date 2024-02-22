@@ -1,37 +1,27 @@
-/* "use client"
-import { CallWaiter, Categories, FormSearch, MainPlates, MenuPlates, ModalPlateRequired, OrdersPlates, ModalInfo, MainLoading } from '@/components/molecules';
-import { useItemsStore, useOrdersStore, useSearchStore } from '@/store'; */
 import { Suspense } from 'react';
-import { Categories, MainLoading } from '@/components/molecules';
+import { SearchCalls } from '@/components/atoms';
+import { Categories, FormSearch, OrdersPlates, Plates, Modals } from '@/components/molecules';
 import styles from './MainHome.module.scss'
 
+interface NavbarProps {
+	tableID: string
+}
 
-
-
-export const MainHome = () => {
-
-	/* 	const plates = useItemsStore(state => state.plates)
-	
-		const section = useItemsStore(state => state.section)
-	
-		const request = useOrdersStore(state => state.request)
-	
-		const modalInfo = useSearchStore(state => state.modalInfo) */
-
+export const MainHome = ({ tableID }: NavbarProps) => {
 	return (
 		<>
 			<div className={styles.mainContainerPlates}>
-				{/* <CallWaiter />
-				<FormSearch /> */}
-				<Suspense fallback={<MainLoading />}>
+				<Suspense fallback={"Cargando..."}>
+					<SearchCalls tableID={tableID} />
+				</Suspense>
+				<FormSearch />
+				<Suspense fallback={"Cargando..."}>
 					<Categories />
 				</Suspense>
-				{/* 	{section === "main" ? <MainPlates plates={plates} /> : <MenuPlates plates={plates} />} */}
+				<Plates />
 			</div>
-
-			{/* <OrdersPlates />
-			{request && <ModalPlateRequired request={request} />}
-			{modalInfo.state === true && <ModalInfo modalInfo={modalInfo} />} */}
+			<OrdersPlates />
+			<Modals />
 		</>
 	)
 }

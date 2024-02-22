@@ -2,10 +2,15 @@
 import { useSearchStore, useTableStore } from '@/store';
 import { updateTableNumberCall, updateTableNumberNotCall } from '../../../../services';
 import { CallWaiterView } from './CallWaiterView';
+import { useFetchCallTable } from '@/hooks';
+import { TableRestaurant } from '@/interfaces';
 
-export const CallWaiter = () => {
 
-	const table = useTableStore(state => state.tableRestaurant)
+interface CallWaiterProps {
+	table: TableRestaurant
+}
+
+export const CallWaiter = ({ table }: CallWaiterProps) => {
 
 	const sittingOnTheTableCall = useTableStore(state => state.sittingOnTheTableCall)
 
@@ -13,6 +18,7 @@ export const CallWaiter = () => {
 
 	const setModalInfo = useSearchStore(state => state.setModalInfo)
 
+	useFetchCallTable(table)
 
 	const handleCall = () => {
 		updateTableNumberCall(table.TableID);
