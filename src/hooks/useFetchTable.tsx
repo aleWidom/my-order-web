@@ -8,6 +8,8 @@ import { useTableStore } from '@/store';
 
 export const useFetchTable = (table: TableRestaurant) => {
 
+    console.log("me renderice")
+
     const setTable = useTableStore(state => state.setTable)
 
     const setIdPeopleInTable = useTableStore(state => state.setIdPeopleInTable)
@@ -35,6 +37,8 @@ export const useFetchTable = (table: TableRestaurant) => {
                     console.log(err)
                 })
         }
+
+        console.log(table.table_active === '0', "activa o no")
 
         setTable({
             TableID: table?.TableID,

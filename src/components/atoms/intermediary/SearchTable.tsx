@@ -13,7 +13,7 @@ export const SearchTable = async ({ tableID }: SearchTablerProps) => {
 
     return (
         <>
-            {table !== undefined && <Table table={table} />}
+            {table !== undefined ? <Table table={table} /> : ""}
         </>
     );
 };

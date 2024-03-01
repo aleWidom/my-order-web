@@ -1,10 +1,17 @@
 
 import { Navbar, MainHome } from "@/sections"
 
+interface HomeProps {
+  searchParams: {
+    table: string
+  }
+}
 
-export default async function Home({ searchParams }: any) {
+export default async function Home({ searchParams }: HomeProps) {
 
-  const tableID = searchParams?.table || '';
+  const tableID = searchParams?.table;
+
+
 
   return (
     <>

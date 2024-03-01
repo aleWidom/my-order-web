@@ -1,6 +1,6 @@
 
 "use client"
-import { useItemsStore } from '@/store';
+import { useItemsStore } from '@/store'
 import { useEffect } from 'react';
 import { TableRestaurant } from '@/interfaces';
 import { useFetchTable } from '@/hooks';
