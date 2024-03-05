@@ -4,11 +4,10 @@ import { v4 as uuidv4 } from 'uuid';
 import { peopleInTable, peopleInTableFetch, updateTableNumberActive } from '@/services';
 import { TableRestaurant } from '@/interfaces';
 import { useTableStore } from '@/store';
+import { table } from 'console';
 
 
 export const useFetchTable = (table: TableRestaurant) => {
-
-    console.log("me renderice")
 
     const setTable = useTableStore(state => state.setTable)
 
@@ -16,7 +15,7 @@ export const useFetchTable = (table: TableRestaurant) => {
 
     useEffect(() => {
         if (table.table_active === '0') {
-            console.log(table.table_active === '0')
+
             updateTableNumberActive(table.TableID);
 
             //Genero el idPeopleInTable
@@ -38,8 +37,6 @@ export const useFetchTable = (table: TableRestaurant) => {
                 })
         }
 
-        console.log(table.table_active === '0', "activa o no")
-
         setTable({
             TableID: table?.TableID,
             table_number: table?.table_number,
@@ -47,5 +44,7 @@ export const useFetchTable = (table: TableRestaurant) => {
             table_call: table?.table_call,
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [])
+
 };
+

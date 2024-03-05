@@ -1,15 +1,20 @@
 
 "use client"
-import { useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 import { TiArrowSortedDown } from "react-icons/ti";
 import { OrderPlate } from '@/components/molecules'
 import { useOrdersStore } from '@/store/orders-store'
 import styles from './OrdersPlates.module.scss'
-import { useTableStore } from '@/store';
-import { fetchItemPeopleInTable } from '@/services';
+import { fetchItemPeopleInTable, peopleInTableFetch } from '@/services';
 import { Order } from '@/interfaces';
 
-export const OrdersPlates = () => {
+
+interface OrdersPlatesProps {
+	tableID: string
+}
+
+
+export const OrdersPlates = ({ tableID }: OrdersPlatesProps) => {
 
 	const orders = useOrdersStore(state => state.orders)
 
@@ -17,19 +22,36 @@ export const OrdersPlates = () => {
 
 	const request = useOrdersStore(state => state.request)
 
-	const idPeopleInTable = useTableStore(state => state.idPeopleInTable)
+	useEffect(() => {
+		const fetchDataAndSetTimeout = () => {
+			peopleInTableFetch(tableID)
+				.then((data) => {
+					if (data !== undefined) {
+						fetchItemPeopleInTable(data[0].PeopleInTableID)
+							.then((data: Order[]) => {
+								console.log(data)
+								setOrders(data);
+							})
+							.catch((err) => {
+								console.log(err);
+								return err;
+							})
+							.finally(() => {
+								setTimeout(fetchDataAndSetTimeout, 1000); // Llama a la función recursivamente después de 5 segundos
+							});
+					}
+				})
+				.catch((err) => {
+					console.log(err);
+					return err;
+				});
+		};
 
-	useLayoutEffect(() => {
-		fetchItemPeopleInTable(idPeopleInTable)
-			.then((data: Order[]) => {
-				setOrders(data)
-			})
-			.catch((err) => {
-				console.log(err)
-				return err
-			})
+		// Llama a fetchDataAndSetTimeout por primera vez
+		fetchDataAndSetTimeout();
+
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [request === true, idPeopleInTable])
+	}, [request === true]);
 
 	return (
 		<div className={styles.mainContainerOrders}>
@@ -53,3 +75,10 @@ export const OrdersPlates = () => {
 		</div>
 	)
 }
+
+
+
+/* else if (event.queryStringParameters?.fetchItemPeopleInTable !== undefined) {
+	queryMySql = `select id_item as ItemID, title, orderNumberID, id_peopleInTable, numberTable , quantity, price,state, date from Item_peopleInTable , Item
+	Where Item_peopleInTable.id_item = Item.ItemID && Item_peopleInTable.id_peopleInTable = ${JSON.stringify(event.queryStringParameters.fetchItemPeopleInTable)} ORDER BY date DESC`
+} */

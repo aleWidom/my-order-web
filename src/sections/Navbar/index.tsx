@@ -15,7 +15,9 @@ export const Navbar = async ({ tableID }: NavbarProps) => {
 				<MainBrand />
 			</div>
 			<div className={styles.containerTableWaiter}>
-				<SearchTable tableID={tableID} />
+				<Suspense fallback={"Cargando"}>
+					<SearchTable tableID={tableID} />
+				</Suspense>
 			</div>
 		</nav>
 	);

@@ -14,6 +14,10 @@ export const MenuPlates = ({ plates }: MenuPlatesProps) => {
 
     const categorySelected = useCategoriesStore(state => state.categorySelected)
 
+    console.log(categorySelected)
+
+    console.log(plates)
+
     return (
         <div className={styles.container}>
             <Image className={styles.containerImgCategory} width={100} height={100} alt={"headerResult"} src={`${categorySelected.CategoryID === "0" ? "https://www.history.org.uk/library/1308/0000/0172/Exam_Results_image_chalk_board_640.jpg" : categorySelected?.photo}`} />

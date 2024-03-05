@@ -3,8 +3,6 @@ import { MainPlates, MenuPlates } from "@/components/molecules"
 import { useItemsStore } from "@/store"
 
 
-
-
 export const Plates = () => {
 
 
@@ -19,4 +17,3 @@ export const Plates = () => {
     </>
   )
 }
-

@@ -11,8 +11,6 @@ export default async function Home({ searchParams }: HomeProps) {
 
   const tableID = searchParams?.table;
 
-
-
   return (
     <>
       <Navbar tableID={tableID} />

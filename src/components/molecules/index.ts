@@ -12,7 +12,7 @@ export * from './cards/OrderPlate'
 export * from './cards/OrdersPlates'
 export * from './cards/ModalPlateRequired'
 export * from './cards/Modals'
-export * from './cards/Swiper'
+export * from './cards/CarrouselCategories'
 export * from './inputs/Quantity'
 
 
