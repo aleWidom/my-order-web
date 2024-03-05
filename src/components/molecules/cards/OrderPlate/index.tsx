@@ -2,6 +2,7 @@
 "use client"
 import { Order } from '@/interfaces'
 import styles from './OrderPlate.module.scss'
+import { deleteOrder } from '@/services'
 
 
 interface OrderProps {
@@ -11,8 +12,7 @@ interface OrderProps {
 export const OrderPlate = ({ order }: OrderProps) => {
 
 	const handleDeleteOrder = () => {
-		console.log(order.orderNumberID)
-		/* deleteOrder(order.orderNumberID) */
+		 deleteOrder(order.orderNumberID) 
 	}
 
 	return (

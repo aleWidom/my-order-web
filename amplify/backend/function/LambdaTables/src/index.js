@@ -59,6 +59,10 @@ exports.handler = async (event) => {
 			)}, ${JSON.stringify(value.id_item)}, 'in process')`
 	)}`;
 		}
+		else if (event.queryStringParameters?.deleteOrder !== undefined) {
+			queryMySql = `DELETE FROM Item_peopleInTable WHERE OrderNumberID = ${JSON.stringify(event.queryStringParameters.deleteOrder)}`;
+		}
+
 
 		const promiseQuery = new Promise((resolve) => {
 			connection.query(`${queryMySql}`, function (error, results, fields) {

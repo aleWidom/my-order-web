@@ -128,6 +128,15 @@ async function itemPeopleInTable(body: ItemPeopleInTable) {
 	}
 }
 
+async function deleteOrder(orderID: string) {
+	try {
+		const response = await axios.delete(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?deleteOrder=${orderID}`);
+		return response;
+	} catch (err) {
+		console.log(err);
+	}
+}
+
 
 
 
@@ -145,6 +154,7 @@ export {
 	peopleInTableFetch,
 	peopleInTable,
 	itemPeopleInTable,
+	deleteOrder
 };
 
 

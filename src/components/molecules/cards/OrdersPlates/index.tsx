@@ -78,7 +78,3 @@ export const OrdersPlates = ({ tableID }: OrdersPlatesProps) => {
 
 
 
-/* else if (event.queryStringParameters?.fetchItemPeopleInTable !== undefined) {
-	queryMySql = `select id_item as ItemID, title, orderNumberID, id_peopleInTable, numberTable , quantity, price,state, date from Item_peopleInTable , Item
-	Where Item_peopleInTable.id_item = Item.ItemID && Item_peopleInTable.id_peopleInTable = ${JSON.stringify(event.queryStringParameters.fetchItemPeopleInTable)} ORDER BY date DESC`
-} */

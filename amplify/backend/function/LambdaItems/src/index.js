@@ -31,8 +31,8 @@ exports.handler = async (event) => {
         queryMySql = `select * from Item where title like "%${event.queryStringParameters.search}%"`
     }
     else if (event.queryStringParameters?.fetchItemPeopleInTable !== undefined) {
-        queryMySql = `select id_item as ItemID, title, orderNumberID, numberTable , quantity, price,state, date from Item_peopleInTable , Item
-        Where Item_peopleInTable.id_item = Item.ItemID ORDER BY date DESC;`
+        queryMySql = `select id_item as ItemID, title, orderNumberID, id_peopleInTable, numberTable , quantity, price,state, date from Item_peopleInTable , Item
+        Where Item_peopleInTable.id_item = Item.ItemID && Item_peopleInTable.id_peopleInTable = ${JSON.stringify(event.queryStringParameters.fetchItemPeopleInTable)} ORDER BY date DESC`
     }
     else if (event.queryStringParameters?.itemsAcordingCategory !== undefined) {
         queryMySql = `select ItemID, title, description, price from Category , Item
