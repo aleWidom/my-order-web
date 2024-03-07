@@ -14,11 +14,12 @@ export const OrderPlate = ({ order }: OrderProps) => {
 
 	const setMessageRequest = useOrdersStore(state => state.setMessageRequest)
 
-	console.log(order)
+	const setRequest = useOrdersStore(state => state.setRequest)
 
 	const handleDeleteOrder = () => {
 		console.log(order.orderNumberID)
 		deleteOrder(order.orderNumberID)
+		setRequest(true)
 		setMessageRequest('cancel')
 	}
 
