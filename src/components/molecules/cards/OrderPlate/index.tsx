@@ -3,6 +3,7 @@
 import { Order } from '@/interfaces'
 import styles from './OrderPlate.module.scss'
 import { deleteOrder } from '@/services'
+import { useOrdersStore } from '@/store'
 
 
 interface OrderProps {
@@ -11,8 +12,14 @@ interface OrderProps {
 
 export const OrderPlate = ({ order }: OrderProps) => {
 
+	const setMessageRequest = useOrdersStore(state => state.setMessageRequest)
+
+	console.log(order)
+
 	const handleDeleteOrder = () => {
-		 deleteOrder(order.orderNumberID) 
+		console.log(order.orderNumberID)
+		deleteOrder(order.orderNumberID)
+		setMessageRequest('cancel')
 	}
 
 	return (

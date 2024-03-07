@@ -31,7 +31,6 @@ export const ModalPlateRequired = ({ request }: ModalPlateRequiredProps) => {
 				<div className={styles.containerModalPlate}>
 					<div className={styles.modalPlate}>
 						<FaRegCheckCircle className={styles.iconSuccess} />
-
 						<p className={styles.titleSuccess}>Su pedido se ha realizado correctamente.</p>
 					</div>
 				</div>
@@ -41,6 +40,14 @@ export const ModalPlateRequired = ({ request }: ModalPlateRequiredProps) => {
 					<div className={styles.modalPlate}>
 						<FaTimesCircle className={styles.iconError} />
 						<p className={styles.titleError}>Vuelva a solicitar el pedido por favor.</p>
+					</div>
+				</div>
+			}
+			{messageRequest === "cancel" &&
+				<div className={styles.containerModalPlate}>
+					<div className={styles.modalPlate}>
+						<FaTimesCircle className={styles.iconError} />
+						<p className={styles.titleError}>Se ha cancelado su solicitud.</p>
 					</div>
 				</div>
 			}

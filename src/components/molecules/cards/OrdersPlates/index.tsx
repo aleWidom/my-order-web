@@ -23,10 +23,10 @@ export const OrdersPlates = ({ tableID }: OrdersPlatesProps) => {
 	const request = useOrdersStore(state => state.request)
 
 	useEffect(() => {
-
 		peopleInTableFetch(tableID)
 			.then((data) => {
 				if (data !== undefined) {
+
 					fetchItemPeopleInTable(data[0].PeopleInTableID)
 						.then((data: Order[]) => {
 							console.log(data)
