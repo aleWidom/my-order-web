@@ -26,7 +26,6 @@ export const OrdersPlates = ({ tableID }: OrdersPlatesProps) => {
 		peopleInTableFetch(tableID)
 			.then((data) => {
 				if (data !== undefined) {
-
 					fetchItemPeopleInTable(data[0].PeopleInTableID)
 						.then((data: Order[]) => {
 							console.log(data)
