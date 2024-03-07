@@ -9,6 +9,7 @@ interface HomeProps {
 
 export default async function Home({ searchParams }: HomeProps) {
 
+  //searchParams
   const tableID = searchParams?.table;
 
 
