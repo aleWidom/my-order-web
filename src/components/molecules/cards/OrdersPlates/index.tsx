@@ -23,32 +23,25 @@ export const OrdersPlates = ({ tableID }: OrdersPlatesProps) => {
 	const request = useOrdersStore(state => state.request)
 
 	useEffect(() => {
-		const fetchDataAndSetTimeout = () => {
-			peopleInTableFetch(tableID)
-				.then((data) => {
-					if (data !== undefined) {
-						fetchItemPeopleInTable(data[0].PeopleInTableID)
-							.then((data: Order[]) => {
-								console.log(data)
-								setOrders(data);
-							})
-							.catch((err) => {
-								console.log(err);
-								return err;
-							})
-							.finally(() => {
-								setTimeout(fetchDataAndSetTimeout, 1000); // Llama a la función recursivamente después de 5 segundos
-							});
-					}
-				})
-				.catch((err) => {
-					console.log(err);
-					return err;
-				});
-		};
 
-		// Llama a fetchDataAndSetTimeout por primera vez
-		fetchDataAndSetTimeout();
+		peopleInTableFetch(tableID)
+			.then((data) => {
+				if (data !== undefined) {
+					fetchItemPeopleInTable(data[0].PeopleInTableID)
+						.then((data: Order[]) => {
+							console.log(data)
+							setOrders(data);
+						})
+						.catch((err) => {
+							console.log(err);
+							return err;
+						})
+				}
+			})
+			.catch((err) => {
+				console.log(err);
+				return err;
+			});
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [request === true]);
