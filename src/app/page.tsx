@@ -1,5 +1,6 @@
 
 import { Navbar, MainHome } from "@/sections"
+import { fetchTable } from "@/services";
 
 interface HomeProps {
   searchParams: {
@@ -9,14 +10,17 @@ interface HomeProps {
 
 export default async function Home({ searchParams }: HomeProps) {
 
-
   const tableID = searchParams?.table;
 
+  const table = await fetchTable(tableID);
 
   return (
     <>
-      <Navbar tableID={tableID} />
-      <MainHome tableID={tableID} />
+      {table !== undefined && 
+      <>
+      <Navbar table={table} />
+      <MainHome table={table} />
+      </>}
     </>
   );
 }

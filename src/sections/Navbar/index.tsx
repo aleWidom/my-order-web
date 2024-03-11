@@ -1,13 +1,14 @@
 
-import { MainBrand, SearchTable } from '@/components/atoms';
+import { MainBrand, Table } from '@/components/atoms';
 import styles from './Navbar.module.scss';
 import { Suspense } from 'react';
+import { TableRestaurant } from '@/interfaces';
 
 interface NavbarProps {
-	tableID: string
+	table: TableRestaurant
 }
 
-export const Navbar = async ({ tableID }: NavbarProps) => {
+export const Navbar = async ({ table }: NavbarProps) => {
 
 	return (
 		<nav className={styles.containerNavbarHome}>
@@ -16,7 +17,7 @@ export const Navbar = async ({ tableID }: NavbarProps) => {
 			</div>
 			<div className={styles.containerTableWaiter}>
 				<Suspense fallback={"Cargando"}>
-					<SearchTable tableID={tableID} />
+					<Table table={table} />
 				</Suspense>
 			</div>
 		</nav>
