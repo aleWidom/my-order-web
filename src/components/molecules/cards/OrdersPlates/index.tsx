@@ -4,9 +4,9 @@ import { useEffect } from 'react'
 import { TiArrowSortedDown } from "react-icons/ti";
 import { OrderPlate } from '@/components/molecules'
 import { useOrdersStore } from '@/store/orders-store'
-import styles from './OrdersPlates.module.scss'
 import { fetchItemPeopleInTable, peopleInTableFetch } from '@/services';
 import { Order } from '@/interfaces';
+import styles from './OrdersPlates.module.scss'
 
 
 interface OrdersPlatesProps {

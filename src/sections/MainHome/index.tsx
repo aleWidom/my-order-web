@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
+import { SearchPlates } from '@/components/atoms';
 import { Categories, FormSearch, OrdersPlates, Modals, CallWaiter } from '@/components/molecules';
 import { TableRestaurant } from '@/interfaces';
 import styles from './MainHome.module.scss'
-import { SearchPlates } from '@/components/atoms';
 
 
 
