@@ -16,9 +16,7 @@ export const Navbar = async ({ table }: NavbarProps) => {
 				<MainBrand />
 			</div>
 			<div className={styles.containerTableWaiter}>
-				<Suspense fallback={"Cargando"}>
-					<Table table={table} />
-				</Suspense>
+				<Table table={table} />
 			</div>
 		</nav>
 	);

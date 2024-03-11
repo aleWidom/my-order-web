@@ -1,7 +1,5 @@
 
 "use client"
-import { useItemsStore } from '@/store'
-import { useEffect } from 'react';
 import { TableRestaurant } from '@/interfaces';
 import { useFetchTable } from '@/hooks';
 import styles from './Table.module.scss'
@@ -11,12 +9,6 @@ interface TableProps {
 }
 
 export const Table = ({ table }: TableProps) => {
-
-    const setPlates = useItemsStore(state => state.setPlates)
-
-    useEffect(() => {
-        setPlates("", "0")
-    }, [])
 
     useFetchTable(table)
 

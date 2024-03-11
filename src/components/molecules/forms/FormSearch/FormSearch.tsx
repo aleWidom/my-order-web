@@ -56,7 +56,7 @@ export const FormSearch = () => {
 							)
 
 							setQuery(value)
-							setPlates(value, "0")
+							setPlates(value, "0", [])
 							setValue("")
 							setSection("")
 						}

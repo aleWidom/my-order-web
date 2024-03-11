@@ -28,7 +28,6 @@ export const OrdersPlates = ({ tableID }: OrdersPlatesProps) => {
 				if (data !== undefined) {
 					fetchItemPeopleInTable(data[0].PeopleInTableID)
 						.then((data: Order[]) => {
-							console.log(data)
 							setOrders(data);
 						})
 						.catch((err) => {

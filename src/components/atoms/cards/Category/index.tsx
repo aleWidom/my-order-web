@@ -23,7 +23,7 @@ export const Category = ({ category }: CategoryProps) => {
 
   const handleClickCategory = (cardSelected: CategoryRestaurant) => () => {
     setCategorySelected(cardSelected)
-    setPlates("", cardSelected.CategoryID)
+    setPlates("", cardSelected.CategoryID, [])
     setQuery("")
     setSection("")
   };

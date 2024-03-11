@@ -31,7 +31,6 @@ async function fetchTablesActiveCall() {
 }
 
 async function fetchTable(tableID: string) {
-	console.log(tableID)
 	try {
 		const response = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?searchTable=${tableID}`);
 		const data: TableRestaurant[] = response.data;
@@ -110,7 +109,6 @@ async function fetchOrderItem() {
 }
 
 async function peopleInTable(idPeopleInTable: string, tableId: string) {
-	console.log("peopleInTable")
 	try {
 		const response = await axios.post(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/${idPeopleInTable}/${tableId}?peopleInTable`);
 		return response.data;
