@@ -1,9 +1,9 @@
 
 "use client"
 import { Order } from '@/interfaces'
-import styles from './OrderPlate.module.scss'
 import { deleteOrder } from '@/services'
 import { useOrdersStore } from '@/store'
+import styles from './OrderPlate.module.scss'
 
 
 interface OrderProps {
