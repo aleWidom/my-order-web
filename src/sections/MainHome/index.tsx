@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
-import { SearchCalls } from '@/components/atoms';
-import { Categories, FormSearch, OrdersPlates, Plates, Modals } from '@/components/molecules';
+import { Categories, FormSearch, OrdersPlates, Plates, Modals, CallWaiter } from '@/components/molecules';
 import styles from './MainHome.module.scss'
 import { TableRestaurant } from '@/interfaces';
 
@@ -13,9 +12,7 @@ export const MainHome = ({ table }: NavbarProps) => {
 	return (
 		<>
 			<div className={styles.mainContainerPlates}>
-				<Suspense fallback={"Cargando..."}>
-					<SearchCalls tableID={table.TableID} />
-				</Suspense>
+				<CallWaiter table={table} />
 				<FormSearch />
 				<Suspense fallback={"Cargando..."}>
 					<Categories />

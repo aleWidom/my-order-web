@@ -16,11 +16,11 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <>
-      {table !== undefined && 
-      <>
-      <Navbar table={table} />
-      <MainHome table={table} />
-      </>}
+      {table !== undefined &&
+        <>
+          <Navbar table={table} />
+          <MainHome table={table} />
+        </>}
     </>
   );
 }
