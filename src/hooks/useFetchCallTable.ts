@@ -7,14 +7,14 @@ export const useFetchCallTable = (table: TableRestaurant) => {
 
     const setSittingOnTheTableCall = useTableStore(state => state.setSittingOnTheTableCall)
 
-    useEffect(() => {
-        if (table.table_call === '1') {
-            setSittingOnTheTableCall(true)
-        }
-        else if (table.table_call === '0') {
-            setSittingOnTheTableCall(false)
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+
+    if (table.table_call === '1') {
+        setSittingOnTheTableCall(true)
+    }
+    else if (table.table_call === '0') {
+        setSittingOnTheTableCall(false)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+
 };
 
