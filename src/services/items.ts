@@ -42,7 +42,7 @@ async function getItemsResults(valueInput: string, categoryID: string) {
 async function fetchItemPeopleInTable(id_peopleInTable: string) {
 	try {
 		const fetchItemPeopleInTable = await fetch(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items?fetchItemPeopleInTable=${id_peopleInTable}`,
-			{ next: { revalidate: 1000 } });
+			{ cache: 'no-store' });
 		const data = await fetchItemPeopleInTable.json()
 		return data
 	} catch (err) {
