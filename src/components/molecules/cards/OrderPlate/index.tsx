@@ -25,7 +25,7 @@ export const OrderPlate = ({ order }: OrderProps) => {
 	return (
 		<div className={styles.containerCardOrderDefinitive}>
 			<div className={styles.containerDescription}>
-				<h4 className={styles.title}>{order.title.length > 28 ? order.title.slice(0, 28) + "..." : order.title}</h4>
+				<h4 className={styles.title}>{order.title.length > 45 ? order.title.slice(0, 45) + "..." : order.title}</h4>
 				<small className={styles.price} >Precio Unitario: ${order?.price}</small>
 				<small className={styles.quantity}>Cantidad: {order.quantity} u.</small>
 				{order.state === "in process" ?
