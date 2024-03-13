@@ -56,16 +56,13 @@ export const Quantity = ({ price, title, idItem }: QuantityProps) => {
 		setRequest(true)
 
 		itemPeopleInTable({
-			tableID: table.TableID,
-			numberTable: table.table_number,
 			orderNumber: idOrder,
+			id_table: table.TableID,
+			numberTable: table.table_number,
 			idPeopleInTable,
-			detail: [{
-				id_item: idItem,
-				price: price,
-				quantity,
-				title
-			}]
+			id_item: idItem,
+			quantity
+
 		})
 			.then((response) => {
 				if (response?.status === 200) {

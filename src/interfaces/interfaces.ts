@@ -27,12 +27,15 @@ export interface CategoryRestaurant {
 
 
 export interface ItemPeopleInTable {
-	tableID: string,
-	numberTable: string | undefined,
 	orderNumber: string,
 	idPeopleInTable: string,
-	detail: PlateSelected[]
+	numberTable: string | undefined,
+	quantity: number,
+	id_item: string,
+	id_table: string,
 }
+
+
 
 export interface PlateSelected {
 	title: string;
