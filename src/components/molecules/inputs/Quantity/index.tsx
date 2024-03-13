@@ -56,6 +56,7 @@ export const Quantity = ({ price, title, idItem }: QuantityProps) => {
 		setRequest(true)
 
 		itemPeopleInTable({
+			tableID: table.TableID,
 			numberTable: table.table_number,
 			orderNumber: idOrder,
 			idPeopleInTable,
@@ -71,7 +72,7 @@ export const Quantity = ({ price, title, idItem }: QuantityProps) => {
 					setMessageRequest("success")
 				}
 			})
-			.catch((err:any) => {
+			.catch((err: any) => {
 				setMessageRequest("error")
 				console.log(err)
 			})
@@ -96,5 +97,5 @@ export const Quantity = ({ price, title, idItem }: QuantityProps) => {
 	)
 }
 
- 
+
 

@@ -27,6 +27,7 @@ export interface CategoryRestaurant {
 
 
 export interface ItemPeopleInTable {
+	tableID: string,
 	numberTable: string | undefined,
 	orderNumber: string,
 	idPeopleInTable: string,
@@ -49,7 +50,7 @@ export interface ModalPlate {
 	quantity: number;
 	stateModal?: boolean,
 	modalType?: 'main' | 'required',
-	stateOrder?: 'temporary' | 'edit'| 'delete' | 'orderConfirmed' | 'orderError',
+	stateOrder?: 'temporary' | 'edit' | 'delete' | 'orderConfirmed' | 'orderError',
 	headerModalRequest?: string,
 	index?: number
 }
