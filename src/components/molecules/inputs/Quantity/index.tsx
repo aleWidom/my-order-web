@@ -57,10 +57,10 @@ export const Quantity = ({ price, title, idItem }: QuantityProps) => {
 
 		itemPeopleInTable({
 			orderNumber: idOrder,
-			numberTable: table.table_number,
 			idPeopleInTable,
-			id_item: idItem,
-			quantity
+			numberTable: table.table_number,
+			quantity,
+			id_item: idItem
 
 		})
 			.then((response) => {

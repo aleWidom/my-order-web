@@ -1,3 +1,4 @@
+import { table } from 'console';
 export interface TableRestaurant {
 	TableID: string;
 	table_number: string | undefined;
@@ -74,3 +75,4 @@ export interface Order {
 	state: string,
 	date: string
 }
+
