@@ -32,7 +32,6 @@ export interface ItemPeopleInTable {
 	numberTable: string | undefined,
 	quantity: number,
 	id_item: string,
-	id_table: string,
 }
 
 

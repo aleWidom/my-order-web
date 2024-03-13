@@ -57,7 +57,6 @@ export const Quantity = ({ price, title, idItem }: QuantityProps) => {
 
 		itemPeopleInTable({
 			orderNumber: idOrder,
-			id_table: table.TableID,
 			numberTable: table.table_number,
 			idPeopleInTable,
 			id_item: idItem,
