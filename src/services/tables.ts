@@ -138,8 +138,6 @@ async function deleteOrder(orderID: string) {
 
 
 
-
-
 export {
 	fetchTables,
 	fetchTablesActive,
