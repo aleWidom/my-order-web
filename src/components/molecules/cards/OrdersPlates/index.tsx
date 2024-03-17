@@ -56,7 +56,7 @@ export const OrdersPlates = ({ tableID }: OrdersPlatesProps) => {
 	return (
 		<div className={styles.mainContainerOrders}>
 			<div className={styles.containerRequest}>
-				<h3 className={styles.title} >Órdenes solicitadas.</h3>
+				<h3 className={styles.title}  >Órdenes solicitadas.</h3>
 				{orders.length ? <h3 className={styles.quantityOrder}>{orders.length}</h3> : ""}
 			</div>
 

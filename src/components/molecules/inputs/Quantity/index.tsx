@@ -75,7 +75,6 @@ export const Quantity = ({ price, title, idItem }: QuantityProps) => {
 	};
 
 	return (
-
 		<>
 			{
 				buttonQuantity === false ? <button onClick={addItem} className={styles.buttonQuantity}>+</button> :
