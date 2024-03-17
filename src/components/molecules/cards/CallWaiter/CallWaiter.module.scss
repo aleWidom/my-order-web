@@ -31,3 +31,19 @@
 	border: $color-terciary 1px solid;
 	color: $color-terciary;
 }
+
+
+@media (min-width: 576px) {
+	.containerCallWaiter{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.button {
+		width: 50%;
+		border-radius: 0.25rem;
+	}
+	
+}

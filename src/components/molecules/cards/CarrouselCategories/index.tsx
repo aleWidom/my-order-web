@@ -1,23 +1,37 @@
-"use client"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { CategoryRestaurant } from "@/interfaces"
-import { Category } from "@/components/atoms"
-
-
+'use client';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { CategoryRestaurant } from '@/interfaces';
+import { Category } from '@/components/atoms';
 
 interface SwiperProps {
-    categories: CategoryRestaurant[],
+	categories: CategoryRestaurant[];
 }
 
 export const CarrouselCategories = ({ categories }: SwiperProps) => {
-    return (
-        <Swiper spaceBetween={50} slidesPerView={3}>
-            {categories.map((category) => (
-                <SwiperSlide key={category.CategoryID}>
-                    <Category category={category} />
-                </SwiperSlide>
-            ))}
-        </Swiper>
-
-    )
-}
+	return (
+		<Swiper
+			breakpoints={{
+				// when window width is >= 320px
+				320: {
+					slidesPerView: 3,
+					spaceBetween: 50,
+				},
+				576: {
+					slidesPerView: 4,
+					spaceBetween: 25,
+				},
+				1920: {
+					slidesPerView: 14,
+					spaceBetween: 10,
+					loop: false,
+				},
+			}}
+		>
+			{categories.map((category) => (
+				<SwiperSlide key={category.CategoryID}>
+					<Category category={category} />
+				</SwiperSlide>
+			))}
+		</Swiper>
+	);
+};

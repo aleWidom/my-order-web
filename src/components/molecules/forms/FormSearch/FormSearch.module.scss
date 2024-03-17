@@ -17,3 +17,17 @@ background-color: white;
 	border: solid 1px $color-secondary;
 	border-radius: 0.5rem;
 }
+
+@media (min-width: 576px) {
+	.container{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.containerFormSearch {
+		width: 50%;
+		border-radius: 0.25rem;
+	}
+}
