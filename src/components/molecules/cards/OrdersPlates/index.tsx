@@ -66,7 +66,7 @@ export const OrdersPlates = ({ tableID }: OrdersPlatesProps) => {
 						<>
 							<TiArrowSortedDown className={styles.arrow} />
 							{
-								orders.map((order, i) => (
+								orders?.map((order, i) => (
 									<OrderPlate key={order.orderNumberID} order={order} />
 								))
 							}</>

@@ -20,6 +20,7 @@ export const Plates = ({ dataPlates }: PlatesProps) => {
 
   useEffect(() => {
     setPlates("", "0", dataPlates)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

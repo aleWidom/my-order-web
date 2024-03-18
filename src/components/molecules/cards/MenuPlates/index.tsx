@@ -23,7 +23,7 @@ export const MenuPlates = ({ plates }: MenuPlatesProps) => {
                 <Image className={styles.containerImgCategory} width={100} height={100} alt={"headerResult"} src={`${categorySelected?.photo}`} />}
             <h2 className={styles.title}>{categorySelected.CategoryID === "0" ? "" : categorySelected?.name}</h2>
             <div className={styles.containerMenu}>
-                {plates.map((e) => (
+                {plates?.map((e) => (
                     <MenuPlate key={e.ItemID} title={e.title} description={e.description} price={e.price} idItem={e.ItemID} />
                 ))}
             </div>

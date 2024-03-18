@@ -41,7 +41,7 @@ export const CarrouselCategories = ({ categories }: SwiperProps) => {
 			modules={[Navigation, Pagination, Autoplay]}
 			autoplay
 		>
-			{categories.map((category) => (
+			{categories?.map((category) => (
 				<SwiperSlide key={category.CategoryID}>
 					<Category category={category} />
 				</SwiperSlide>

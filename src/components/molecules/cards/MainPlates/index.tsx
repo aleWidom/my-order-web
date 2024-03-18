@@ -59,23 +59,32 @@ export const MainPlates = ({ plates }: MainPlatesProps) => {
 								slidesPerView: 1.2,
 								spaceBetween: 20,
 							},
-							768: {
+							628: {
 								slidesPerView: 1.6,
 								spaceBetween: 20,
 							},
+							778: {
+								slidesPerView: 2,
+								spaceBetween: 20,
+							},
 							920: {
-								slidesPerView: 2.2,
+								slidesPerView: 2.4,
 								spaceBetween: 25,
 							},
-							1600: {
+							1200: {
 								slidesPerView: 2.8,
 								spaceBetween: 30,
 							},
+							1600: {
+								slidesPerView: 3.2,
+								spaceBetween: 30,
+							},
+
 
 						}}>
 						<>
 							{cardAllMainPlates.plates &&
-								cardAllMainPlates.plates.map((e: any) => (
+								cardAllMainPlates.plates?.map((e: any) => (
 									<SwiperSlide key={e.ItemID} >
 										<MainPlate source={e.photo} title={e.title} price={e.price} description={e.description} idItem={e.ItemID} />
 									</SwiperSlide>
