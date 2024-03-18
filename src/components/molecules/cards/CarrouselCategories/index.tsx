@@ -1,6 +1,5 @@
 'use client';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -38,8 +37,6 @@ export const CarrouselCategories = ({ categories }: SwiperProps) => {
 					spaceBetween: 10,
 				},
 			}}
-			modules={[Navigation, Pagination, Autoplay]}
-			autoplay
 		>
 			{categories?.map((category) => (
 				<SwiperSlide key={category.CategoryID}>

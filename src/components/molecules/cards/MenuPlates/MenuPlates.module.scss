@@ -29,7 +29,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	object-fit: contain;
+	border: solid 2.5px $color-four;
+	object-fit: cover;
 }
 
 .containerMenu {
@@ -48,7 +49,9 @@
 
 
 @media (min-width: 576px) {
-
+	.containerImgCategory {
+		width: 65%;
+	}
 
 	.containerMenu {
 		width: 60%;
@@ -57,7 +60,9 @@
 }
 
 @media (min-width: 920px) {
-
+	.containerImgCategory {
+		width: 40%;
+	}
 
 	.containerMenu {
 		width: 40%;
@@ -66,7 +71,9 @@
 
 
 @media (min-width: 1400px) {
-
+	.containerImgCategory {
+		width: 30%;
+	}
 
 	.containerMenu {
 		width: 30%;
@@ -74,7 +81,9 @@
 }
 
 @media (min-width: 1920px) {
-
+	.containerImgCategory {
+		width: 30%;
+	}
 
 	.containerMenu {
 		width: 30%;
