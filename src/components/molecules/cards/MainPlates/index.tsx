@@ -52,7 +52,27 @@ export const MainPlates = ({ plates }: MainPlatesProps) => {
 			{cardsAllMainPlates.map((cardAllMainPlates, i) => (
 				<div className={styles.cardsPlates} key={i}>
 					<h3 className={styles.title}>{cardAllMainPlates.header}</h3>
-					<Swiper spaceBetween={20} slidesPerView={1.2}>
+					<Swiper
+						breakpoints={{
+							// when window width is >= 320px
+							320: {
+								slidesPerView: 1.2,
+								spaceBetween: 20,
+							},
+							768: {
+								slidesPerView: 1.6,
+								spaceBetween: 20,
+							},
+							920: {
+								slidesPerView: 2.2,
+								spaceBetween: 25,
+							},
+							1600: {
+								slidesPerView: 2.8,
+								spaceBetween: 30,
+							},
+
+						}}>
 						<>
 							{cardAllMainPlates.plates &&
 								cardAllMainPlates.plates.map((e: any) => (

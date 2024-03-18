@@ -55,23 +55,25 @@ export const OrdersPlates = ({ tableID }: OrdersPlatesProps) => {
 
 	return (
 		<div className={styles.mainContainerOrders}>
-			<div className={styles.containerRequest}>
-				<h3 className={styles.title}  >Órdenes solicitadas.</h3>
-				{orders.length ? <h3 className={styles.quantityOrder}>{orders.length}</h3> : ""}
-			</div>
-
-			{orders.length === 0 ? <p>No se han realizado órdenes en este mesa.</p> :
-				<div className={styles.container}>
-					<>
-						<TiArrowSortedDown className={styles.arrow} />
-						{
-							orders.map((order, i) => (
-								<OrderPlate key={order.orderNumberID} order={order} />
-							))
-						}</>
+			<div className={styles.containerOrders}>
+				<div className={styles.containerRequest}>
+					<h3 className={styles.title}  >Órdenes solicitadas.</h3>
+					{orders.length ? <h3 className={styles.quantityOrder}>{orders.length}</h3> : ""}
 				</div>
 
-			}
+				{orders.length === 0 ? <p>No se han realizado órdenes en este mesa.</p> :
+					<div className={styles.container}>
+						<>
+							<TiArrowSortedDown className={styles.arrow} />
+							{
+								orders.map((order, i) => (
+									<OrderPlate key={order.orderNumberID} order={order} />
+								))
+							}</>
+					</div>
+
+				}
+			</div>
 		</div>
 	)
 }
