@@ -13,9 +13,9 @@
 }
 
 .containerImg {
-	width: 100%;
-	height: 9rem;
-	object-fit: contain;
+	width: 90%;
+	height: 150px;
+	object-fit: cover;
 	background-position: center;
 }
 
@@ -33,5 +33,12 @@
 	color: $color-secondary;
 	margin-top: -1rem;
 	font-size: 1rem;
+
+}
+
+@media (min-width: 920px) {
+	.containerImg {
+		width: 65%;
+	}
 
 }

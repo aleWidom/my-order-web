@@ -1,0 +1,16 @@
+.swiper-button-prev,
+.swiper-button-next {
+    display: none;
+    /* Oculta los botones de navegación en pantallas pequeñas */
+}
+
+@media (min-width: 920px) {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: block;
+        font-size: 12px !important;
+        color: grey;
+        /* Oculta los botones de navegación en pantallas pequeñas */
+    }
+}

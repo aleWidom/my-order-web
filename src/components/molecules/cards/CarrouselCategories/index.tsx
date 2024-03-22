@@ -1,11 +1,14 @@
 'use client';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { CategoryRestaurant } from '@/interfaces';
 import { Category } from '@/components/atoms';
+import styles from './CarrouselCategories.module.scss'
+import "@/styles/SwiperComponents.scss";
 
 interface SwiperProps {
 	categories: CategoryRestaurant[];
@@ -14,6 +17,8 @@ interface SwiperProps {
 export const CarrouselCategories = ({ categories }: SwiperProps) => {
 	return (
 		<Swiper
+			className={styles.swipper}
+			modules={[Autoplay, Navigation, Pagination]}
 			breakpoints={{
 				// when window width is >= 320px
 				320: {
@@ -35,8 +40,10 @@ export const CarrouselCategories = ({ categories }: SwiperProps) => {
 				1920: {
 					slidesPerView: 14,
 					spaceBetween: 10,
-				},
+				}
 			}}
+			navigation
+			loop={true}
 		>
 			{categories?.map((category) => (
 				<SwiperSlide key={category.CategoryID}>

@@ -19,7 +19,7 @@ export const MenuPlates = ({ plates }: MenuPlatesProps) => {
 
     return (
         <div className={styles.container}>
-            {categorySelected.CategoryID === "0" ? <h2 className={styles.resultsSearch}>Resultados: {`"${query}"`}</h2> :
+            {categorySelected.CategoryID === "0" ? <h2 className={styles.resultsSearch}>Resultados: {`"${query.trim()}"`}</h2> :
                 <Image className={styles.containerImgCategory} width={100} height={100} alt={"headerResult"} src={`${categorySelected?.photo}`} />}
             <h2 className={styles.title}>{categorySelected.CategoryID === "0" ? "" : categorySelected?.name}</h2>
             <div className={styles.containerMenu}>
