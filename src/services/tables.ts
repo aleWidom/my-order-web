@@ -35,8 +35,8 @@ async function fetchTableActiveCall(tableID: string) {
 	try {
 		const response = await await fetch(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?searchTableCall=${tableID}`,
 			{ cache: 'no-store' });
-		const data = await response.json()
-		return data
+		const data: TableRestaurant[] = await response.json()
+		return data[0]
 	} catch (err) {
 		console.log(err);
 	}
