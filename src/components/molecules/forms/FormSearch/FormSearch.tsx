@@ -38,7 +38,7 @@ export const FormSearch = () => {
 		} else {
 			getItemsResults(value, "0")
 				.then((data) => {
-					if (data) {
+					if (data !== undefined) {
 						if (data.length === 0) {
 							setModalInfo({
 								description: "No hay elementos que coincidan con la búsqueda.",

@@ -30,6 +30,19 @@ async function fetchTablesActiveCall() {
 	}
 }
 
+
+async function fetchTableActiveCall(tableID: string) {
+	try {
+		const response = await await fetch(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?searchTableCall=${tableID}`,
+			{ cache: 'no-store' });
+		const data = await response.json()
+		return data
+	} catch (err) {
+		console.log(err);
+	}
+}
+
+
 async function fetchTable(tableID: string) {
 	try {
 		const response = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?searchTable=${tableID}`);
@@ -151,7 +164,8 @@ export {
 	peopleInTableFetch,
 	peopleInTable,
 	itemPeopleInTable,
-	deleteOrder
+	deleteOrder,
+	fetchTableActiveCall
 };
 
 

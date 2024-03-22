@@ -64,8 +64,10 @@ export const Quantity = ({ price, title, idItem }: QuantityProps) => {
 
 		})
 			.then((response) => {
-				if (response?.status === 200) {
-					setMessageRequest("success")
+				if (response !== undefined) {
+					if (response?.status === 200) {
+						setMessageRequest("success")
+					}
 				}
 			})
 			.catch((err: any) => {

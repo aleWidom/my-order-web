@@ -28,7 +28,7 @@ export const ModalInfo = ({ modalInfo }: ModalSearchProps) => {
 	return (
 		<div className={styles.containerModalInfo}>
 			<div className={styles.modalInfo}>
-				{modalInfo.section === "form" ?
+				{modalInfo.section === "form" || modalInfo.description === "Vuelva a realizar el llamado al mozo." ?
 					<FaTimes style={{ fontSize: "30px", color: "red" }} /> :
 					modalInfo.description === "Su moza/o se aceraca a su mesa." ? <BsPersonCheckFill style={{ fontSize: "30px", color: "white" }} /> : <BsPersonFillDash style={{ fontSize: "30px", color: "white" }} />
 				}
