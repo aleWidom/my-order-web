@@ -5,7 +5,7 @@ import { ItemPeopleInTable, TableRestaurant } from '../interfaces';
 
 async function fetchTables() {
 	try {
-		const response = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables`);
+		const response = await axios.get(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables`);
 		return response.data;
 	} catch (err) {
 		console.log(err);
@@ -14,7 +14,7 @@ async function fetchTables() {
 
 async function fetchTablesActive() {
 	try {
-		const response = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?active`);
+		const response = await axios.get(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables?active`);
 		return response.data;
 	} catch (err) {
 		console.log(err);
@@ -23,7 +23,7 @@ async function fetchTablesActive() {
 
 async function fetchTablesActiveCall() {
 	try {
-		const response = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?activeCall `);
+		const response = await axios.get(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables?activeCall `);
 		return response.data;
 	} catch (err) {
 		console.log(err);
@@ -33,7 +33,7 @@ async function fetchTablesActiveCall() {
 
 async function fetchTableActiveCall(tableID: string) {
 	try {
-		const response = await await fetch(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?searchTableCall=${tableID}`,
+		const response = await await fetch(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables?searchTableCall=${tableID}`,
 			{ cache: 'no-store' });
 		const data: TableRestaurant[] = await response.json()
 		return data[0]
@@ -45,7 +45,7 @@ async function fetchTableActiveCall(tableID: string) {
 
 async function fetchTable(tableID: string) {
 	try {
-		const response = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?searchTable=${tableID}`);
+		const response = await axios.get(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables?searchTable=${tableID}`);
 		const data: TableRestaurant[] = response.data;
 		return data[0]
 	} catch (err) {
@@ -58,7 +58,7 @@ async function fetchTable(tableID: string) {
 async function updateTableNumberDesactive(tableID: string) {
 	try {
 		const response = await axios.put(
-			/*or get*/ `https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/?desactivate=${tableID}`
+			/*or get*/ `https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables/?desactivate=${tableID}`
 		);
 		return response.data;
 	} catch (err) {
@@ -69,7 +69,7 @@ async function updateTableNumberDesactive(tableID: string) {
 async function updateTableNumberCall(tableID: string) {
 	try {
 		const response = await axios.put(
-			/*or get*/ `https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/?call=${tableID}`
+			/*or get*/ `https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables/?call=${tableID}`
 		);
 		return response.data;
 	} catch (err) {
@@ -80,7 +80,7 @@ async function updateTableNumberCall(tableID: string) {
 async function updateTableNumberNotCall(tableID: string | undefined) {
 	try {
 		const response = await axios.put(
-			/*or get*/ `https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/?notCall=${tableID}`
+			/*or get*/ `https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables/?notCall=${tableID}`
 		);
 		return response.data;
 	} catch (err) {
@@ -92,7 +92,7 @@ async function updateTableNumberNotCall(tableID: string | undefined) {
 async function updateTableNumberActive(tableID: string) {
 	try {
 		const response = await axios.put(
-			/*or get*/ `https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/?activate=${tableID}`
+			/*or get*/ `https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables/?activate=${tableID}`
 		);
 		return response.data;
 	} catch (err) {
@@ -103,7 +103,7 @@ async function updateTableNumberActive(tableID: string) {
 
 async function peopleInTableFetch(tableID: string) {
 	try {
-		const response = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/?peopleInTableSearch=${tableID}`);
+		const response = await axios.get(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables/?peopleInTableSearch=${tableID}`);
 		return response.data;
 	} catch (err) {
 		console.log(err);
@@ -113,7 +113,7 @@ async function peopleInTableFetch(tableID: string) {
 
 async function fetchOrderItem() {
 	try {
-		const response = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?itemPeopleInTableJoin`);
+		const response = await axios.get(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables?itemPeopleInTableJoin`);
 		return response.data;
 
 	} catch (err) {
@@ -123,7 +123,7 @@ async function fetchOrderItem() {
 
 async function peopleInTable(idPeopleInTable: string, tableId: string) {
 	try {
-		const response = await axios.post(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables/${idPeopleInTable}/${tableId}?peopleInTable`);
+		const response = await axios.post(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables/${idPeopleInTable}/${tableId}?peopleInTable`);
 		return response.data;
 	} catch (err) {
 		console.log(err);
@@ -133,7 +133,7 @@ async function peopleInTable(idPeopleInTable: string, tableId: string) {
 
 async function itemPeopleInTable(body: ItemPeopleInTable) {
 	try {
-		const response = await axios.post(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?itemPeopleInTable`, body);
+		const response = await axios.post(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables?itemPeopleInTable`, body);
 		return response;
 	} catch (err) {
 		console.log(err);
@@ -142,7 +142,7 @@ async function itemPeopleInTable(body: ItemPeopleInTable) {
 
 async function deleteOrder(orderID: string) {
 	try {
-		const response = await axios.delete(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/tables?deleteOrder=${orderID}`);
+		const response = await axios.delete(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/tables?deleteOrder=${orderID}`);
 		return response;
 	} catch (err) {
 		console.log(err);

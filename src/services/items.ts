@@ -4,7 +4,7 @@ import axios from 'axios';
 
 async function fetchItemsRestaurant() {
 	try {
-		const allItems = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items`);
+		const allItems = await axios.get(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/items`);
 		return allItems.data;
 	} catch (err) {
 		console.log(err);
@@ -14,7 +14,7 @@ async function fetchItemsRestaurant() {
 
 async function getAllCategoriesIdRestaurant1() {
 	try {
-		const allCategories = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items?categories`);
+		const allCategories = await axios.get(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/items?categories`);
 		return allCategories.data;
 	} catch (err) {
 		console.log(err);
@@ -24,7 +24,7 @@ async function getAllCategoriesIdRestaurant1() {
 
 async function getItemsResults(valueInput: string, categoryID: string) {
 	try {
-		const searchResults = await axios.get(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items?search=${valueInput}`);
+		const searchResults = await axios.get(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/items?search=${valueInput}`);
 		if (categoryID !== "0") {
 			const platesByCategory = searchResults.data.filter((plate: PlateRestaurant) => {
 				return plate.id_category === categoryID
@@ -41,7 +41,7 @@ async function getItemsResults(valueInput: string, categoryID: string) {
 
 async function fetchItemPeopleInTable(id_peopleInTable: string) {
 	try {
-		const fetchItemPeopleInTable = await fetch(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items?fetchItemPeopleInTable=${id_peopleInTable}`,
+		const fetchItemPeopleInTable = await fetch(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/items?fetchItemPeopleInTable=${id_peopleInTable}`,
 			{ cache: 'no-store' });
 		const data = await fetchItemPeopleInTable.json()
 		return data
@@ -52,7 +52,7 @@ async function fetchItemPeopleInTable(id_peopleInTable: string) {
 
 async function deleteItem(orderId: string) {
 	try {
-		const deleteItem = await axios.delete(`https://wt15fjaub7.execute-api.us-east-1.amazonaws.com/dev/items?deleteItem=${orderId}`);
+		const deleteItem = await axios.delete(`https://s7y0zpjbs6.execute-api.us-east-1.amazonaws.com/develop/items?deleteItem=${orderId}`);
 		return deleteItem
 	} catch (err) {
 		console.log(err);

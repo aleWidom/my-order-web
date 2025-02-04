@@ -1,5 +1,27 @@
 {
   "api": {
+    "myorder": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "items"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "tables"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "myorderapi": {
       "dependsOn": [
         {
@@ -30,6 +52,16 @@
       "service": "Lambda"
     },
     "LambdaTables": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "items": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "tables": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -65,6 +97,38 @@
         {
           "category": "function",
           "resourceName": "LambdaTables"
+        }
+      ]
+    },
+    "AMPLIFY_function_items_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "items"
+        }
+      ]
+    },
+    "AMPLIFY_function_items_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "items"
+        }
+      ]
+    },
+    "AMPLIFY_function_tables_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "tables"
+        }
+      ]
+    },
+    "AMPLIFY_function_tables_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "tables"
         }
       ]
     }

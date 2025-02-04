@@ -3,14 +3,14 @@
   "paths": {
     "/items": {
       "name": "/items",
-      "lambdaFunction": "LambdaItems",
+      "lambdaFunction": "items",
       "permissions": {
         "setting": "open"
       }
     },
     "/tables": {
       "name": "/tables",
-      "lambdaFunction": "LambdaTables",
+      "lambdaFunction": "tables",
       "permissions": {
         "setting": "open"
       }
