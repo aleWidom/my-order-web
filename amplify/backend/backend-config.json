@@ -1,6 +1,6 @@
 {
   "api": {
-    "myorder": {
+    "myorderwebrecuperadoapi": {
       "dependsOn": [
         {
           "attributes": [
@@ -21,41 +21,9 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "API Gateway"
-    },
-    "myorderapi": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "LambdaItems"
-        },
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "LambdaTables"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
     }
   },
   "function": {
-    "LambdaItems": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "LambdaTables": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
     "items": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -68,38 +36,6 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_LambdaItems_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "LambdaItems"
-        }
-      ]
-    },
-    "AMPLIFY_function_LambdaItems_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "LambdaItems"
-        }
-      ]
-    },
-    "AMPLIFY_function_LambdaTables_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "LambdaTables"
-        }
-      ]
-    },
-    "AMPLIFY_function_LambdaTables_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "LambdaTables"
-        }
-      ]
-    },
     "AMPLIFY_function_items_deploymentBucketName": {
       "usedBy": [
         {
