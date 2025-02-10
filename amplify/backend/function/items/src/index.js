@@ -3,64 +3,81 @@
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
  */
 
+const mysql = require('mysql2');
 
 exports.handler = async (event) => {
-
-    let mysql = require('mysql2');
-
     let connection;
-
     let result;
 
-
     try {
+        console.log("🟢 Intentando conectar a MySQL...");
 
         connection = mysql.createConnection({
             host: 'recuperamacionmyorderdb-cluster.cluster-ctulrcqrkejd.us-east-1.rds.amazonaws.com',
             user: 'admin',
             password: 'admin123456',
             database: 'myorder'
-        })
+        });
 
-        let queryMySql = `select * from Item`
+        console.log("✅ Conexión exitosa");
+
+        let queryMySql = `SELECT * FROM Item`;
 
         if (event.queryStringParameters?.categories !== undefined) {
-            queryMySql = `SELECT * from Category ORDER BY CategoryID Asc;`
+            queryMySql = `SELECT * FROM Category ORDER BY CategoryID ASC;`;
         }
         else if (event.queryStringParameters?.search !== undefined) {
-            queryMySql = `select * from Item where title like "%${event.queryStringParameters.search}%"`
+            queryMySql = `SELECT * FROM Item WHERE title LIKE "%${event.queryStringParameters.search}%"`;
         }
         else if (event.queryStringParameters?.fetchItemPeopleInTable !== undefined) {
-            queryMySql = `select id_item as ItemID, title, orderNumberID, id_peopleInTable, numberTable , quantity, price,state, date from Item_peopleInTable , Item
-        Where Item_peopleInTable.id_item = Item.ItemID && Item_peopleInTable.id_peopleInTable = ${JSON.stringify(event.queryStringParameters.fetchItemPeopleInTable)} ORDER BY date DESC`
+            queryMySql = `SELECT id_item AS ItemID, title, orderNumberID, id_peopleInTable, numberTable, quantity, price, state, date 
+                          FROM Item_peopleInTable 
+                          JOIN Item ON Item_peopleInTable.id_item = Item.ItemID 
+                          WHERE Item_peopleInTable.id_peopleInTable = ${JSON.stringify(event.queryStringParameters.fetchItemPeopleInTable)} 
+                          ORDER BY date DESC`;
         }
         else if (event.queryStringParameters?.itemsAcordingCategory !== undefined) {
-            queryMySql = `select ItemID, title, description, price from Category , Item
-        where CategoryID = Item.id_category AND CategoryID=${event.queryStringParameters.itemsAcordingCategory}`
+            queryMySql = `SELECT ItemID, title, description, price 
+                          FROM Category 
+                          JOIN Item ON CategoryID = Item.id_category 
+                          WHERE CategoryID=${event.queryStringParameters.itemsAcordingCategory}`;
         }
         else if (event.queryStringParameters?.makeDelivered !== undefined) {
-            queryMySql = `Update Item_peopleInTable SET state = "delivered" where ItemPeopleInTableID = ${JSON.stringify(event.pathParameters.proxy.slice(0, 36))} ;`
+            queryMySql = `UPDATE Item_peopleInTable SET state = "delivered" WHERE ItemPeopleInTableID = ${JSON.stringify(event.pathParameters.proxy.slice(0, 36))};`;
         }
         else if (event.queryStringParameters?.deleteItem !== undefined) {
-            queryMySql = `DELETE FROM Item_peopleInTable WHERE OrderNumberID = ${JSON.stringify(event.queryStringParameters.deleteItem)} ;`
+            queryMySql = `DELETE FROM Item_peopleInTable WHERE OrderNumberID = ${JSON.stringify(event.queryStringParameters.deleteItem)};`;
         }
 
-        const promiseQuery = new Promise((resolve) => {
-            connection.query(`${queryMySql}`, function (error, results, fields) {
-                resolve(results)
+        if (!connection) {
+            throw new Error("🔴 No se pudo establecer conexión con la base de datos");
+        }
+
+        console.log("🔵 Ejecutando query:", queryMySql);
+
+        const promiseQuery = new Promise((resolve, reject) => {
+            connection.query(queryMySql, function (error, results) {
+                if (error) reject(error);
+                else resolve(results);
             });
-        })
-        result = await promiseQuery
-    }
+        });
 
+        result = await promiseQuery;
+        console.log("🟢 Query ejecutada con éxito");
+
+    }
     catch (err) {
-        return err
+        console.error("🔴 Error en la consulta:", err);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: "Database query failed", details: err.message })
+        };
     } finally {
-        if (connection) await connection.end()
+        if (connection) {
+            console.log("🟡 Cerrando conexión...");
+            connection.destroy();
+        }
     }
-
-
-
 
     return {
         statusCode: 200,
@@ -71,4 +88,3 @@ exports.handler = async (event) => {
         body: JSON.stringify(result),
     };
 };
-
