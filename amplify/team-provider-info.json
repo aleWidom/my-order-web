@@ -15,7 +15,7 @@
       "function": {
         "items": {
           "deploymentBucketName": "amplify-myorderwebrecuperado-dev-05aa2-deployment",
-          "s3Key": "amplify-builds/items-33615169627974616362-build.zip"
+          "s3Key": "amplify-builds/items-4d76767a487139467858-build.zip"
         },
         "tables": {
           "deploymentBucketName": "amplify-myorderwebrecuperado-dev-05aa2-deployment",
